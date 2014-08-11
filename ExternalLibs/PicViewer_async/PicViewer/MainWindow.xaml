@@ -1,0 +1,27 @@
+﻿<Window x:Class="PicViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Picture Viewer" Height="350" Width="700" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="350*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" >
+            <Button Content="Prev" Height="23" Name="buttonPrev" Width="75" Margin="5" Click="buttonPrev_Click" />
+            <Button Content="Next" Height="23" Name="buttonNext" Width="75" Margin="5" Click="buttonNext_Click" />
+            <Label Content="Label" Height="28" Name="labelPath" Width="350" />
+            <ComboBox Height="23" Name="Feeds" Width="140" ItemsSource="{Binding}" SelectionChanged="Feeds_SelectionChanged">
+                <ComboBoxItem Content="Technology" Tag="http://feeds.bbci.co.uk/news/technology/rss.xml" />
+                <ComboBoxItem Content="Science" Tag="http://feeds.bbci.co.uk/news/science_and_environment/rss.xml" />
+                <ComboBoxItem Content="News" Tag="http://feeds.bbci.co.uk/news/world/rss.xml" />
+                <ComboBoxItem Content="Business" Tag="http://feeds.bbci.co.uk/news/business/rss.xml" />
+                <ComboBoxItem Content="Health" Tag="http://feeds.bbci.co.uk/news/health/rss.xml" />
+                <ComboBoxItem Content="Education" Tag="http://feeds.bbci.co.uk/news/education/rss.xml" />
+                <ComboBoxItem Content="Entertainment" Tag="http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml" />
+            </ComboBox>
+        </StackPanel> 
+        <Rectangle Grid.Row="1" Fill="#FF293875" />
+        <Image Grid.Row="1" Margin="15" Name="imagePicture" Stretch="Fill" />
+    </Grid>
+</Window>

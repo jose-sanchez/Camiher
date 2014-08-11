@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Model1StoreContainer">
+          <EntitySet Name="ClientSet" EntityType="Model1.Store.ClientSet" store:Type="Tables" />
+          <EntitySet Name="CompradorSet" EntityType="Model1.Store.CompradorSet" store:Type="Tables" />
+          <EntitySet Name="FotosSet" EntityType="Model1.Store.FotosSet" store:Type="Tables" />
+          <EntitySet Name="NotificationSet" EntityType="Model1.Store.NotificationSet" store:Type="Tables" />
+          <EntitySet Name="ProductImageSet" EntityType="Model1.Store.ProductImageSet" store:Type="Tables" />
+          <EntitySet Name="ProductsSet" EntityType="Model1.Store.ProductsSet" store:Type="Tables" />
+          <EntitySet Name="ProveedorSet" EntityType="Model1.Store.ProveedorSet" store:Type="Tables" />
+          <EntitySet Name="SaleSet" EntityType="Model1.Store.SaleSet" store:Type="Tables" />
+          <EntitySet Name="VentaSet" EntityType="Model1.Store.VentaSet" store:Type="Tables" store:Name="VentaSet">
+            <DefiningQuery>SELECT 
+            [VentaSet].[Id] AS [Id], 
+            [VentaSet].[PrecioDado] AS [PrecioDado], 
+            [VentaSet].[PrecioOfrecido] AS [PrecioOfrecido], 
+            [VentaSet].[CorreoEnviado] AS [CorreoEnviado], 
+            [VentaSet].[FechaUltimoCorreo] AS [FechaUltimoCorreo], 
+            [VentaSet].[PrecioFinal] AS [PrecioFinal], 
+            [VentaSet].[Comprador_Id] AS [Comprador_Id], 
+            [VentaSet].[Product_Id] AS [Product_Id]
+            FROM [VentaSet] AS [VentaSet]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="ClientSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="255" />
+          <Property Name="PhoneMain" Type="nvarchar" MaxLength="20" />
+          <Property Name="PhoneSecond" Type="nvarchar" MaxLength="20" />
+          <Property Name="Address" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+          <Property Name="Description" Type="nvarchar" MaxLength="3000" />
+          <Property Name="Account" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CompradorSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" Nullable="false" />
+          <Property Name="TelefonoM" Type="nvarchar" Nullable="false" />
+          <Property Name="TelefonoF" Type="nvarchar" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FotosSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" />
+          <Property Name="Path" Type="nvarchar" Nullable="false" />
+          <Property Name="Orden" Type="nvarchar" Nullable="false" />
+          <Property Name="Product_ID" Type="nvarchar" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NotificationSet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="ProductID" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="SearchID" Type="nvarchar" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="ProductImageSet">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="ProducID" Type="nvarchar" MaxLength="32" />
+          <Property Name="Path" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Order" Type="int" />
+          <Property Name="Email" Type="bit" />
+        </EntityType>
+        <EntityType Name="ProductsSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Producto" Type="nvarchar" Nullable="false" />
+          <Property Name="Marca" Type="nvarchar" Nullable="false" />
+          <Property Name="Modelo" Type="nvarchar" Nullable="false" />
+          <Property Name="Año" Type="int" Nullable="false" />
+          <Property Name="Potencia" Type="int" Nullable="false" />
+          <Property Name="Peso" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" />
+          <Property Name="Precio" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="Id" Type="nvarchar" Nullable="false" />
+          <Property Name="Enventa" Type="nvarchar" Nullable="false" />
+          <Property Name="Enbusca" Type="nvarchar" Nullable="false" />
+          <Property Name="Proveedor_ID" Type="nvarchar" />
+          <Property Name="Kilometer" Type="int" />
+          <Property Name="Hours" Type="int" />
+          <Property Name="PrivateDescription" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="ProveedorSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Apellido" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="TelefonoM" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="TelefonoF" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Direccion" Type="nvarchar" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SaleSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="PriceforClient" Type="int" />
+          <Property Name="PriceClientOffered" Type="int" />
+          <Property Name="LastEmailDate" Type="datetime" />
+          <Property Name="FinalPrice" Type="int" />
+          <Property Name="Client_ID" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="Product_ID" Type="nvarchar" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'VentaSet' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="VentaSet">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="PrecioDado" />
+            <PropertyRef Name="PrecioOfrecido" />
+            <PropertyRef Name="CorreoEnviado" />
+            <PropertyRef Name="FechaUltimoCorreo" />
+            <PropertyRef Name="PrecioFinal" />
+            <PropertyRef Name="Comprador_Id" />
+            <PropertyRef Name="Product_Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PrecioDado" Type="nvarchar" Nullable="false" />
+          <Property Name="PrecioOfrecido" Type="nvarchar" Nullable="false" />
+          <Property Name="CorreoEnviado" Type="nvarchar" Nullable="false" />
+          <Property Name="FechaUltimoCorreo" Type="nvarchar" Nullable="false" />
+          <Property Name="PrecioFinal" Type="nvarchar" Nullable="false" />
+          <Property Name="Comprador_Id" Type="int" Nullable="false" />
+          <Property Name="Product_Id" Type="int" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CompradorSet1" EntityType="Model1.CompradorSet" />
+          <EntitySet Name="FotosSet1" EntityType="Model1.FotosSet" />
+          <EntitySet Name="VentaSet" EntityType="Model1.VentaSet" />
+          <EntitySet Name="ProveedorSet" EntityType="Model1.ProveedorSet" />
+          <EntitySet Name="ClientSet" EntityType="Model1.ClientSet" />
+          <EntitySet Name="SaleSet" EntityType="Model1.SaleSet" />
+          <EntitySet Name="NotificationSet" EntityType="Model1.NotificationSet" />
+          <EntitySet Name="ProductImageSet" EntityType="Model1.ProductImageSet" />
+          <EntitySet Name="ProductsSet" EntityType="Model1.ProductsSet" />
+        </EntityContainer>
+        <EntityType Name="CompradorSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Apellido" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelefonoM" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelefonoF" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Direccion" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FotosSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Path" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Orden" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Product_ID" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VentaSet">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="PrecioDado" />
+            <PropertyRef Name="PrecioOfrecido" />
+            <PropertyRef Name="CorreoEnviado" />
+            <PropertyRef Name="FechaUltimoCorreo" />
+            <PropertyRef Name="PrecioFinal" />
+            <PropertyRef Name="Comprador_Id" />
+            <PropertyRef Name="Product_Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PrecioDado" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrecioOfrecido" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CorreoEnviado" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FechaUltimoCorreo" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrecioFinal" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Comprador_Id" Nullable="false" />
+          <Property Type="Int32" Name="Product_Id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProveedorSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Apellido" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelefonoM" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TelefonoF" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Direccion" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ClientSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Surname" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhoneMain" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhoneSecond" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Account" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SaleSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PriceforClient" />
+          <Property Type="Int32" Name="PriceClientOffered" />
+          <Property Type="DateTime" Name="LastEmailDate" />
+          <Property Type="Int32" Name="FinalPrice" />
+          <Property Type="String" Name="Client_ID" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Product_ID" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NotificationSet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="String" Name="ID" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductID" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SearchID" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductImageSet">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Type="String" Name="ImageID" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProducID" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Path" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Order" />
+          <Property Type="Boolean" Name="Email" />
+        </EntityType>
+        <EntityType Name="ProductsSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="String" Name="Producto" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Modelo" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Año" Nullable="false" />
+          <Property Type="Int32" Name="Potencia" Nullable="false" />
+          <Property Type="Int32" Name="Peso" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Precio" Nullable="false" />
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Enventa" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Enbusca" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Proveedor_ID" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Kilometer" />
+          <Property Type="Int32" Name="Hours" />
+          <Property Type="String" Name="PrivateDescription" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model1" />
+        <Alias Key="Target" Value="Model1.Store" />
+        <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1StoreContainer">
+          <EntitySetMapping Name="CompradorSet1">
+            <EntityTypeMapping TypeName="Model1.CompradorSet">
+              <MappingFragment StoreEntitySet="CompradorSet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TelefonoF" ColumnName="TelefonoF" />
+                <ScalarProperty Name="TelefonoM" ColumnName="TelefonoM" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FotosSet1">
+            <EntityTypeMapping TypeName="Model1.FotosSet">
+              <MappingFragment StoreEntitySet="FotosSet">
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VentaSet">
+            <EntityTypeMapping TypeName="Model1.VentaSet">
+              <MappingFragment StoreEntitySet="VentaSet">
+                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+                <ScalarProperty Name="Comprador_Id" ColumnName="Comprador_Id" />
+                <ScalarProperty Name="PrecioFinal" ColumnName="PrecioFinal" />
+                <ScalarProperty Name="FechaUltimoCorreo" ColumnName="FechaUltimoCorreo" />
+                <ScalarProperty Name="CorreoEnviado" ColumnName="CorreoEnviado" />
+                <ScalarProperty Name="PrecioOfrecido" ColumnName="PrecioOfrecido" />
+                <ScalarProperty Name="PrecioDado" ColumnName="PrecioDado" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProveedorSet">
+            <EntityTypeMapping TypeName="Model1.ProveedorSet">
+              <MappingFragment StoreEntitySet="ProveedorSet">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="TelefonoF" ColumnName="TelefonoF" />
+                <ScalarProperty Name="TelefonoM" ColumnName="TelefonoM" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientSet">
+            <EntityTypeMapping TypeName="Model1.ClientSet">
+              <MappingFragment StoreEntitySet="ClientSet">
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneSecond" ColumnName="PhoneSecond" />
+                <ScalarProperty Name="PhoneMain" ColumnName="PhoneMain" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleSet">
+            <EntityTypeMapping TypeName="Model1.SaleSet">
+              <MappingFragment StoreEntitySet="SaleSet">
+                <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="FinalPrice" ColumnName="FinalPrice" />
+                <ScalarProperty Name="LastEmailDate" ColumnName="LastEmailDate" />
+                <ScalarProperty Name="PriceClientOffered" ColumnName="PriceClientOffered" />
+                <ScalarProperty Name="PriceforClient" ColumnName="PriceforClient" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationSet">
+            <EntityTypeMapping TypeName="Model1.NotificationSet">
+              <MappingFragment StoreEntitySet="NotificationSet">
+                <ScalarProperty Name="SearchID" ColumnName="SearchID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductImageSet">
+            <EntityTypeMapping TypeName="Model1.ProductImageSet">
+              <MappingFragment StoreEntitySet="ProductImageSet">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="ProducID" ColumnName="ProducID" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductsSet">
+            <EntityTypeMapping TypeName="Model1.ProductsSet">
+              <MappingFragment StoreEntitySet="ProductsSet">
+                <ScalarProperty Name="PrivateDescription" ColumnName="PrivateDescription" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="Kilometer" ColumnName="Kilometer" />
+                <ScalarProperty Name="Proveedor_ID" ColumnName="Proveedor_ID" />
+                <ScalarProperty Name="Enbusca" ColumnName="Enbusca" />
+                <ScalarProperty Name="Enventa" ColumnName="Enventa" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="Potencia" ColumnName="Potencia" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Producto" ColumnName="Producto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Model1" ZoomLevel="75" >
+        <EntityTypeShape EntityType="Model1.CompradorSet" Width="1.5" PointX="6.75" PointY="4.75" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="Model1.FotosSet" Width="1.5" PointX="0.75" PointY="8.75" Height="1.9802864583333317" />
+        <EntityTypeShape EntityType="Model1.VentaSet" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="Model1.ProveedorSet" Width="1.5" PointX="3.375" PointY="0.75" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="Model1.ClientSet" Width="1.5" PointX="0.75" PointY="4.75" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="Model1.SaleSet" Width="1.5" PointX="3.375" PointY="4.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="Model1.NotificationSet" Width="1.5" PointX="7.375" PointY="0.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="Model1.ProductImageSet" Width="1.5" PointX="3.375" PointY="8.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="Model1.ProductsSet" Width="1.5" PointX="5.375" PointY="8.75" Height="4.0956022135416674" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

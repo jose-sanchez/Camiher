@@ -1,0 +1,56 @@
+﻿@model  List<WEBCAMIHER.Models.Content>
+<div id="leftcolum">
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Index</h2>
+
+
+    @Html.DropDownList("PageList")
+
+
+
+    <div id="contents">
+        <div id="specificcontent">
+        </div>
+            <div id="newcontent">
+                Titulo:<br><input id="nctitle" type="text" name="title"><br>
+                Texto:<br><input id="nctext" type="text" name="text"><br>
+                <button type="button" id="btSave">Save</button>
+            </div>
+        </div>
+</div>
+<div id="rightcolum">
+    @using (Html.BeginForm("UploadImage", "Content", FormMethod.Post,
+    new
+    {
+        enctype = "multipart/form-data",
+        id = "ImgForm",
+        name = "ImgForm",
+        target = "UploadTarget"
+    }))
+    {
+
+        <div class="row" hidden="hidden">
+            <span class="span4">
+                <input type="file" name="uploadImages" id="uploadImages" multiple="multiple" class="input-files" />
+            </span>
+            <span class="span2">
+                <input type="button" name="button" value="Subir" class="btn btn-upload" onclick="UploadImage()" />
+            </span>
+            <div id="Images"></div>
+        </div>
+        <div id="jsonResult" />
+
+
+        <input hidden="hidden" id="contentID" name="contentID" value="Hola" />
+    }
+    <iframe id="UploadTarget" name="UploadTarget" onload="UploadImage_Complete();" style="position: absolute; left: -999em; top: -999em;"></iframe>
+    
+</div>
+        @section scripts
+{
+            <script type="text/javascript" src="@Url.Content("/Scripts/web-Camiher.js")"></script>
+
+        }

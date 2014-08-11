@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "OurServices";
+}
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Message.</h1>
+           <p>
+               Ponemos a su servicio todo tipo de maquinaria de obra pública relacionada con el movimiento
+               de tierras y la construccion. Bajo la dirección y asesoramiento de Don Jose Maria Sanchez Colino que cuenta con mas
+               35 años de experiencia en el sector.
+           </p>
+        </hgroup>
+    </div>
+</section>
+    }
+
+<h3>Somos expertos en:</h3>
+<ol class="round">
+    @foreach (WEBCAMIHER.Models.Content item in ViewBag.OurServicesList)
+    {
+        <li class="@item.Class ">
+            <h5>@item.Title</h5>
+            @item.Text
+            <br><img src="~/Images/btGaleria.png" id="@item.Id" class="galeria" />
+        </li>
+
+
+    }
+</ol>
+<div class="container_Images" hidden>
+    <img src="~/Images/Arrow.png" class="arrow-left" />
+    <div class="List_Images" id="list_Ima">
+        <img id="currentImage">
+    </div>
+    <img src="~/Images/Arrow1.png" class="arrow-right" />
+</div>
+
+
+<div id="Director">
+    <h3>Jose Maria Sanchez Colino</h3>
+    <br />
+    <div id="Imagen">
+        <img src="~/Images/servicios.jpg" alt="Sellado de vertedero" />
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/web-Camiher.js")"></script>
+
+}

@@ -1,0 +1,10 @@
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\ClassLibrary1\ClassLibrary1\bin\Release\ClassLibrary1.dll
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\ClassLibrary1\ClassLibrary1\bin\Release\ClassLibrary1.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\ClassLibrary1\ClassLibrary1\obj\Release\ClassLibrary1.dll
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\ClassLibrary1\ClassLibrary1\obj\Release\ClassLibrary1.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\ClassLibrary1\ClassLibrary1\obj\Release\DAL.csprojResolveAssemblyReference.cache
+C:\Users\josehp\NightDiary\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Release\ClassLibrary1.dll
+C:\Users\josehp\NightDiary\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Release\ClassLibrary1.pdb
+C:\Users\josehp\NightDiary\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Release\ClassLibrary1.dll
+C:\Users\josehp\NightDiary\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Release\ClassLibrary1.pdb
+C:\Users\josehp\NightDiary\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Release\DAL.csprojResolveAssemblyReference.cache

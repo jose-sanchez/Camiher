@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="Model1" />
+  <Alias Key="Target" Value="Model1.Store" />
+  <EntityContainerMapping CdmEntityContainer="Model1Container" StorageEntityContainer="Model1StoreContainer">
+    <EntitySetMapping Name="CompradorSet1">
+      <EntityTypeMapping TypeName="Model1.CompradorSet">
+        <MappingFragment StoreEntitySet="CompradorSet">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="TelefonoF" ColumnName="TelefonoF" />
+          <ScalarProperty Name="TelefonoM" ColumnName="TelefonoM" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FotosSet1">
+      <EntityTypeMapping TypeName="Model1.FotosSet">
+        <MappingFragment StoreEntitySet="FotosSet">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductsSet1">
+      <EntityTypeMapping TypeName="Model1.ProductsSet">
+        <MappingFragment StoreEntitySet="ProductsSet">
+          <ScalarProperty Name="Proveedor_ID" ColumnName="Proveedor_ID" />
+          <ScalarProperty Name="Enbusca" ColumnName="Enbusca" />
+          <ScalarProperty Name="Enventa" ColumnName="Enventa" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+          <ScalarProperty Name="Potencia" ColumnName="Potencia" />
+          <ScalarProperty Name="Año" ColumnName="Año" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Producto" ColumnName="Producto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VentaSet">
+      <EntityTypeMapping TypeName="Model1.VentaSet">
+        <MappingFragment StoreEntitySet="VentaSet">
+          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+          <ScalarProperty Name="Comprador_Id" ColumnName="Comprador_Id" />
+          <ScalarProperty Name="PrecioFinal" ColumnName="PrecioFinal" />
+          <ScalarProperty Name="FechaUltimoCorreo" ColumnName="FechaUltimoCorreo" />
+          <ScalarProperty Name="CorreoEnviado" ColumnName="CorreoEnviado" />
+          <ScalarProperty Name="PrecioOfrecido" ColumnName="PrecioOfrecido" />
+          <ScalarProperty Name="PrecioDado" ColumnName="PrecioDado" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProveedorSet">
+      <EntityTypeMapping TypeName="Model1.ProveedorSet">
+        <MappingFragment StoreEntitySet="ProveedorSet">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="TelefonoF" ColumnName="TelefonoF" />
+          <ScalarProperty Name="TelefonoM" ColumnName="TelefonoM" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

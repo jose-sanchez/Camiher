@@ -1,0 +1,61 @@
+﻿@{
+   
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<ol class="round">
+    @foreach (WEBCAMIHER.Models.Content item in ViewBag.ContactList)
+    {
+        <li >
+            <h5>@item.Title</h5>
+            @item.Text
+            <br>
+        </li>
+
+
+    }
+</ol>
+@*<section class="contact">
+    <header>
+        <h3>Phone</h3>
+    </header>
+    <p>
+        <span class="label">Oficina:</span>
+        <span>91 864 07 40</span>
+    </p>
+    <p>
+        <span class="label">Movil:</span>
+        <span>629 10 67 14</span>
+    </p>
+</section>
+
+<section class="contact">
+    <header>
+        <h3>Email</h3>
+    </header>
+
+    <p>
+        <span class="label">General:</span>
+        <span><a href="camihersl@hotmail.com">camihersl@hotmail.com</a></span>
+    </p>
+</section>
+
+<section class="contact">
+    <header>
+        <h3>Direccion</h3>
+    </header>
+    <p>
+        Cervantes 11<br />
+        Cadalso de los vidrios , Madrid,(28640)
+    </p>
+</section>*@
+
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/web-Camiher.js")"></script>
+
+}

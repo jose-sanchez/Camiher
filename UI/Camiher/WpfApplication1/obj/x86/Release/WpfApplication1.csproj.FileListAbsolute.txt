@@ -1,0 +1,101 @@
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\WpfApplication1.exe.config
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\WpfApplication1.exe
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\WpfApplication1.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Index.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\MainWindow.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Provider.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\test.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Index.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\MainWindow.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Provedores.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Provider.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\test.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\App.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1_Content.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1_MarkupCompile.cache
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1_MarkupCompile.lref
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Provedores.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1.g.resources
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1.Properties.Resources.resources
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1.exe
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\ClassLibrary1.dll
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\DragAndDrop.exe
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\PicViewer.exe
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\System.Windows.Controls.Input.Toolkit.Design.dll
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\System.Windows.Controls.Input.Toolkit.dll
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\WPFToolkit.dll
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\PicViewer.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\DragAndDrop.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\ClassLibrary1.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\System.Windows.Controls.DataVisualization.Toolkit.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\System.Windows.Controls.Input.Toolkit.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\System.Windows.Controls.Input.Toolkit.Design.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\bin\Release\WPFToolkit.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\BuyProduct.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\DragDropImage.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\NotificationClient.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\ProductSearched.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Product.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Simple Styles.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\stylesgrid.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\UCProductList.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\UCProviderList.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\UCClientList.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\App.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\BuyProduct.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Client.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\DragDropImage.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\ListSelectProduct.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\NotificationClient.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\ProductSearched.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Product.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Products.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\UCProductList.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\UCProviderList.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\UCClientList.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Client.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\ListSelectProduct.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\Products.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1.csprojResolveAssemblyReference.cache
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1.csproj.GenerateResource.Cache
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\bin\Release\WpfApplication1.exe.config
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1.exe
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1.pdb
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1.csprojResolveAssemblyReference.cache
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\BuyProduct.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\DragDropImage.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\NotificationClient.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\ProductSearched.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\Product.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\MainWindow.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\Simple Styles.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\stylesgrid.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\test.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\UCProductList.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\UCProviderList.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\UCClientList.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\App.baml
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\BuyProduct.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\Client.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\DragDropImage.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\ListSelectProduct.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\NotificationClient.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\ProductSearched.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\Index.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\Product.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\MainWindow.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\Products.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\Provedores.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\Provider.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\test.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\UCProductList.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\UCProviderList.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\UCClientList.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\App.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1_Content.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1_MarkupCompile.cache
+C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1_MarkupCompile.lref

@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="ClientSet" EntityType="Model1.Store.ClientSet" store:Type="Tables" />
+    <EntitySet Name="CompradorSet" EntityType="Model1.Store.CompradorSet" store:Type="Tables" />
+    <EntitySet Name="FotosSet" EntityType="Model1.Store.FotosSet" store:Type="Tables" />
+    <EntitySet Name="NotificationSet" EntityType="Model1.Store.NotificationSet" store:Type="Tables" />
+    <EntitySet Name="ProductImageSet" EntityType="Model1.Store.ProductImageSet" store:Type="Tables" />
+    <EntitySet Name="ProductsSet" EntityType="Model1.Store.ProductsSet" store:Type="Tables" />
+    <EntitySet Name="ProveedorSet" EntityType="Model1.Store.ProveedorSet" store:Type="Tables" />
+    <EntitySet Name="SaleSet" EntityType="Model1.Store.SaleSet" store:Type="Tables" />
+    <EntitySet Name="VentaSet" EntityType="Model1.Store.VentaSet" store:Type="Tables" store:Name="VentaSet">
+      <DefiningQuery>SELECT 
+            [VentaSet].[Id] AS [Id], 
+            [VentaSet].[PrecioDado] AS [PrecioDado], 
+            [VentaSet].[PrecioOfrecido] AS [PrecioOfrecido], 
+            [VentaSet].[CorreoEnviado] AS [CorreoEnviado], 
+            [VentaSet].[FechaUltimoCorreo] AS [FechaUltimoCorreo], 
+            [VentaSet].[PrecioFinal] AS [PrecioFinal], 
+            [VentaSet].[Comprador_Id] AS [Comprador_Id], 
+            [VentaSet].[Product_Id] AS [Product_Id]
+            FROM [VentaSet] AS [VentaSet]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <EntityType Name="ClientSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="255" />
+    <Property Name="PhoneMain" Type="nvarchar" MaxLength="20" />
+    <Property Name="PhoneSecond" Type="nvarchar" MaxLength="20" />
+    <Property Name="Address" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar" MaxLength="3000" />
+    <Property Name="Account" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CompradorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar" Nullable="false" />
+    <Property Name="TelefonoM" Type="nvarchar" Nullable="false" />
+    <Property Name="TelefonoF" Type="nvarchar" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FotosSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" Nullable="false" />
+    <Property Name="Orden" Type="nvarchar" Nullable="false" />
+    <Property Name="Product_ID" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NotificationSet">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="ProductID" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="SearchID" Type="nvarchar" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="ProductImageSet">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="ProducID" Type="nvarchar" MaxLength="32" />
+    <Property Name="Path" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Order" Type="int" />
+    <Property Name="Email" Type="bit" />
+  </EntityType>
+  <EntityType Name="ProductsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Producto" Type="nvarchar" Nullable="false" />
+    <Property Name="Marca" Type="nvarchar" Nullable="false" />
+    <Property Name="Modelo" Type="nvarchar" Nullable="false" />
+    <Property Name="Año" Type="int" Nullable="false" />
+    <Property Name="Potencia" Type="int" Nullable="false" />
+    <Property Name="Peso" Type="int" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" Nullable="false" />
+    <Property Name="Precio" Type="int" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Id" Type="nvarchar" Nullable="false" />
+    <Property Name="Enventa" Type="nvarchar" Nullable="false" />
+    <Property Name="Enbusca" Type="nvarchar" Nullable="false" />
+    <Property Name="Proveedor_ID" Type="nvarchar" />
+    <Property Name="Kilometer" Type="int" />
+    <Property Name="Hours" Type="int" />
+    <Property Name="PrivateDescription" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="ProveedorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Apellido" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="TelefonoM" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="TelefonoF" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Direccion" Type="nvarchar" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SaleSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="PriceforClient" Type="int" />
+    <Property Name="PriceClientOffered" Type="int" />
+    <Property Name="LastEmailDate" Type="datetime" />
+    <Property Name="FinalPrice" Type="int" />
+    <Property Name="Client_ID" Type="nvarchar" Nullable="false" MaxLength="32" />
+    <Property Name="Product_ID" Type="nvarchar" Nullable="false" MaxLength="32" />
+  </EntityType>
+  <!--Errors Found During Generation:
+            warning 6002: The table/view 'VentaSet' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+  <EntityType Name="VentaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="PrecioDado" />
+      <PropertyRef Name="PrecioOfrecido" />
+      <PropertyRef Name="CorreoEnviado" />
+      <PropertyRef Name="FechaUltimoCorreo" />
+      <PropertyRef Name="PrecioFinal" />
+      <PropertyRef Name="Comprador_Id" />
+      <PropertyRef Name="Product_Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PrecioDado" Type="nvarchar" Nullable="false" />
+    <Property Name="PrecioOfrecido" Type="nvarchar" Nullable="false" />
+    <Property Name="CorreoEnviado" Type="nvarchar" Nullable="false" />
+    <Property Name="FechaUltimoCorreo" Type="nvarchar" Nullable="false" />
+    <Property Name="PrecioFinal" Type="nvarchar" Nullable="false" />
+    <Property Name="Comprador_Id" Type="int" Nullable="false" />
+    <Property Name="Product_Id" Type="int" Nullable="false" />
+  </EntityType>
+</Schema>

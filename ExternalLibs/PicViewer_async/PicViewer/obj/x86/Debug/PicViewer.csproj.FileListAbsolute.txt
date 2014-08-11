@@ -1,0 +1,13 @@
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\bin\Debug\PicViewer.exe
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\bin\Debug\PicViewer.pdb
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\obj\x86\Debug\MainWindow.baml
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\obj\x86\Debug\MainWindow.g.cs
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\obj\x86\Debug\App.g.cs
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\obj\x86\Debug\PicViewer_MarkupCompile.cache
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\obj\x86\Debug\PicViewer.g.resources
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\obj\x86\Debug\PicViewer.Properties.Resources.resources
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\obj\x86\Debug\PicViewer.exe
+C:\Users\josehp\Downloads\PicViewer_async\PicViewer_async\PicViewer\obj\x86\Debug\PicViewer.pdb

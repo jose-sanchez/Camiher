@@ -1,0 +1,13 @@
+c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\App.g.cs
+c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop_MarkupCompile.cache
+c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.g.resources
+c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.Properties.Resources.resources
+c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\bin\Debug\DragAndDrop.exe
+c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\bin\Debug\DragAndDrop.pdb
+c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.exe
+c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\DragDropImage.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\DragDropImage.g.cs

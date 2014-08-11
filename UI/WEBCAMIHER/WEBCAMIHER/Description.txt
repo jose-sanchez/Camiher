@@ -1,0 +1,26 @@
+﻿Web Site for the comany CAMIHER.
+
+The web site is developed with MVC 4 .net and jquery. I have created a content manager to allow the user to amend the parrafs in 
+the web site and add picture to each parraf
+
+What we can learn 
+-Upload images
+	Notes: Via iframe tag and input files tag.
+	It is possible also to implement a drag and drop functionality described here:
+	http://davidwalsh.name/resize-image-canvas
+	It will be possible to inplement with a httphandler  or a api service
+-Store images in database
+-Recover the images from database and Show images in base64
+	Notes: After recover the image object it is build a img tag with the base64 image and send to the client via json
+		   In the client side jquery process the answer and append the img to the document
+-Resize images
+	Notes:
+		The resize is done via css . Each image returned from the server is whithin a div tag of class imagesmall with a determin size
+		From css we set the image to fit 100% of the container div.
+		I have tried to resize with a javascript function but as the image are appended in the same call when the resize function
+		is execute the image has not been appended still and the resize does not occurr. A posible solution would be to set the image as
+		hidden and then  create a timer that call the resize function after a couple of second and toggle it
+-Opacity
+	notes: If you have a father class with some opacity and you want to have a child without opacity
+	you must use background with rgba format for the father  example : background: rgba(27, 25, 25,0.8);
+	you cannot use the property opacity because the child will inherate the opacity and you cannot remove it

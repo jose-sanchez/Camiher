@@ -1,0 +1,4 @@
+C:\Users\josehp\NightDiary\Libs\Common\Encryption\bin\Debug\Encryption.dll
+C:\Users\josehp\NightDiary\Libs\Common\Encryption\bin\Debug\Encryption.pdb
+C:\Users\josehp\NightDiary\Libs\Common\Encryption\obj\Debug\Encryption.dll
+C:\Users\josehp\NightDiary\Libs\Common\Encryption\obj\Debug\Encryption.pdb

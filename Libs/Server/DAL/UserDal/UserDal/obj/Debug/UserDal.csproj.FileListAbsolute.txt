@@ -1,0 +1,10 @@
+C:\Users\josehp\NightDiary\Libs\Server\DAL\UserDal\UserDal\bin\Debug\UserDal.dll
+C:\Users\josehp\NightDiary\Libs\Server\DAL\UserDal\UserDal\bin\Debug\UserDal.pdb
+C:\Users\josehp\NightDiary\Libs\Server\DAL\UserDal\UserDal\obj\Debug\UserDal.dll
+C:\Users\josehp\NightDiary\Libs\Server\DAL\UserDal\UserDal\obj\Debug\UserDal.pdb
+C:\Users\josehp\NightDiary\Libs\Server\DAL\UserDal\UserDal\bin\Debug\UserDal.dll.config
+C:\Users\josehp\NightDiary\Libs\Server\DAL\UserDal\UserDal\obj\Debug\UserDal.csprojResolveAssemblyReference.cache
+C:\Users\josehp\NightDiary\Libs\Server\DAL\UserDal\UserDal\bin\Debug\Logger.dll
+C:\Users\josehp\NightDiary\Libs\Server\DAL\UserDal\UserDal\bin\Debug\NLog.dll
+C:\Users\josehp\NightDiary\Libs\Server\DAL\UserDal\UserDal\bin\Debug\Logger.pdb
+C:\Users\josehp\NightDiary\Libs\Server\DAL\UserDal\UserDal\bin\Debug\NLog.xml

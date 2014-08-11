@@ -1,0 +1,23 @@
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\bin\Release\DragAndDrop.exe
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\bin\Release\DragAndDrop.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Release\DragDropImage.baml
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Release\DragDropImage.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Release\App.g.cs
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop_MarkupCompile.cache
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop.g.resources
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop.Properties.Resources.resources
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop.exe
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop.pdb
+C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop.csproj.GenerateResource.Cache
+C:\Users\josehp\NightDiary\UI\Camiher\DragAndDrop\DragAndDrop\bin\Release\DragAndDrop.exe
+C:\Users\josehp\NightDiary\UI\Camiher\DragAndDrop\DragAndDrop\bin\Release\DragAndDrop.pdb
+C:\Users\josehp\NightDiary\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Release\DragDropImage.baml
+C:\Users\josehp\NightDiary\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Release\DragDropImage.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Release\App.g.cs
+C:\Users\josehp\NightDiary\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop_MarkupCompile.cache
+C:\Users\josehp\NightDiary\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop.g.resources
+C:\Users\josehp\NightDiary\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop.Properties.Resources.resources
+C:\Users\josehp\NightDiary\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop.csproj.GenerateResource.Cache
+C:\Users\josehp\NightDiary\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop.exe
+C:\Users\josehp\NightDiary\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop.pdb
+C:\Users\josehp\NightDiary\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Release\DragAndDrop.csprojResolveAssemblyReference.cache

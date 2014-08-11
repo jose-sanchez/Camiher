@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Housing";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Message.</h1>
+                <p>
+                    Disponemos de numerosas viviendas para comprar o alquilar. 
+                </p>
+            </hgroup>
+        </div>
+    </section>
+}
+<h3>Oferta actual:</h3>
+<ol class="round">
+    @foreach (WEBCAMIHER.Models.Content item in ViewBag.HousingList) { 
+    <li class="@item.Class " >
+        <h5>@item.Title</h5>
+        @item.Text
+        <br><img src="~/Images/btGaleria.png" id="@item.Id" class="galeria" />
+    </li>
+        
+    
+    }
+</ol>
+<div class="container_Images" hidden>
+    <img src="~/Images/Arrow.png"  class="arrow-left"/>
+    <div class="List_Images" id="list_Ima">
+        <img id="currentImage">
+    </div>
+    <img src="~/Images/Arrow1.png" class="arrow-right" />
+</div>
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("/Scripts/web-Camiher.js")"></script>
+
+}

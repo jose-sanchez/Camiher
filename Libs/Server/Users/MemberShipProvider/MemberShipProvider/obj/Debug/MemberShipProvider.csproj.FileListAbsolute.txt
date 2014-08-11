@@ -1,0 +1,14 @@
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\obj\Debug\MemberShipProvider.csprojResolveAssemblyReference.cache
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\bin\Debug\MemberShipProvider.dll
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\bin\Debug\MemberShipProvider.pdb
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\bin\Debug\UserDal.dll
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\bin\Debug\UserDal.pdb
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\obj\Debug\MemberShipProvider.dll
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\obj\Debug\MemberShipProvider.pdb
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\bin\Debug\NLog.config
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\bin\Debug\Logger.dll
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\bin\Debug\NLog.dll
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\bin\Debug\Logger.pdb
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\bin\Debug\NLog.xml
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\bin\Debug\Encryption.dll
+C:\Users\josehp\NightDiary\Libs\Server\Users\MemberShipProvider\MemberShipProvider\bin\Debug\Encryption.pdb

@@ -1,0 +1,16 @@
+c:\users\josehp\NightDiary\UserViewer\UserViewer\bin\Debug\UserViewer.exe.config
+c:\users\josehp\NightDiary\UserViewer\UserViewer\obj\Debug\UserViewer.csprojResolveAssemblyReference.cache
+c:\users\josehp\NightDiary\UserViewer\UserViewer\obj\Debug\UserViewer.Form1.resources
+c:\users\josehp\NightDiary\UserViewer\UserViewer\obj\Debug\UserViewer.Properties.Resources.resources
+c:\users\josehp\NightDiary\UserViewer\UserViewer\obj\Debug\UserViewer.csproj.GenerateResource.Cache
+c:\users\josehp\NightDiary\UserViewer\UserViewer\bin\Debug\UserViewer.exe
+c:\users\josehp\NightDiary\UserViewer\UserViewer\bin\Debug\UserViewer.pdb
+c:\users\josehp\NightDiary\UserViewer\UserViewer\bin\Debug\DataProviders.dll
+c:\users\josehp\NightDiary\UserViewer\UserViewer\bin\Debug\DataProviders.pdb
+c:\users\josehp\NightDiary\UserViewer\UserViewer\obj\Debug\UserViewer.exe
+c:\users\josehp\NightDiary\UserViewer\UserViewer\obj\Debug\UserViewer.pdb
+C:\Users\josehp\NightDiary\UserViewer\UserViewer\bin\Debug\NLog.config
+C:\Users\josehp\NightDiary\UserViewer\UserViewer\bin\Debug\Logger.dll
+C:\Users\josehp\NightDiary\UserViewer\UserViewer\bin\Debug\NLog.dll
+C:\Users\josehp\NightDiary\UserViewer\UserViewer\bin\Debug\Logger.pdb
+C:\Users\josehp\NightDiary\UserViewer\UserViewer\bin\Debug\NLog.xml
