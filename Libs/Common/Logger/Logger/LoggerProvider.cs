@@ -11,8 +11,8 @@
 #endregion
 
 using System.Configuration;
-using Logger.Interfaces;
-using Logger.Loggers;
+using Common.Logger.Interfaces;
+using Common.Logger.Loggers;
 
 namespace Logger
 {

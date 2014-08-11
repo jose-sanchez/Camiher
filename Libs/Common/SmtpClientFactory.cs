@@ -11,6 +11,7 @@
 #endregion
 using System;
 using System.Net.Mail;
+using CommonLogger;
 using Logger;
 
 namespace Common

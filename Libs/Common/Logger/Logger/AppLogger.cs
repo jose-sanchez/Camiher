@@ -10,9 +10,11 @@
 #endregion
 
 using System;
-using Logger.Interfaces;
+using Common.Logger.Interfaces;
+using Common.Logger.Interfaces;
+using Logger;
 
-namespace Logger
+namespace CommonLogger
 {
     public static class AppLogger
     {

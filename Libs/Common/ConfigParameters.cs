@@ -11,6 +11,7 @@
 #endregion
 using System;
 using System.Configuration;
+using CommonLogger;
 using Logger;
 
 namespace Common

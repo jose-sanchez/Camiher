@@ -31,7 +31,7 @@ using System.Windows.Shapes;
 using System.Windows.Shell;
 
 
-namespace AdministrationCenter {
+namespace WpfApplication1 {
     
     
     /// <summary>
@@ -73,7 +73,7 @@ namespace AdministrationCenter {
         [System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [System.CodeDom.Compiler.GeneratedCodeAttribute("PresentationBuildTasks", "4.0.0.0")]
         public static void Main() {
-            AdministrationCenter.App app = new AdministrationCenter.App();
+            WpfApplication1.App app = new WpfApplication1.App();
             app.InitializeComponent();
             app.Run();
         }

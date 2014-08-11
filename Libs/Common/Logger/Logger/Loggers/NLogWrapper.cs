@@ -10,9 +10,9 @@
 #endregion
 
 using System;
-using Logger.Interfaces;
+using Common.Logger.Interfaces;
 
-namespace Logger.Loggers
+namespace Common.Logger.Loggers
 {
     class NLogWrapper:ILogger
     {

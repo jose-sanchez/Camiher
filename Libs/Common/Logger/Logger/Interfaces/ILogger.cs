@@ -15,7 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Logger.Interfaces
+namespace Common.Logger.Interfaces
 {
     interface ILogger
     {

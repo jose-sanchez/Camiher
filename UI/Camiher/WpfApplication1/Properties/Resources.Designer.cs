@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AdministrationCenter.Properties {
+namespace WpfApplication1.Properties {
     using System;
     
     
