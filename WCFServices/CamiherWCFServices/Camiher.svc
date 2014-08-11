@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CamiherWCFServices.Service1" CodeBehind="Camiher.svc.cs" %>

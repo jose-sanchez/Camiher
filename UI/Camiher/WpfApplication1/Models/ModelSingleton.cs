@@ -22,7 +22,6 @@ namespace AdministrationCenter.Models
                 {
                     _contexDC = new Model1Container();
                     
-
                 } 
                 return _contexDC;
             }

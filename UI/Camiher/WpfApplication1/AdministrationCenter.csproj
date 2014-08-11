@@ -93,7 +93,7 @@
     <Compile Include="Clients\Client.xaml.cs">
       <DependentUpon>Client.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DragDropImage.xaml.cs">
+    <Compile Include="Products\DragDropImage.xaml.cs">
       <DependentUpon>DragDropImage.xaml</DependentUpon>
     </Compile>
     <Compile Include="editbox.cs" />
@@ -102,7 +102,7 @@
     <Compile Include="Products\ListSelectProduct.xaml.cs">
       <DependentUpon>ListSelectProduct.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ModelSingleton.cs" />
+    <Compile Include="Models\ModelSingleton.cs" />
     <Compile Include="NotificationClient.xaml.cs">
       <DependentUpon>NotificationClient.xaml</DependentUpon>
     </Compile>
@@ -127,10 +127,7 @@
     <Compile Include="Providers\Provider.xaml.cs">
       <DependentUpon>Provider.xaml</DependentUpon>
     </Compile>
-    <Compile Include="startrutines.cs" />
-    <Compile Include="test.xaml.cs">
-      <DependentUpon>test.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="StartRutines.cs" />
     <Compile Include="UserControls\UCProductList.xaml.cs">
       <DependentUpon>UCProductList.xaml</DependentUpon>
     </Compile>
@@ -148,7 +145,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="DragDropImage.xaml">
+    <Page Include="Products\DragDropImage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -206,10 +203,6 @@
     <Page Include="stylesgrid.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="test.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UCProductList.xaml">
       <SubType>Designer</SubType>
