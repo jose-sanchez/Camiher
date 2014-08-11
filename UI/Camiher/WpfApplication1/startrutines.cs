@@ -6,11 +6,13 @@ using System.IO;
 using System.Windows;
 namespace AdministrationCenter
 {
-    class startrutines
+    class StartRutines
     {
+        /// <summary>
+        /// Create a datebase backup
+        /// </summary>
         public static void Database_Backup()
         {
-
             try
             {
                 if (!Directory.Exists(AppDomain.CurrentDomain.BaseDirectory + "DB_Backup"))
@@ -31,8 +33,6 @@ namespace AdministrationCenter
             catch
             {
                 MessageBox.Show("Ha habido un error al intentar crear el archivo" +  AppDomain.CurrentDomain.BaseDirectory + "\\DB_Backup\\Camiher" + System.DateTime.Now.Date + " . Tome nota de este error e informe al soporte de la aplicacion");
-
-
             }
         }
         

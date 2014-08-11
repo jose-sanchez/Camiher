@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
+using Common;
 namespace AdministrationCenter
 {
     /// <summary>
@@ -46,8 +47,8 @@ namespace AdministrationCenter
                     tbMovil.IsEnabled = false;
                     tbFijo.IsEnabled = false;
                     tbEmail.IsEnabled = false;
-                    btBuscar.Visibility = System.Windows.Visibility.Visible;
-                    Ramdom r = new Ramdom();
+                    btBuscar.Visibility = Visibility.Visible;
+                    var r = new Ramdom();
                     _proveedor.Id = r.RandomString(32);
                     _proveedor.Descripcion = "";
                 }
@@ -57,7 +58,7 @@ namespace AdministrationCenter
                     tbMovil.IsEnabled = true;
                     tbFijo.IsEnabled = true;
                     tbEmail.IsEnabled = true;
-                    btBuscar.Visibility = System.Windows.Visibility.Hidden;
+                    btBuscar.Visibility = Visibility.Hidden;
                     btSave.IsEnabled = true;
          
                 }
@@ -184,26 +185,12 @@ namespace AdministrationCenter
             base.OnPreviewTextInput(e);
         }
 
-        private static bool IsEmailAllowed(string text)
-        {
-            bool blnValidEmail = true;
-            Regex regEMail = new Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
-            if (text.Length > 0)
-            {
-                blnValidEmail = regEMail.IsMatch(text);
-            }
-
-            return blnValidEmail;
-        }
-
-
-
         private void txtEmail_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox tb = sender as TextBox;
             if (tb != null)
             {
-                if (IsEmailAllowed(tb.Text.Trim()) == false)
+                if (Common.Validation.IsEmailAllowed(tb.Text.Trim()) == false)
                 {
                     e.Handled = true;
                     MessageBox.Show("El correo no es un correo valido", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
