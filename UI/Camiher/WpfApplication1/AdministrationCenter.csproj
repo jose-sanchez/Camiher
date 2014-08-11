@@ -127,7 +127,6 @@
     <Compile Include="Providers\Provider.xaml.cs">
       <DependentUpon>Provider.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Ramdom.cs" />
     <Compile Include="startrutines.cs" />
     <Compile Include="test.xaml.cs">
       <DependentUpon>test.xaml</DependentUpon>
@@ -141,7 +140,6 @@
     <Compile Include="UserControls\UCClientList.xaml.cs">
       <DependentUpon>UCClientList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Validation.cs" />
     <Page Include="Products\BuyProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

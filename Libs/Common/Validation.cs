@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-namespace AdministrationCenter
+namespace Common
 {
-    class Validation
+    public class Validation
     {
-
-        private static bool IsEmailAllowed(string text)
+        /// <summary>
+        /// Validate the email format
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static bool IsEmailAllowed(string text)
         {
             bool blnValidEmail = true;
-            Regex regEMail = new Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+            var regEMail = new Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
             if (text.Length > 0)
             {
                 blnValidEmail = regEMail.IsMatch(text);

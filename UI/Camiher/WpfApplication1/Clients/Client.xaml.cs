@@ -234,26 +234,13 @@ namespace AdministrationCenter
             return true;
 
         }
-        private static bool IsEmailAllowed(string text)
-        {
-            bool blnValidEmail = true;
-            Regex regEMail = new Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
-            if (text.Length > 0)
-            {
-                blnValidEmail = regEMail.IsMatch(text);
-            }
-
-            return blnValidEmail;
-        }
-
-
 
         private void txtEmail_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox tb = sender as TextBox;
             if (tb != null)
             {
-                if (IsEmailAllowed(tb.Text.Trim()) == false)
+                if (Common.Validation.IsEmailAllowed(tb.Text.Trim()) == false)
                 {
                     e.Handled = true;
                     MessageBox.Show("El correo no es un correo valido", "Error", MessageBoxButton.OK, MessageBoxImage.Error);

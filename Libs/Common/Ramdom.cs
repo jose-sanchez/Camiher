@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace AdministrationCenter
+namespace Common
 {
-    class Ramdom
+    public class Ramdom
     {
-
-
+        /// <summary>
+        /// Generate a random string by default hexadecimal
+        /// </summary>
+        /// <param name="length">ramdom string length</param>
+        /// <param name="allowedChars">character that can appeat in the ramdom string</param>
+        /// <returns></returns>
         public string RandomString(int length, string allowedChars = "ABCDEFZ0123456789")
         {
             if (length < 0) throw new ArgumentOutOfRangeException("length", "length cannot be less than zero.");
