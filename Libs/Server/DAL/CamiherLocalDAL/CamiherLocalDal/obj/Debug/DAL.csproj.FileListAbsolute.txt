@@ -3,3 +3,7 @@ C:\Users\josehp\documents\visual studio 2010\Projects\ClassLibrary1\ClassLibrary
 C:\Users\josehp\documents\visual studio 2010\Projects\ClassLibrary1\ClassLibrary1\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\josehp\documents\visual studio 2010\Projects\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 C:\Users\josehp\documents\visual studio 2010\Projects\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\ClassLibrary1.dll
+C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\ClassLibrary1.pdb
+C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Debug\ClassLibrary1.dll
+C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Debug\ClassLibrary1.pdb

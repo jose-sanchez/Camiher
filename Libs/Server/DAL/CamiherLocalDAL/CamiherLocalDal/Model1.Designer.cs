@@ -17,7 +17,7 @@ using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 
-namespace WpfApplication1
+namespace AdministrationCenter
 {
     #region Contexts
     
@@ -295,9 +295,9 @@ namespace WpfApplication1
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="ClientSet")]
+    [EdmEntityType(NamespaceName="Model1", Name="ClientSet")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContract(IsReference=true)]
     public partial class ClientSet : EntityObject
     {
         #region Factory Method
@@ -319,8 +319,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.String Id
         {
             get
@@ -346,8 +346,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String Name
         {
             get
@@ -370,8 +370,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String Surname
         {
             get
@@ -394,8 +394,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String PhoneMain
         {
             get
@@ -418,8 +418,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String PhoneSecond
         {
             get
@@ -442,8 +442,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String Address
         {
             get
@@ -466,8 +466,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String Email
         {
             get
@@ -490,8 +490,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String Description
         {
             get
@@ -514,8 +514,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String Account
         {
             get
@@ -542,9 +542,9 @@ namespace WpfApplication1
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="CompradorSet")]
+    [EdmEntityType(NamespaceName="Model1", Name="CompradorSet")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContract(IsReference=true)]
     public partial class CompradorSet : EntityObject
     {
         #region Factory Method
@@ -580,8 +580,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.Int32 Id
         {
             get
@@ -607,8 +607,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Nombre
         {
             get
@@ -631,8 +631,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Apellido
         {
             get
@@ -655,8 +655,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String TelefonoM
         {
             get
@@ -679,8 +679,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String TelefonoF
         {
             get
@@ -703,8 +703,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Direccion
         {
             get
@@ -727,8 +727,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Descripcion
         {
             get
@@ -751,8 +751,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Email
         {
             get
@@ -779,9 +779,9 @@ namespace WpfApplication1
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="FotosSet")]
+    [EdmEntityType(NamespaceName="Model1", Name="FotosSet")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContract(IsReference=true)]
     public partial class FotosSet : EntityObject
     {
         #region Factory Method
@@ -811,8 +811,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.Int32 Id
         {
             get
@@ -838,8 +838,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Nombre
         {
             get
@@ -862,8 +862,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Path
         {
             get
@@ -886,8 +886,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Orden
         {
             get
@@ -910,8 +910,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Product_ID
         {
             get
@@ -938,9 +938,9 @@ namespace WpfApplication1
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="NotificationSet")]
+    [EdmEntityType(NamespaceName="Model1", Name="NotificationSet")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContract(IsReference=true)]
     public partial class NotificationSet : EntityObject
     {
         #region Factory Method
@@ -966,8 +966,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.String ID
         {
             get
@@ -993,8 +993,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String ProductID
         {
             get
@@ -1017,8 +1017,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String SearchID
         {
             get
@@ -1045,9 +1045,9 @@ namespace WpfApplication1
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="ProductImageSet")]
+    [EdmEntityType(NamespaceName="Model1", Name="ProductImageSet")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContract(IsReference=true)]
     public partial class ProductImageSet : EntityObject
     {
         #region Factory Method
@@ -1069,8 +1069,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.String ImageID
         {
             get
@@ -1096,8 +1096,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String ProducID
         {
             get
@@ -1120,8 +1120,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String Path
         {
             get
@@ -1144,8 +1144,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String Name
         {
             get
@@ -1168,8 +1168,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String Description
         {
             get
@@ -1192,8 +1192,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public Nullable<global::System.Int32> Order
         {
             get
@@ -1216,8 +1216,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public Nullable<global::System.Boolean> Email
         {
             get
@@ -1244,9 +1244,9 @@ namespace WpfApplication1
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="ProductsSet")]
+    [EdmEntityType(NamespaceName="Model1", Name="ProductsSet")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContract(IsReference=true)]
     public partial class ProductsSet : EntityObject
     {
         #region Factory Method
@@ -1290,8 +1290,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Producto
         {
             get
@@ -1314,8 +1314,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Marca
         {
             get
@@ -1338,8 +1338,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Modelo
         {
             get
@@ -1362,8 +1362,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.Int32 Año
         {
             get
@@ -1386,8 +1386,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.Int32 Potencia
         {
             get
@@ -1410,8 +1410,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.Int32 Peso
         {
             get
@@ -1434,8 +1434,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Descripcion
         {
             get
@@ -1458,8 +1458,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.Int32 Precio
         {
             get
@@ -1482,8 +1482,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.Int32 Cantidad
         {
             get
@@ -1506,8 +1506,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.String Id
         {
             get
@@ -1533,8 +1533,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Enventa
         {
             get
@@ -1557,8 +1557,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Enbusca
         {
             get
@@ -1581,8 +1581,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String Proveedor_ID
         {
             get
@@ -1605,8 +1605,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public Nullable<global::System.Int32> Kilometer
         {
             get
@@ -1629,8 +1629,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public Nullable<global::System.Int32> Hours
         {
             get
@@ -1653,8 +1653,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public global::System.String PrivateDescription
         {
             get
@@ -1681,9 +1681,9 @@ namespace WpfApplication1
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="ProveedorSet")]
+    [EdmEntityType(NamespaceName="Model1", Name="ProveedorSet")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContract(IsReference=true)]
     public partial class ProveedorSet : EntityObject
     {
         #region Factory Method
@@ -1719,8 +1719,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.String Id
         {
             get
@@ -1746,8 +1746,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Nombre
         {
             get
@@ -1770,8 +1770,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Apellido
         {
             get
@@ -1794,8 +1794,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String TelefonoM
         {
             get
@@ -1818,8 +1818,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String TelefonoF
         {
             get
@@ -1842,8 +1842,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Direccion
         {
             get
@@ -1866,8 +1866,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Descripcion
         {
             get
@@ -1890,8 +1890,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Email
         {
             get
@@ -1918,9 +1918,9 @@ namespace WpfApplication1
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="SaleSet")]
+    [EdmEntityType(NamespaceName="Model1", Name="SaleSet")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContract(IsReference=true)]
     public partial class SaleSet : EntityObject
     {
         #region Factory Method
@@ -1946,8 +1946,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.String Id
         {
             get
@@ -1973,8 +1973,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public Nullable<global::System.Int32> PriceforClient
         {
             get
@@ -1997,8 +1997,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public Nullable<global::System.Int32> PriceClientOffered
         {
             get
@@ -2021,8 +2021,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public Nullable<global::System.DateTime> LastEmailDate
         {
             get
@@ -2045,8 +2045,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
+        [DataMember()]
         public Nullable<global::System.Int32> FinalPrice
         {
             get
@@ -2069,8 +2069,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Client_ID
         {
             get
@@ -2093,8 +2093,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
+        [DataMember()]
         public global::System.String Product_ID
         {
             get
@@ -2121,9 +2121,9 @@ namespace WpfApplication1
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="VentaSet")]
+    [EdmEntityType(NamespaceName="Model1", Name="VentaSet")]
     [Serializable()]
-    [DataContractAttribute(IsReference=true)]
+    [DataContract(IsReference=true)]
     public partial class VentaSet : EntityObject
     {
         #region Factory Method
@@ -2159,8 +2159,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.Int32 Id
         {
             get
@@ -2186,8 +2186,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.String PrecioDado
         {
             get
@@ -2213,8 +2213,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.String PrecioOfrecido
         {
             get
@@ -2240,8 +2240,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.String CorreoEnviado
         {
             get
@@ -2267,8 +2267,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.String FechaUltimoCorreo
         {
             get
@@ -2294,8 +2294,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.String PrecioFinal
         {
             get
@@ -2321,8 +2321,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.Int32 Comprador_Id
         {
             get
@@ -2348,8 +2348,8 @@ namespace WpfApplication1
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
+        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
+        [DataMember()]
         public global::System.Int32 Product_Id
         {
             get

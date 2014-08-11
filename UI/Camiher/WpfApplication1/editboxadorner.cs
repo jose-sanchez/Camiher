@@ -10,7 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Data;
 
-namespace WpfApplication1
+namespace AdministrationCenter
 {
     /// <summary>
     /// An adorner class that contains a TextBox to provide editing capability 

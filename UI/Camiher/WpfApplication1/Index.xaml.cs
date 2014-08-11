@@ -13,7 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 
-namespace WpfApplication1
+namespace AdministrationCenter
 {
     /// <summary>
     /// Interaction logic for Index.xaml

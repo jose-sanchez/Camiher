@@ -4,11 +4,11 @@ using System.Configuration;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
+using AdministrationCenter.Properties;
 using Common;
 using Logger;
-using WpfApplication1.Properties;
 
-namespace WpfApplication1.Helpers
+namespace AdministrationCenter.Helpers
 {
     class EmailHelper
     {

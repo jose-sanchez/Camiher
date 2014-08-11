@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Windows.Documents;
 using System.Windows.Media;
 
-namespace WpfApplication1
+namespace AdministrationCenter
 {
     /// <summary>
     /// EditBox is a custom cotrol that can switch between two modes: 

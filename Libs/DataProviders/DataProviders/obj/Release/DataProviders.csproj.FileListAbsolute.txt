@@ -1,0 +1,9 @@
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Release\DataProviders.dll.config
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Release\DataProviders.dll
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Release\DataProviders.pdb
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Release\Logger.dll
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Release\NLog.dll
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Release\Logger.pdb
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Release\NLog.xml
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\obj\Release\DataProviders.dll
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\obj\Release\DataProviders.pdb

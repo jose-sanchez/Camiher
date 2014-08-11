@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfApplication1
+namespace AdministrationCenter
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;

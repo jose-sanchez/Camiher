@@ -99,3 +99,4 @@ C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\WpfApplica
 C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
 C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1_MarkupCompile.cache
 C:\Users\josehp\NightDiary\UI\Camiher\WpfApplication1\obj\x86\Release\WpfApplication1_MarkupCompile.lref
+C:\Users\josehp\Camiher\UI\Camiher\WpfApplication1\bin\Release\WpfApplication1.exe.config

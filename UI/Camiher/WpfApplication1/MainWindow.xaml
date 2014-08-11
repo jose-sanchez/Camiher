@@ -1,4 +1,4 @@
-﻿<NavigationWindow  x:Class="WpfApplication1.MainWindow"
+﻿<NavigationWindow  x:Class="AdministrationCenter.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Inicio" Height="900" Width="900" Source="Index.xaml" MinHeight="800" MaxHeight="800">

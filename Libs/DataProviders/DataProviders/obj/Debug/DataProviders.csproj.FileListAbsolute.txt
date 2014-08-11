@@ -9,3 +9,12 @@ C:\Users\josehp\NightDiary\Libs\DataProviders\DataProviders\bin\Debug\NLog.dll
 C:\Users\josehp\NightDiary\Libs\DataProviders\DataProviders\bin\Debug\Logger.pdb
 C:\Users\josehp\NightDiary\Libs\DataProviders\DataProviders\bin\Debug\NLog.xml
 C:\Users\josehp\NightDiary\Libs\DataProviders\DataProviders\obj\Debug\DataProviders.csprojResolveAssemblyReference.cache
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Debug\DataProviders.dll.config
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Debug\DataProviders.dll
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Debug\DataProviders.pdb
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Debug\Logger.dll
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Debug\NLog.dll
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Debug\Logger.pdb
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Debug\NLog.xml
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\obj\Debug\DataProviders.dll
+C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\obj\Debug\DataProviders.pdb

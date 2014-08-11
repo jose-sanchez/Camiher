@@ -1,12 +1,12 @@
-﻿<Page x:Class="WpfApplication1.Index"
+﻿<Page x:Class="AdministrationCenter.Index"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:WpfApplication1"
+      xmlns:local="clr-namespace:AdministrationCenter"
       mc:Ignorable="d" 
       d:DesignHeight="900" d:DesignWidth="538" 
-	Title="Index" xmlns:my="clr-namespace:WpfApplication1" MaxHeight="900" WindowHeight="538" MaxWidth="538" MinHeight="900">
+	Title="Index" xmlns:my="clr-namespace:AdministrationCenter" MaxHeight="900" WindowHeight="538" MaxWidth="538" MinHeight="900">
     <Page.Resources>
         <CollectionViewSource x:Key="ProductsSetViewSource" d:DesignSource="{d:DesignInstance my:ProductsSet, CreateList=True}" />
     </Page.Resources>

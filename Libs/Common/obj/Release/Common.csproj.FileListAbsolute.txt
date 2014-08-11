@@ -1,1 +1,2 @@
 C:\Users\josehp\NightDiary\Libs\Common\obj\Release\Common.csprojResolveAssemblyReference.cache
+C:\Users\josehp\Camiher\Libs\Common\obj\Release\Common.csprojResolveAssemblyReference.cache
