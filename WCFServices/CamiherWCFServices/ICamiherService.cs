@@ -19,7 +19,8 @@ namespace CamiherWCFServices
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
-        // TODO: Add your service operations here
+        [OperationContract]
+        string ClientBuyProduct(string clientId, string productId, string currentSale);
     }
 
 

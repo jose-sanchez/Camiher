@@ -1,10 +1,10 @@
 ﻿using System.Linq;
-using AdministrationCenter;
+using Camiher.Libs.Server.DAL.CamiherLocalDAL;
 using Camiher.Libs.Server.BusinesOperations.Interfaces;
 using Common;
 namespace Camiher.Libs.Server.BusinesOperations
 {
-    class ClientsOperations : IClientsOperations
+    public class ClientsOperations : IClientsOperations
     {
         public void ClientBuyProduct(string clientId, string productId, string currentSale)
         {

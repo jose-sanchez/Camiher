@@ -17,7 +17,7 @@ using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 
-namespace AdministrationCenter
+namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
 {
     #region Contexts
     
