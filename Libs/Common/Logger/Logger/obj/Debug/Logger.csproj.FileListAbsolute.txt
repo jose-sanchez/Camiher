@@ -22,3 +22,4 @@ C:\Users\josehp\Camiher\Libs\Common\Logger\Logger\bin\Debug\NLog.dll
 C:\Users\josehp\Camiher\Libs\Common\Logger\Logger\bin\Debug\NLog.xml
 C:\Users\josehp\Camiher\Libs\Common\Logger\Logger\obj\Debug\Logger.dll
 C:\Users\josehp\Camiher\Libs\Common\Logger\Logger\obj\Debug\Logger.pdb
+C:\Users\josehp\Camiher\Libs\Common\Logger\Logger\obj\Debug\Logger.csprojResolveAssemblyReference.cache

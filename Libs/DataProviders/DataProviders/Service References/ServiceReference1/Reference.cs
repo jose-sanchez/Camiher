@@ -8,7 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataProviders.ServiceReference1 {
+using System;
+
+namespace Camiher.Libs.DataProviders.ServiceReference1 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17,12 +19,12 @@ namespace DataProviders.ServiceReference1 {
         
         // CODEGEN: Generating message contract since element name HelloWorldResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        DataProviders.ServiceReference1.HelloWorldResponse HelloWorld(DataProviders.ServiceReference1.HelloWorldRequest request);
+        ServiceReference1.HelloWorldResponse HelloWorld(ServiceReference1.HelloWorldRequest request);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
-        System.IAsyncResult BeginHelloWorld(DataProviders.ServiceReference1.HelloWorldRequest request, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginHelloWorld(ServiceReference1.HelloWorldRequest request, System.AsyncCallback callback, object asyncState);
         
-        DataProviders.ServiceReference1.HelloWorldResponse EndHelloWorld(System.IAsyncResult result);
+        ServiceReference1.HelloWorldResponse EndHelloWorld(System.IAsyncResult result);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -32,12 +34,12 @@ namespace DataProviders.ServiceReference1 {
     public partial class HelloWorldRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="http://tempuri.org/", Order=0)]
-        public DataProviders.ServiceReference1.HelloWorldRequestBody Body;
+        public ServiceReference1.HelloWorldRequestBody Body;
         
         public HelloWorldRequest() {
         }
         
-        public HelloWorldRequest(DataProviders.ServiceReference1.HelloWorldRequestBody Body) {
+        public HelloWorldRequest(ServiceReference1.HelloWorldRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -59,12 +61,12 @@ namespace DataProviders.ServiceReference1 {
     public partial class HelloWorldResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="http://tempuri.org/", Order=0)]
-        public DataProviders.ServiceReference1.HelloWorldResponseBody Body;
+        public ServiceReference1.HelloWorldResponseBody Body;
         
         public HelloWorldResponse() {
         }
         
-        public HelloWorldResponse(DataProviders.ServiceReference1.HelloWorldResponseBody Body) {
+        public HelloWorldResponse(ServiceReference1.HelloWorldResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -87,7 +89,7 @@ namespace DataProviders.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface UsersWebServiceSoapChannel : DataProviders.ServiceReference1.UsersWebServiceSoap, System.ServiceModel.IClientChannel {
+    public interface UsersWebServiceSoapChannel : UsersWebServiceSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -111,7 +113,7 @@ namespace DataProviders.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class UsersWebServiceSoapClient : System.ServiceModel.ClientBase<DataProviders.ServiceReference1.UsersWebServiceSoap>, DataProviders.ServiceReference1.UsersWebServiceSoap {
+    public partial class UsersWebServiceSoapClient : System.ServiceModel.ClientBase<UsersWebServiceSoap>, UsersWebServiceSoap {
         
         private BeginOperationDelegate onBeginHelloWorldDelegate;
         
@@ -141,37 +143,44 @@ namespace DataProviders.ServiceReference1 {
         public event System.EventHandler<HelloWorldCompletedEventArgs> HelloWorldCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DataProviders.ServiceReference1.HelloWorldResponse DataProviders.ServiceReference1.UsersWebServiceSoap.HelloWorld(DataProviders.ServiceReference1.HelloWorldRequest request) {
+        DataProviders.ServiceReference1.HelloWorldResponse DataProviders.ServiceReference1.UsersWebServiceSoap.HelloWorld(ServiceReference1.HelloWorldRequest request) {
             return base.Channel.HelloWorld(request);
         }
-        
+
+        public IAsyncResult BeginHelloWorld(HelloWorldRequest request, AsyncCallback callback, object asyncState)
+        {
+            throw new NotImplementedException();
+        }
+
         public string HelloWorld() {
-            DataProviders.ServiceReference1.HelloWorldRequest inValue = new DataProviders.ServiceReference1.HelloWorldRequest();
+            ServiceReference1.HelloWorldRequest inValue = new DataProviders.ServiceReference1.HelloWorldRequest();
             inValue.Body = new DataProviders.ServiceReference1.HelloWorldRequestBody();
-            DataProviders.ServiceReference1.HelloWorldResponse retVal = ((DataProviders.ServiceReference1.UsersWebServiceSoap)(this)).HelloWorld(inValue);
+            ServiceReference1.HelloWorldResponse retVal = ((DataProviders.ServiceReference1.UsersWebServiceSoap)(this)).HelloWorld(inValue);
             return retVal.Body.HelloWorldResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult DataProviders.ServiceReference1.UsersWebServiceSoap.BeginHelloWorld(DataProviders.ServiceReference1.HelloWorldRequest request, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginHelloWorld(request, callback, asyncState);
+        System.IAsyncResult DataProviders.ServiceReference1.UsersWebServiceSoap.BeginHelloWorld(ServiceReference1.HelloWorldRequest request, System.AsyncCallback callback, object asyncState)
+        {
+            if (request != null) return base.Channel.BeginHelloWorld(request: request, callback: callback, asyncState: asyncState);
+            return null;
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         public System.IAsyncResult BeginHelloWorld(System.AsyncCallback callback, object asyncState) {
             DataProviders.ServiceReference1.HelloWorldRequest inValue = new DataProviders.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new DataProviders.ServiceReference1.HelloWorldRequestBody();
-            return ((DataProviders.ServiceReference1.UsersWebServiceSoap)(this)).BeginHelloWorld(inValue, callback, asyncState);
+            inValue.Body = new ServiceReference1.HelloWorldRequestBody();
+            return ((ServiceReference1.UsersWebServiceSoap)(this)).BeginHelloWorld(inValue, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DataProviders.ServiceReference1.HelloWorldResponse DataProviders.ServiceReference1.UsersWebServiceSoap.EndHelloWorld(System.IAsyncResult result) {
+        ServiceReference1.HelloWorldResponse ServiceReference1.UsersWebServiceSoap.EndHelloWorld(System.IAsyncResult result) {
             return base.Channel.EndHelloWorld(result);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         public string EndHelloWorld(System.IAsyncResult result) {
-            DataProviders.ServiceReference1.HelloWorldResponse retVal = ((DataProviders.ServiceReference1.UsersWebServiceSoap)(this)).EndHelloWorld(result);
+            ServiceReference1.HelloWorldResponse retVal = ((ServiceReference1.UsersWebServiceSoap)(this)).EndHelloWorld(result);
             return retVal.Body.HelloWorldResult;
         }
         

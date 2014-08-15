@@ -5,6 +5,9 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.WebServicesObjects;
+
 
 namespace CamiherWCFServices
 {
@@ -20,7 +23,10 @@ namespace CamiherWCFServices
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         [OperationContract]
-        string ClientBuyProduct(string clientId, string productId, string currentSale);
+        BaseResponse ClientBuyProduct(string clientId, string productId, string currentSale);
+
+        [OperationContract]
+        SaleResponse GetCurrentSale(string clientId, string productId);
     }
 
 

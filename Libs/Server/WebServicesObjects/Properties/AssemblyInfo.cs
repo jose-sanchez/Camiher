@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Camiher.Libs.DataProviders")]
+[assembly: AssemblyTitle("WebServicesObjects")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Hewlett-Packard")]
-[assembly: AssemblyProduct("Camiher.Libs.DataProviders")]
+[assembly: AssemblyProduct("WebServicesObjects")]
 [assembly: AssemblyCopyright("Copyright © Hewlett-Packard 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("64d661c8-fa0a-4dfd-a814-ea23956b7ba9")]
+[assembly: Guid("c7e674c4-dac2-47d4-814b-53d39082a09d")]
 
 // Version information for an assembly consists of the following four values:
 //

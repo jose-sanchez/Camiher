@@ -13,6 +13,9 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using AdministrationCenter.Helpers;
 using AdministrationCenter.Models;
+using Camiher.Libs.DataProviders;
+using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Common;
 
 namespace AdministrationCenter
 {
@@ -291,30 +294,19 @@ namespace AdministrationCenter
                 ClientBuyProduct(_client.Id, (lvProductRequested.SelectedItem as ItemRequestedProductList).ProductID);
         }
 
-        public static void ClientBuyProduct(string ClientID, string ProductID)
+        public static void ClientBuyProduct(string clientId, string productId)
         {
-
-            Model1Container _dataDC = ModelSingleton.getDataDC;
+            
+            DataProvidersFactory.GetBusinessOperationProvider().ClientBuyProduct();
             ProductsSet Product = _dataDC.ProductsSet.First(S => S.Id == ProductID);
-            SaleSet currentsale = _dataDC.SaleSet.First(S => S.Client_ID == ClientID
-                                                        && S.Product_ID == ProductID);
+            SaleSet currentsale = DataProvidersFactory.GetBusinessOperationProvider().GetCurrentSale(clientId, productId);
             BuyProduct newBuyProduct = new BuyProduct(currentsale);
             
             newBuyProduct.ShowDialog();
           
             if (!newBuyProduct.Cancel)
             {
-                Product.Enventa = "false";
-                foreach (SaleSet item in _dataDC.SaleSet.Where(S => S.Product_ID == ProductID
-                           && S.Id != currentsale.Id))
-                {
-                    _dataDC.SaleSet.DeleteObject(item);
-                }
-                foreach (NotificationSet item in _dataDC.NotificationSet.Where(S => S.ProductID == ProductID))
-                {
-                    _dataDC.NotificationSet.DeleteObject(item);
-                }
-                _dataDC.SaveChanges();
+                DataProvidersFactory.GetBusinessOperationProvider().ClientBuyProduct(clientId, productId, currentsale.Id);
 
             }
         }

@@ -10,9 +10,10 @@
 // --------------------------------------------------------------------------------------------------------------------
 #endregion
 using System;
-using DataProviders.ServiceReference1;
+using Camiher.Libs.DataProviders.ServiceReference1;
 
-namespace DataProviders.Interfaces
+
+namespace Camiher.Libs.DataProviders.Interfaces
 {
     public interface IUserProviderAsync
     {

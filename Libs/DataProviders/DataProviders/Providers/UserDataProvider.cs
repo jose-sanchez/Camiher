@@ -9,11 +9,13 @@
 // <creation issue="" date="11-08-2014" author="Jose Sanchez" />
 // --------------------------------------------------------------------------------------------------------------------
 #endregion
-using DataProviders.Interfaces;
-using System;
-using DataProviders.ServiceReference1;
 
-namespace DataProviders.Providers
+using Camiher.Libs.DataProviders.Interfaces;
+
+using System;
+using Camiher.Libs.DataProviders.ServiceReference1;
+
+namespace Camiher.Libs.DataProviders.Providers
 {
    public class UserDataProvider:IUserProviderAsync
     {

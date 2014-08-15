@@ -43,6 +43,7 @@
       <HintPath>..\..\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\ClassLibrary1.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -82,6 +83,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libs\Server\BusinesOperations\BusinesOperations.csproj">
+      <Project>{f21b6998-54f2-4716-a5f2-12f4331297b4}</Project>
+      <Name>BusinesOperations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libs\Server\WebServicesObjects\WebServicesObjects.csproj">
+      <Project>{73a9976f-76ee-4d75-9797-38246bafe6d5}</Project>
+      <Name>WebServicesObjects</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

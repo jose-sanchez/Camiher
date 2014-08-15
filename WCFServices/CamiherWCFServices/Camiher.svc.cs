@@ -7,6 +7,8 @@ using System.ServiceModel.Web;
 using System.Text;
 using Camiher.Libs.Server.DAL.CamiherLocalDAL;
 using Camiher.Libs.Server.BusinesOperations;
+using Camiher.Libs.Server.WebServicesObjects;
+
 
 namespace CamiherWCFServices
 {
@@ -32,17 +34,40 @@ namespace CamiherWCFServices
             return composite;
         }
 
-        public string ClientBuyProduct(string clientId, string productId, string currentSale)
+        /// <summary>
+        /// Client buy a porduct
+        /// </summary>
+        /// <param name="clientId"></param>
+        /// <param name="productId"></param>
+        /// <param name="currentSale"></param>
+        /// <returns></returns>
+        public BaseResponse ClientBuyProduct(string clientId, string productId, string currentSale)
         {
             var businessOperations = new ClientsOperations();
             businessOperations.ClientBuyProduct(clientId, productId, currentSale);
-            return null;
+            return new BaseResponse()
+            {
+                ErrorResponse = ResponseError.Ok
+            };
         }
 
-        public SaleSet GetCurrentSale(string clientId, string productId)
+        /// <summary>
+        /// Get current Sale
+        /// </summary>
+        /// <param name="clientId"></param>
+        /// <param name="productId"></param>
+        /// <returns></returns>
+        public SaleResponse GetCurrentSale(string clientId, string productId)
         {
             var businessOperations = new ClientsOperations();
-            return businessOperations.GetCurrentSale(clientId, productId);
+            var response = new SaleResponse()
+            {
+                ErrorResponse = ResponseError.Ok,
+                Sale = businessOperations.GetCurrentSale(clientId, productId)
+
+            };
+
+            return response;
         }
     }
 }

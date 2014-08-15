@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="CamiherWCFServices.Service1" CodeBehind="Camiher.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CamiherWCFServices.Camiher" CodeBehind="Camiher.svc.cs" %>

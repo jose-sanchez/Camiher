@@ -6,21 +6,27 @@
 ///<date>01/07/2014</date>
 ///----------------------------------------------------------------------------------------
 #endregion
-using DataProviders.Providers;
-using DataProviders.Interfaces;
+
+using Camiher.Libs.DataProviders.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Camiher.Libs.DataProviders.Providers;
 
-namespace DataProviders
+namespace Camiher.Libs.DataProviders
 {
     public class DataProvidersFactory
     {
         static public IUserProviderAsync GetUserDataProvider()
         {
             return new UserDataProvider();
+        }
+
+        static public IBusinessOperationProvider GetBusinessOperationProvider()
+        {
+            return new BusinessOperationProvider();
         }
     }
 }
