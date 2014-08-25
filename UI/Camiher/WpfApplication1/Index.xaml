@@ -1,14 +1,17 @@
-﻿<Page x:Class="AdministrationCenter.Index"
+﻿<Page x:Class="Camiher.UI.AdministrationCenter.Index"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AdministrationCenter"
+      xmlns:local="clr-namespace:Camiher.UI.AdministrationCenter"
       mc:Ignorable="d" 
       d:DesignHeight="900" d:DesignWidth="538" 
-	Title="Index" xmlns:my="clr-namespace:AdministrationCenter" MaxHeight="900" WindowHeight="538" MaxWidth="538" MinHeight="900">
+	Title="Index" xmlns:my="clr-namespace:Camiher.UI.AdministrationCenter"
+      xmlns:userControls="clr-namespace:Camiher.UI.AdministrationCenter.UserControls"
+      xmlns:camiherLocalDal="clr-namespace:Camiher.Libs.Server.DAL.CamiherLocalDAL;assembly=ClassLibrary1"
+      MaxHeight="900" WindowHeight="538" MaxWidth="538" MinHeight="900">
     <Page.Resources>
-        <CollectionViewSource x:Key="ProductsSetViewSource" d:DesignSource="{d:DesignInstance my:ProductsSet, CreateList=True}" />
+        <CollectionViewSource x:Key="ProductsSetViewSource" d:DesignSource="{d:DesignInstance camiherLocalDal:ProductsSet, CreateList=True}" />
     </Page.Resources>
     <Grid Height="850">
         <Grid.RowDefinitions>
@@ -93,7 +96,7 @@
                         </Grid>
                     </DockPanel>
                     <Border Grid.Row="1">
-                        <local:UCProductList x:Name="Product_List"  />
+                        <userControls:UCProductList x:Name="Product_List"  />
                     </Border>
                     <!--<ListView DisplayMemberPath="Enventa" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="2" Height="300" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="71,16,0,0" Name="ProductsSetListView" SelectedValuePath="Id" SelectionMode="Single" VerticalAlignment="Top" Width="309" />-->
                 </Grid>
@@ -149,7 +152,7 @@
                         </Grid>
                     </DockPanel>
                     <Border Grid.Row="1" BorderThickness="3">
-                        <local:UCProviderList x:Name="Provider_List" Height="400" Width="450"/>                  
+                        <userControls:UCProviderList x:Name="Provider_List" Height="400" Width="450"/>                  
                      </Border>
                 </Grid>
             </TabItem>
@@ -165,7 +168,7 @@
                         <RowDefinition Height="646*" />
                     </Grid.RowDefinitions>
 				<Border Grid.Row="1">
-                        <local:UCClientList x:Name="Client_List" Width="342" ></local:UCClientList>
+                        <userControls:UCClientList x:Name="Client_List" Width="342" ></userControls:UCClientList>
 				</Border>
 				<Label Content="Nombre" HorizontalAlignment="Left" Margin="16,0,0,71" VerticalAlignment="Bottom" Width="80" Height="26" Foreground="#FFFBFBFB"/>
 				<Label Content="Apellidos" Margin="244,0,180,71" VerticalAlignment="Bottom" Height="24" Foreground="#FFFBFBFB"/>

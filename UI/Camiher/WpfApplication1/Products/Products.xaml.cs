@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.UI.AdministrationCenter.Models;
+using Camiher.UI.AdministrationCenter.Providers;
 
-namespace AdministrationCenter
+namespace Camiher.UI.AdministrationCenter.Products
 {
     /// <summary>
     /// Interaction logic for Products.xaml
@@ -77,7 +71,7 @@ namespace AdministrationCenter
             //Open class view to find out what Properties the wizard
             //had created in the DataClasses1DataContext class, otherwise
             //I wouldn't have known about Peoples
-            foreach (ProductsSet thisPerson in dataDc.ProductsSet.Where(S =>  S.Enbusca == "True"))
+            foreach (ProductsSet thisPerson in dataDc.ProductsSet.Where(S =>  S.Enbusca == "True" ))
             {
                 this.Add(thisPerson);
             }
@@ -90,7 +84,7 @@ namespace AdministrationCenter
             //Open class view to find out what Properties the wizard
             //had created in the DataClasses1DataContext class, otherwise
             //I wouldn't have known about Peoples
-            foreach (ProductsSet thisPerson in dataDc.ProductsSet.Where(S => S.Enventa == "True" ))
+            foreach (ProductsSet thisPerson in dataDc.ProductsSet.Where(s =>s.Enventa == "True" ))
             {
                 this.Add(thisPerson);
             }
@@ -103,7 +97,7 @@ namespace AdministrationCenter
             //Open class view to find out what Properties the wizard
             //had created in the DataClasses1DataContext class, otherwise
             //I wouldn't have known about Peoples
-            foreach (ProductsSet thisPerson in dataDc.ProductsSet.Where(S => S.Enventa == "False" && S.Enbusca == "False" && S.Proveedor_ID != "Borrado"))
+            foreach (ProductsSet thisPerson in dataDc.ProductsSet.Where(s => s.Enventa == "False" && s.Enbusca == "False" && s.Proveedor_ID != "Borrado"))
             {
                 this.Add(thisPerson);
             }

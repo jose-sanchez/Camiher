@@ -1,30 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Linq;
+using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.UI.AdministrationCenter.Clients;
+using Camiher.UI.AdministrationCenter.Models;
+using Camiher.UI.AdministrationCenter.Products;
 
-namespace AdministrationCenter
+namespace Camiher.UI.AdministrationCenter.UserControls
 {
 	/// <summary>
 	/// Interaction logic for UserControl1.xaml
 	/// </summary>
 	public partial class UCClientList : UserControl
 	{
-
-
-
-
-        
-               
+      
         
         private static Model1Container _dataDC;
         ObservableClient lcl;

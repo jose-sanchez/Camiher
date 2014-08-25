@@ -1,16 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Input;
-using System.Windows;
 using System.Diagnostics;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Media;
-using System.Windows.Data;
 
-namespace AdministrationCenter
+namespace Camiher.UI.AdministrationCenter
 {
     /// <summary>
     /// An adorner class that contains a TextBox to provide editing capability 

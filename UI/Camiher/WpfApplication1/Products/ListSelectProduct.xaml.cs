@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using AdministrationCenter.Helpers;
+using Camiher.Libs.Common;
+using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.UI.AdministrationCenter.Helpers;
+using Camiher.UI.AdministrationCenter.Models;
+using Camiher.UI.AdministrationCenter.UserControls;
 
-namespace AdministrationCenter
+namespace Camiher.UI.AdministrationCenter.Products
 {
     /// <summary>
     /// Interaction logic for ListSelectProduct.xaml

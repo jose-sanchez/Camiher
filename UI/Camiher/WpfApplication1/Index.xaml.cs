@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Text.RegularExpressions;
-
-namespace AdministrationCenter
+using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.UI.AdministrationCenter.Models;
+using Camiher.UI.AdministrationCenter.Products;
+using Validation = Camiher.Libs.Common.Validation;
+namespace Camiher.UI.AdministrationCenter
 {
     /// <summary>
     /// Interaction logic for Index.xaml
@@ -37,7 +32,7 @@ namespace AdministrationCenter
              Client_List.LWidth = 500;
              Client_List.LHeight = 400;
              _dataDC = ModelSingleton.getDataDC;
-             startrutines.Database_Backup();
+             StartRutines.Database_Backup();
              ProductSearch = new ObservableProductSearch(_dataDC);
              UpdateNotificationList();
 
@@ -69,7 +64,7 @@ namespace AdministrationCenter
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            Products p = new Products();
+            global::Camiher.UI.AdministrationCenter.Products.Products p = new global::Camiher.UI.AdministrationCenter.Products.Products();
             //p.ShowDialog();
         }
 
@@ -172,7 +167,7 @@ namespace AdministrationCenter
             TextBox tb = sender as TextBox;
             if (tb != null)
             {
-                if (Common.Validation.IsEmailAllowed(tb.Text.Trim()) == false)
+                if (Validation.IsEmailAllowed(tb.Text.Trim()) == false)
                 {
                     e.Handled = true;
                     MessageBox.Show("El correo no es un correo valido", "Error", MessageBoxButton.OK, MessageBoxImage.Error);

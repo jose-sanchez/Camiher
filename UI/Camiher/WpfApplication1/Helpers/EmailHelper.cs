@@ -1,14 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Net.Mail;
 using System.Text;
-using AdministrationCenter.Properties;
+using Camiher.Libs.Common;
+using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.UI.AdministrationCenter.Models;
+using Camiher.UI.AdministrationCenter.Products;
+using Camiher.UI.AdministrationCenter.Properties;
 using Common;
-using Logger;
+using CommonLogger;
 
-namespace AdministrationCenter.Helpers
+namespace Camiher.UI.AdministrationCenter.Helpers
 {
     class EmailHelper
     {

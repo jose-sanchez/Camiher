@@ -1,15 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
-using System.Windows.Input;
-using System.Windows;
 using System.Diagnostics;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Input;
 using System.Windows.Media;
 
-namespace AdministrationCenter
+namespace Camiher.UI.AdministrationCenter
 {
     /// <summary>
     /// EditBox is a custom cotrol that can switch between two modes: 

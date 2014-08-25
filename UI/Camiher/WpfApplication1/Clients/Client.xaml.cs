@@ -1,23 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Linq;
-using System.Text.RegularExpressions;
-using AdministrationCenter.Helpers;
-using AdministrationCenter.Models;
+using Camiher.Libs.Common;
 using Camiher.Libs.DataProviders;
 using Camiher.Libs.Server.DAL.CamiherLocalDAL;
-using Common;
+using Camiher.UI.AdministrationCenter.Helpers;
+using Camiher.UI.AdministrationCenter.Models;
+using Camiher.UI.AdministrationCenter.Products;
+using Camiher.UI.AdministrationCenter.UserControls;
+using Validation = Camiher.Libs.Common.Validation;
 
-namespace AdministrationCenter
+namespace Camiher.UI.AdministrationCenter.Clients
 {
 	/// <summary>
 	/// Interaction logic for Client.xaml
@@ -244,7 +239,7 @@ namespace AdministrationCenter
             TextBox tb = sender as TextBox;
             if (tb != null)
             {
-                if (Common.Validation.IsEmailAllowed(tb.Text.Trim()) == false)
+                if (Validation.IsEmailAllowed(tb.Text.Trim()) == false)
                 {
                     e.Handled = true;
                     MessageBox.Show("El correo no es un correo valido", "Error", MessageBoxButton.OK, MessageBoxImage.Error);

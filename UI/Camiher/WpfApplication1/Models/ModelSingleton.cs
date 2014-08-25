@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Camiher.Libs.Server.DAL.CamiherLocalDAL;
 
-namespace AdministrationCenter.Models
+namespace Camiher.UI.AdministrationCenter.Models
 {
      class ModelSingleton
     {

@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.IO;
+using Camiher.Libs.Common;
+using Camiher.Libs.Server.DAL.CamiherLocalDAL;
 
-namespace AdministrationCenter
+namespace Camiher.UI.AdministrationCenter.Products
 
 {
     /// <summary>

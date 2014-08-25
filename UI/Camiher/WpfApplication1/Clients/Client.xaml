@@ -1,13 +1,13 @@
 ﻿<Window
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	x:Class="AdministrationCenter.Client"
+	x:Class="Camiher.UI.AdministrationCenter.Clients.Client"
 	x:Name="Window"
 	Title="Client"
-	Width="640" Height="480" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my="clr-namespace:AdministrationCenter"
-    xmlns:administrationCenter="clr-namespace:AdministrationCenter;assembly=ClassLibrary1">
+	Width="640" Height="480" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my="clr-namespace:Camiher.UI.AdministrationCenter"
+    xmlns:camiherLocalDal="clr-namespace:Camiher.Libs.Server.DAL.CamiherLocalDAL;assembly=ClassLibrary1">
     <Window.Resources>
-        <CollectionViewSource x:Key="compradorSet1ViewSource" d:DesignSource="{d:DesignInstance administrationCenter:CompradorSet, CreateList=True}" />
+        <CollectionViewSource x:Key="compradorSet1ViewSource" d:DesignSource="{d:DesignInstance camiherLocalDal:CompradorSet, CreateList=True}" />
     </Window.Resources>
     <Grid x:Name="LayoutRoot">
         <Rectangle Margin="8" Fill="#FF210A0D" Opacity="0.9">
