@@ -9,12 +9,12 @@
 // <creation issue="" date="11-08-2014" author="Jose Sanchez" />
 // --------------------------------------------------------------------------------------------------------------------
 #endregion
+
 using System;
 using System.Net.Mail;
 using CommonLogger;
-using Logger;
 
-namespace Common
+namespace Camiher.Libs.Common
 {
     // represent the possible type of smtpclient, currently only Gmail but can be extended to contain yahoo,hotmail..
     public enum SmtpClientType

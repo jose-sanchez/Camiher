@@ -9,13 +9,14 @@
 // <creation issue="" date="11-08-2014" author="Jose Sanchez" />
 // --------------------------------------------------------------------------------------------------------------------
 #endregion
+
 using System;
 using System.Net;
 using System.Net.Mail;
+using Common;
 using CommonLogger;
-using Common.Logger;
 
-namespace Common
+namespace Camiher.Libs.Common
 {
     public class Email:IEmail
     {
