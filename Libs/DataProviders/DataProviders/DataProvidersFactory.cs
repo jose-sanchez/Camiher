@@ -8,11 +8,6 @@
 #endregion
 
 using Camiher.Libs.DataProviders.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Camiher.Libs.DataProviders.Providers;
 
 namespace Camiher.Libs.DataProviders

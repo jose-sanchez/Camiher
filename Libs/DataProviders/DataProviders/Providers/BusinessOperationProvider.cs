@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Camiher.Libs.DataProviders.Camiher;
+﻿using Camiher.Libs.DataProviders.Camiher;
 using Camiher.Libs.DataProviders.Interfaces;
 using Camiher.Libs.Server.DAL.CamiherLocalDAL;
 using Camiher.Libs.Server.WebServicesObjects;

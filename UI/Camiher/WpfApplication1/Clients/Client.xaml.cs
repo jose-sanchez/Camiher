@@ -295,12 +295,9 @@ namespace AdministrationCenter
         }
 
         public static void ClientBuyProduct(string clientId, string productId)
-        {
-            
-            DataProvidersFactory.GetBusinessOperationProvider().ClientBuyProduct();
-            ProductsSet Product = _dataDC.ProductsSet.First(S => S.Id == ProductID);
+        {          
             SaleSet currentsale = DataProvidersFactory.GetBusinessOperationProvider().GetCurrentSale(clientId, productId);
-            BuyProduct newBuyProduct = new BuyProduct(currentsale);
+            BuyProduct newBuyProduct = new BuyProduct((SaleSet) currentsale);
             
             newBuyProduct.ShowDialog();
           

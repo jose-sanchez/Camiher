@@ -7,7 +7,7 @@
     <ProjectGuid>{73A9976F-76EE-4D75-9797-38246BAFE6D5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebServicesObjects</RootNamespace>
+    <RootNamespace>Camiher.Libs.Server.WebServicesObjects</RootNamespace>
     <AssemblyName>WebServicesObjects</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

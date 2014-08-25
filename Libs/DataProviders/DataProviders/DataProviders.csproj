@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProvidersFactory.cs" />
+    <Compile Include="Interfaces\IBusinessOperationProvider.cs" />
     <Compile Include="Interfaces\IUserProviderAsync.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\BusinessOperationProvider.cs" />

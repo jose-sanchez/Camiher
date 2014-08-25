@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
+using Camiher.Libs.Server.DAL.CamiherLocalDAL;
 
 namespace Camiher.Libs.Server.WebServicesObjects
 {
@@ -18,6 +14,14 @@ namespace Camiher.Libs.Server.WebServicesObjects
     public class BaseResponse
     {
         public ResponseError ErrorResponse { get; set; }
+
+        public bool IsCorrect 
+        {
+            get
+            {
+                return ResponseError.Ok == ErrorResponse;           
+            }
+        }
 
     }
 }
