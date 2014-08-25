@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Camiher.Libs.Common;
 using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.UI.AdministrationCenter.Helpers;
 using Camiher.UI.AdministrationCenter.Models;
 
 namespace Camiher.UI.AdministrationCenter
@@ -67,7 +68,7 @@ namespace Camiher.UI.AdministrationCenter
                 Boolean EmailSent = false;
                 if (NTC.SendEmail)
                 {
-                    EmailSent = Email.SendEmail(NTC.ClientID, _product.Id, NTC.ClientPrice);
+                    EmailSent = EmailHelper.SendEmail(NTC.ClientID, _product.Id, NTC.ClientPrice);
                 }
                 if (NTC.RequestProduct) {
                     SaleSet newSale = new SaleSet();

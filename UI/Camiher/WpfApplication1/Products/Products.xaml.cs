@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -84,7 +85,8 @@ namespace Camiher.UI.AdministrationCenter.Products
             //Open class view to find out what Properties the wizard
             //had created in the DataClasses1DataContext class, otherwise
             //I wouldn't have known about Peoples
-            foreach (ProductsSet thisPerson in dataDc.ProductsSet.Where(s =>s.Enventa == "True" ))
+
+            foreach (ProductsSet thisPerson in dataDc.ProductsSet.ToList().Where(s =>s.Enventa == "True" ))
             {
                 this.Add(thisPerson);
             }
