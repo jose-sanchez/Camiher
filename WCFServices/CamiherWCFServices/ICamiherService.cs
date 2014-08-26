@@ -27,6 +27,18 @@ namespace CamiherWCFServices
 
         [OperationContract]
         SaleResponse GetCurrentSale(string clientId, string productId);
+
+        [OperationContract]
+        SoldProductsResponse GetSoldProductsByClient(string clientId);
+
+        [OperationContract]
+        ProductsResponse GetSoldProducts();
+
+        [OperationContract]
+        BaseResponse AddProducts(ProductsSet product);
+
+        [OperationContract]
+        BaseResponse DeleteProducts(string productId);
     }
 
 

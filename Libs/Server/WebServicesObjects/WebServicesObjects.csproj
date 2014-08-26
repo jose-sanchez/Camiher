@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseResponse.cs" />
+    <Compile Include="SoldProductsResponse.cs" />
+    <Compile Include="ProductsResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaleResponse.cs" />
   </ItemGroup>

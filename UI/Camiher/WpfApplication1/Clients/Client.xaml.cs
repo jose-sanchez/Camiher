@@ -302,33 +302,28 @@ namespace Camiher.UI.AdministrationCenter.Clients
 
             }
         }
+
+        /// <summary>
+        /// Update the list of sold products for this client
+        /// </summary>
         public void Update_ListSoldProducts()
         {
-
-            ObservableProductSold soldProduct = new ObservableProductSold(_dataDC);
-            ListSoldProducts.ItemsSource = (from c in soldProduct
-                                            join sale in _dataDC.SaleSet.Where(S => S.Client_ID == _client.Id)
-                                            on c.Id equals sale.Product_ID
-
-                                            select new ItemSoldProductList
-                                            {
-                                                Name = c.Producto + " " + c.Marca + " " + c.Modelo,
-                                                FinalPrice = sale.FinalPrice.ToString() + " Euros",
-                                                ProductID = c.Id
-                                            });
-
-
+            ListSoldProducts.ItemsSource =
+                DataProvidersFactory.GetBusinessOperationProvider().GetSoldProductsByClient(_client.Id);
         }
 
         private void ListSoldProducts_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             ItemSoldProductList item = (ListSoldProducts.SelectedItem as ItemSoldProductList);
-            ProductsSet soldProduct = new ObservableProductSold(_dataDC).First(S => S.Id == item.ProductID);
-            Machine viewProductDetails = new Machine(soldProduct);
-            viewProductDetails.ViewOnly = true;
-            
-            viewProductDetails.ShowDialog();
-           
+
+            //Get soldProductList and filter by the product choosen
+            ProductsSet soldProduct = new ObservableProductSold(
+                DataProvidersFactory.GetBusinessOperationProvider().GetSoldProducts()).
+                First(s => s.Id == item.ProductID);
+
+            var viewProductDetails = new Machine(soldProduct);
+            viewProductDetails.ViewOnly = true;           
+            viewProductDetails.ShowDialog();          
         }
 
         private void MenuSendEmail_Click(object sender, RoutedEventArgs e)
@@ -351,7 +346,6 @@ namespace Camiher.UI.AdministrationCenter.Clients
             public String Name { get; set; }
             public String FinalPrice { get; set; }
             public String ProductID { get; set; }
-
         }
         class ItemRequestedProductList
         {

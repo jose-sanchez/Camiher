@@ -18,5 +18,38 @@ namespace Camiher.Libs.Server.BusinesOperations
             ProductsSet product = dataDc.ProductsSet.First(s => s.Id == productId);
             return product;
         }
+
+        /// <summary>
+        /// Add a product to the database
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns>true if product store succesfully</returns>
+        public bool AddProduct(ProductsSet product)
+        {
+            var dataDc = new Model1Container();
+            dataDc.ProductsSet.AddObject(product);
+            dataDc.SaveChanges();
+            return true;
+        }
+
+        public bool DeleteProductById(string productId)
+        {
+            var dataDc = new Model1Container();
+            var product = dataDc.ProductsSet.First(s => s.Id == productId);
+            if (product != null)
+            {
+                dataDc.ProductsSet.DeleteObject(product);
+                dataDc.SaveChanges();
+                return true;
+            }
+            else
+            {
+                //AddLogger
+                return false;
+            }
+
+            
+            
+        }
     }
 }

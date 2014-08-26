@@ -1,7 +1,9 @@
-﻿using System.Linq;
+﻿using System.Data.Objects;
+using System.Linq;
 using Camiher.Libs.Server.DAL.CamiherLocalDAL;
 using Camiher.Libs.Server.BusinesOperations.Interfaces;
-using Common;
+using ClassLibrary1;
+
 namespace Camiher.Libs.Server.BusinesOperations
 {
     public class ClientsOperations : IClientsOperations
@@ -41,5 +43,33 @@ namespace Camiher.Libs.Server.BusinesOperations
             return currentsale;
 
         }
+
+        /// <summary>
+        /// Return all Sold Products 
+        /// </summary>
+        /// <returns>all Sold Products</returns>
+        public ObjectSet<ItemSoldProductList> GetSoldProductsByClient(string clientId)
+        {
+            var dataDc = new Model1Container();
+            var soldProducts = dataDc.ProductsSet.Where(s => s.Enventa == "False" && s.Enbusca == "False" && s.Proveedor_ID != "Borrado");
+            return (ObjectSet<ItemSoldProductList>)(from c in soldProducts
+                join sale in dataDc.SaleSet.Where(S => S.Client_ID == clientId)
+                    on c.Id equals sale.Product_ID
+                select new ItemSoldProductList
+                {
+                    Name = c.Producto + " " + c.Marca + " " + c.Modelo,
+                    FinalPrice = sale.FinalPrice.ToString() + " Euros",
+                    ProductID = c.Id
+                });
+        }
+
+        public ObjectSet<ProductsSet> GetSoldProducts()
+        {
+            var dataDc = new Model1Container();
+            return (ObjectSet<ProductsSet>) dataDc.ProductsSet.Where(s => s.Enventa == "False" && s.Enbusca == "False" && s.Proveedor_ID != "Borrado");          
+        }
+
+
+
     }
 }

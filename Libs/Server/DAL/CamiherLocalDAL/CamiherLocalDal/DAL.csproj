@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ItemSoldProductList.cs" />
     <Compile Include="Model1.Designer.cs">
       <DependentUpon>Model1.edmx</DependentUpon>
       <AutoGen>True</AutoGen>

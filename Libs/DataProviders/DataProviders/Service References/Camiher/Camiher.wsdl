@@ -4,6 +4,7 @@
     <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:import namespace="http://schemas.datacontract.org/2004/07/CamiherWCFServices" />
       <xs:import namespace="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.DAL.CamiherLocalDAL" />
       <xs:element name="GetData">
         <xs:complexType>
           <xs:sequence>
@@ -63,6 +64,60 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="GetSoldProductsByClient">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="clientId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSoldProductsByClientResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" minOccurs="0" name="GetSoldProductsByClientResult" nillable="true" type="q5:SoldProductsResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSoldProducts">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSoldProductsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" minOccurs="0" name="GetSoldProductsResult" nillable="true" type="q6:ProductsResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddProducts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.DAL.CamiherLocalDAL" minOccurs="0" name="product" nillable="true" type="q7:ProductsSet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddProductsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" minOccurs="0" name="AddProductsResult" nillable="true" type="q8:BaseResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteProducts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="productId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteProductsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" minOccurs="0" name="DeleteProductsResult" nillable="true" type="q9:BaseResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
     </xs:schema>
     <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="anyType" nillable="true" type="xs:anyType" />
@@ -115,6 +170,8 @@
       <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
     </xs:schema>
     <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ClassLibrary1" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.DAL.CamiherLocalDAL" />
       <xs:complexType name="BaseResponse">
         <xs:sequence />
       </xs:complexType>
@@ -127,6 +184,122 @@
         </xs:complexContent>
       </xs:complexType>
       <xs:element name="SaleResponse" nillable="true" type="tns:SaleResponse" />
+      <xs:complexType name="SoldProductsResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:BaseResponse">
+            <xs:sequence>
+              <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ClassLibrary1" minOccurs="0" name="Products" nillable="true" type="q1:ArrayOfItemSoldProductList" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="SoldProductsResponse" nillable="true" type="tns:SoldProductsResponse" />
+      <xs:complexType name="ProductsResponse">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:BaseResponse">
+            <xs:sequence>
+              <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.DAL.CamiherLocalDAL" minOccurs="0" name="Products" nillable="true" type="q2:ArrayOfProductsSet" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ProductsResponse" nillable="true" type="tns:ProductsResponse" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ClassLibrary1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ClassLibrary1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfItemSoldProductList">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemSoldProductList" nillable="true" type="tns:ItemSoldProductList" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfItemSoldProductList" nillable="true" type="tns:ArrayOfItemSoldProductList" />
+      <xs:complexType name="ItemSoldProductList">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FinalPrice" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProductID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ItemSoldProductList" nillable="true" type="tns:ItemSoldProductList" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.DAL.CamiherLocalDAL" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.DAL.CamiherLocalDAL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xs:complexType name="ArrayOfProductsSet">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductsSet" nillable="true" type="tns:ProductsSet" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfProductsSet" nillable="true" type="tns:ArrayOfProductsSet" />
+      <xs:complexType name="ProductsSet">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:EntityObject">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Año" type="xs:int" />
+              <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+              <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Enbusca" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Enventa" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Hours" nillable="true" type="xs:int" />
+              <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Kilometer" nillable="true" type="xs:int" />
+              <xs:element minOccurs="0" name="Marca" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Modelo" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Peso" type="xs:int" />
+              <xs:element minOccurs="0" name="Potencia" type="xs:int" />
+              <xs:element minOccurs="0" name="Precio" type="xs:int" />
+              <xs:element minOccurs="0" name="PrivateDescription" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Producto" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="Proveedor_ID" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ProductsSet" nillable="true" type="tns:ProductsSet" />
+    </xs:schema>
+    <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:complexType name="EntityObject">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:StructuralObject">
+            <xs:sequence>
+              <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="EntityKey" nillable="true" type="q1:EntityKey" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="EntityObject" nillable="true" type="tns:EntityObject" />
+      <xs:complexType name="StructuralObject">
+        <xs:sequence />
+        <xs:attribute ref="ser:Id" />
+        <xs:attribute ref="ser:Ref" />
+      </xs:complexType>
+      <xs:element name="StructuralObject" nillable="true" type="tns:StructuralObject" />
+    </xs:schema>
+    <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/System.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:complexType name="EntityKey">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EntityContainerName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EntityKeyValues" nillable="true" type="tns:ArrayOfEntityKeyMember" />
+          <xs:element minOccurs="0" name="EntitySetName" nillable="true" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute ref="ser:Id" />
+        <xs:attribute ref="ser:Ref" />
+      </xs:complexType>
+      <xs:element name="EntityKey" nillable="true" type="tns:EntityKey" />
+      <xs:complexType name="ArrayOfEntityKeyMember">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EntityKeyMember" nillable="true" type="tns:EntityKeyMember" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfEntityKeyMember" nillable="true" type="tns:ArrayOfEntityKeyMember" />
+      <xs:complexType name="EntityKeyMember">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="EntityKeyMember" nillable="true" type="tns:EntityKeyMember" />
     </xs:schema>
   </wsdl:types>
   <wsdl:message name="ICamiherService_GetData_InputMessage">
@@ -153,6 +326,30 @@
   <wsdl:message name="ICamiherService_GetCurrentSale_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCurrentSaleResponse" />
   </wsdl:message>
+  <wsdl:message name="ICamiherService_GetSoldProductsByClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSoldProductsByClient" />
+  </wsdl:message>
+  <wsdl:message name="ICamiherService_GetSoldProductsByClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSoldProductsByClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICamiherService_GetSoldProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSoldProducts" />
+  </wsdl:message>
+  <wsdl:message name="ICamiherService_GetSoldProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSoldProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICamiherService_AddProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProducts" />
+  </wsdl:message>
+  <wsdl:message name="ICamiherService_AddProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICamiherService_DeleteProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProducts" />
+  </wsdl:message>
+  <wsdl:message name="ICamiherService_DeleteProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductsResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICamiherService">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/GetData" message="tns:ICamiherService_GetData_InputMessage" />
@@ -169,6 +366,22 @@
     <wsdl:operation name="GetCurrentSale">
       <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/GetCurrentSale" message="tns:ICamiherService_GetCurrentSale_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICamiherService/GetCurrentSaleResponse" message="tns:ICamiherService_GetCurrentSale_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSoldProductsByClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/GetSoldProductsByClient" message="tns:ICamiherService_GetSoldProductsByClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICamiherService/GetSoldProductsByClientResponse" message="tns:ICamiherService_GetSoldProductsByClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSoldProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/GetSoldProducts" message="tns:ICamiherService_GetSoldProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICamiherService/GetSoldProductsResponse" message="tns:ICamiherService_GetSoldProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/AddProducts" message="tns:ICamiherService_AddProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICamiherService/AddProductsResponse" message="tns:ICamiherService_AddProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/DeleteProducts" message="tns:ICamiherService_DeleteProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICamiherService/DeleteProductsResponse" message="tns:ICamiherService_DeleteProducts_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICamiherService" type="tns:ICamiherService">
@@ -202,6 +415,42 @@
     </wsdl:operation>
     <wsdl:operation name="GetCurrentSale">
       <soap:operation soapAction="http://tempuri.org/ICamiherService/GetCurrentSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSoldProductsByClient">
+      <soap:operation soapAction="http://tempuri.org/ICamiherService/GetSoldProductsByClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSoldProducts">
+      <soap:operation soapAction="http://tempuri.org/ICamiherService/GetSoldProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProducts">
+      <soap:operation soapAction="http://tempuri.org/ICamiherService/AddProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProducts">
+      <soap:operation soapAction="http://tempuri.org/ICamiherService/DeleteProducts" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClassLibrary1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\ClassLibrary1.dll</HintPath>
+    </Reference>
     <Reference Include="Logger">
       <HintPath>..\..\Common\Logger\Logger\bin\Debug\Logger.dll</HintPath>
     </Reference>
@@ -67,7 +70,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\Camiher.Libs.Server.WebServicesObjects.BaseResponse.datasource" />
+    <None Include="Properties\DataSources\Camiher.Libs.Server.WebServicesObjects.ProductsResponse.datasource" />
     <None Include="Properties\DataSources\Camiher.Libs.Server.WebServicesObjects.SaleResponse.datasource" />
+    <None Include="Properties\DataSources\Camiher.Libs.Server.WebServicesObjects.SoldProductsResponse.datasource" />
     <None Include="Service References\Camiher\Camiher.Libs.DataProviders.Camiher.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

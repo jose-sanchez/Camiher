@@ -34,6 +34,8 @@ namespace CamiherWCFServices
             return composite;
         }
 
+        #region client.axml
+
         /// <summary>
         /// Client buy a porduct
         /// </summary>
@@ -69,5 +71,74 @@ namespace CamiherWCFServices
 
             return response;
         }
+
+        public SoldProductsResponse GetSoldProductsByClient(string clientId)
+        {
+            var businessOperations = new ClientsOperations();
+                var response = new SoldProductsResponse()
+                {
+                    ErrorResponse = ResponseError.Ok,
+                    Products = businessOperations.GetSoldProductsByClient(clientId)
+
+                };
+                       
+            return response;
+        }
+
+        public ProductsResponse GetSoldProducts()
+        {
+            var businessOperations = new ClientsOperations();
+
+                var response = new ProductsResponse()
+                {
+                    ErrorResponse = ResponseError.Ok,
+                    Products = businessOperations.GetSoldProducts()
+
+                };   
+      
+            return response;
+        }
+
+        /// <summary>
+        /// Add a product to the database
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns>true if product store succesfully</returns>
+        public BaseResponse AddProducts(ProductsSet product)
+        {
+            var businessOperations = new ProductsOperation();
+            businessOperations.AddProduct(product);
+
+            var response = new ProductsResponse()
+            {
+                ErrorResponse = ResponseError.Ok,
+            };
+
+            return response;
+        }
+
+        /// <summary>
+        /// Delete a product to the database
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns>true if product store succesfully</returns>
+        public BaseResponse DeleteProducts(string productId)
+        {
+            var businessOperations = new ProductsOperation();
+            var response = new ProductsResponse();
+            if (businessOperations.DeleteProductById(productId))
+            {
+                response.ErrorResponse = ResponseError.Ok;
+            }
+            else
+            {
+                //Improvement : perhaps add more ErrorCodes
+                response.ErrorResponse = ResponseError.Error;
+            }
+
+            return response;
+        }
+
+        #endregion client.axml
     }
 }

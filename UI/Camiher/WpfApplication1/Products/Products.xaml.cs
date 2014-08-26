@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Objects;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -94,14 +95,11 @@ namespace Camiher.UI.AdministrationCenter.Products
     }
     public class ObservableProductSold : System.Collections.ObjectModel.ObservableCollection<ProductsSet>
     {
-        public ObservableProductSold(Model1Container dataDc)
+        public ObservableProductSold(ObjectSet<ProductsSet> Products)
         {
-            //Open class view to find out what Properties the wizard
-            //had created in the DataClasses1DataContext class, otherwise
-            //I wouldn't have known about Peoples
-            foreach (ProductsSet thisPerson in dataDc.ProductsSet.Where(s => s.Enventa == "False" && s.Enbusca == "False" && s.Proveedor_ID != "Borrado"))
+            foreach (ProductsSet thisProduct in Products)
             {
-                this.Add(thisPerson);
+                this.Add(thisProduct);
             }
         }
     }
