@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WpfApplication1.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Camiher.UI.AdministrationCenter.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="ImagePath" Type="System.String" Scope="User">
@@ -7,6 +7,9 @@
     </Setting>
     <Setting Name="EmailAddress" Type="System.String" Scope="User">
       <Value Profile="(Default)">jose.sanchez.colino@gmail.com</Value>
+    </Setting>
+    <Setting Name="OnlineMode" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -1,5 +1,6 @@
-﻿using System.Data.Objects;
-using Camiher.Libs.DataProviders.Camiher;
+﻿using System;
+using System.Data.Objects;
+using Camiher.Libs.DataProviders.CamiherService;
 using Camiher.Libs.DataProviders.Interfaces;
 using Camiher.Libs.Server.DAL.CamiherLocalDAL;
 using Camiher.Libs.Server.WebServicesObjects;
@@ -54,6 +55,20 @@ namespace Camiher.Libs.DataProviders.Providers
         public ObjectSet<ProductsSet> GetSoldProducts()
         {
             var response = (ProductsResponse)_businessOperation.GetSoldProducts();
+            if (response.IsCorrect)
+            {
+                return response.Products;
+            }
+            else
+            {
+                //AppLogger.Error(String.Format("[BusinessOperationProvider][GetCurrentSale]: response Error '{0}' ", response.ErrorResponse));
+                return null;
+            }
+        }
+
+        public ObjectSet<ProductsSet> GetProductsToSale()
+        {
+            var response = (ProductsResponse)_businessOperation.GetProducts("Enventa ='True'");
             if (response.IsCorrect)
             {
                 return response.Products;

@@ -100,11 +100,41 @@ namespace CamiherWCFServices
         }
 
         /// <summary>
+        /// Get Products from db
+        /// </summary>
+        /// <param name="filter">filter which product should return</param>
+        /// <returns>product list filtered. If filter is not good format error</returns>
+        public BaseResponse GetProducts(string filter)
+        {
+
+            var businessOperations = new ProductsOperation();
+            var response = new ProductsResponse()
+            {
+                ErrorResponse = ResponseError.Ok,
+            };
+
+            try
+            {
+                response.Products = businessOperations.GetProducts(filter ?? String.Empty);
+            }
+            catch (ArgumentException ex)
+            {
+                response.ErrorResponse = ResponseError.InvalidParameters;
+            }
+            catch (Exception ex)
+            {
+                response.ErrorResponse = ResponseError.Error;
+            }
+
+            return response;
+        }
+
+        /// <summary>
         /// Add a product to the database
         /// </summary>
         /// <param name="product"></param>
         /// <returns>true if product store succesfully</returns>
-        public BaseResponse AddProducts(ProductsSet product)
+        public BaseResponse AddProduct(ProductsSet product)
         {
             var businessOperations = new ProductsOperation();
             businessOperations.AddProduct(product);
@@ -118,11 +148,36 @@ namespace CamiherWCFServices
         }
 
         /// <summary>
+        /// Add a product to the database
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns>true if product updated succesfully</returns>
+        public BaseResponse UpdateProduct(ProductsSet product)
+        {
+            var response = new ProductsResponse()
+            {
+                ErrorResponse = ResponseError.Ok,
+            };
+
+            try
+            {
+                var businessOperations = new ProductsOperation();
+                businessOperations.UpdateProduct(product);
+            }
+            catch (Exception ex)
+            {
+                response.ErrorResponse = ResponseError.Error;
+            }
+
+            return response;
+        }
+
+        /// <summary>
         /// Delete a product to the database
         /// </summary>
         /// <param name="productId"></param>
         /// <returns>true if product store succesfully</returns>
-        public BaseResponse DeleteProducts(string productId)
+        public BaseResponse DeleteProduct(string productId)
         {
             var businessOperations = new ProductsOperation();
             var response = new ProductsResponse();

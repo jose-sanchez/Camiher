@@ -46,5 +46,14 @@ namespace Camiher.UI.AdministrationCenter.Properties {
                 this["EmailAddress"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool OnlineMode {
+            get {
+                return ((bool)(this["OnlineMode"]));
+            }
+        }
     }
 }

@@ -90,31 +90,59 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="AddProducts">
+      <xs:element name="AddProduct">
         <xs:complexType>
           <xs:sequence>
             <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.DAL.CamiherLocalDAL" minOccurs="0" name="product" nillable="true" type="q7:ProductsSet" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="AddProductsResponse">
+      <xs:element name="AddProductResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" minOccurs="0" name="AddProductsResult" nillable="true" type="q8:BaseResponse" />
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" minOccurs="0" name="AddProductResult" nillable="true" type="q8:BaseResponse" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="DeleteProducts">
+      <xs:element name="DeleteProduct">
         <xs:complexType>
           <xs:sequence>
             <xs:element minOccurs="0" name="productId" nillable="true" type="xs:string" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="DeleteProductsResponse">
+      <xs:element name="DeleteProductResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" minOccurs="0" name="DeleteProductsResult" nillable="true" type="q9:BaseResponse" />
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" minOccurs="0" name="DeleteProductResult" nillable="true" type="q9:BaseResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateProduct">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.DAL.CamiherLocalDAL" minOccurs="0" name="product" nillable="true" type="q10:ProductsSet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateProductResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" minOccurs="0" name="UpdateProductResult" nillable="true" type="q11:BaseResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetProducts">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetProductsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Camiher.Libs.Server.WebServicesObjects" minOccurs="0" name="GetProductsResult" nillable="true" type="q12:BaseResponse" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -338,17 +366,29 @@
   <wsdl:message name="ICamiherService_GetSoldProducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSoldProductsResponse" />
   </wsdl:message>
-  <wsdl:message name="ICamiherService_AddProducts_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddProducts" />
+  <wsdl:message name="ICamiherService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
   </wsdl:message>
-  <wsdl:message name="ICamiherService_AddProducts_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddProductsResponse" />
+  <wsdl:message name="ICamiherService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
   </wsdl:message>
-  <wsdl:message name="ICamiherService_DeleteProducts_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteProducts" />
+  <wsdl:message name="ICamiherService_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
   </wsdl:message>
-  <wsdl:message name="ICamiherService_DeleteProducts_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteProductsResponse" />
+  <wsdl:message name="ICamiherService_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICamiherService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="ICamiherService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICamiherService_GetProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducts" />
+  </wsdl:message>
+  <wsdl:message name="ICamiherService_GetProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsResponse" />
   </wsdl:message>
   <wsdl:portType name="ICamiherService">
     <wsdl:operation name="GetData">
@@ -375,13 +415,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/GetSoldProducts" message="tns:ICamiherService_GetSoldProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICamiherService/GetSoldProductsResponse" message="tns:ICamiherService_GetSoldProducts_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AddProducts">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/AddProducts" message="tns:ICamiherService_AddProducts_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICamiherService/AddProductsResponse" message="tns:ICamiherService_AddProducts_OutputMessage" />
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/AddProduct" message="tns:ICamiherService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICamiherService/AddProductResponse" message="tns:ICamiherService_AddProduct_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DeleteProducts">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/DeleteProducts" message="tns:ICamiherService_DeleteProducts_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICamiherService/DeleteProductsResponse" message="tns:ICamiherService_DeleteProducts_OutputMessage" />
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/DeleteProduct" message="tns:ICamiherService_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICamiherService/DeleteProductResponse" message="tns:ICamiherService_DeleteProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/UpdateProduct" message="tns:ICamiherService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICamiherService/UpdateProductResponse" message="tns:ICamiherService_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICamiherService/GetProducts" message="tns:ICamiherService_GetProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICamiherService/GetProductsResponse" message="tns:ICamiherService_GetProducts_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICamiherService" type="tns:ICamiherService">
@@ -440,8 +488,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AddProducts">
-      <soap:operation soapAction="http://tempuri.org/ICamiherService/AddProducts" style="document" />
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/ICamiherService/AddProduct" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -449,8 +497,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DeleteProducts">
-      <soap:operation soapAction="http://tempuri.org/ICamiherService/DeleteProducts" style="document" />
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://tempuri.org/ICamiherService/DeleteProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/ICamiherService/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducts">
+      <soap:operation soapAction="http://tempuri.org/ICamiherService/GetProducts" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -66,3 +66,6 @@ C:\Users\josehp\Camiher\UI\Camiher\WpfApplication1\obj\x86\Debug\Camiher.UI.Admi
 C:\Users\josehp\Camiher\UI\Camiher\WpfApplication1\obj\x86\Debug\AdministrationCenter.csproj.GenerateResource.Cache
 C:\Users\josehp\Camiher\UI\Camiher\WpfApplication1\obj\x86\Debug\AdministrationCenter.exe
 C:\Users\josehp\Camiher\UI\Camiher\WpfApplication1\obj\x86\Debug\AdministrationCenter.pdb
+C:\Users\josehp\Camiher\UI\Camiher\WpfApplication1\bin\Debug\NLog.dll
+C:\Users\josehp\Camiher\UI\Camiher\WpfApplication1\bin\Debug\Logger.pdb
+C:\Users\josehp\Camiher\UI\Camiher\WpfApplication1\bin\Debug\NLog.xml

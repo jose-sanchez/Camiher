@@ -287,6 +287,11 @@ namespace WEBCAMIHER.Controllers
         //        return Json(true);
         //}
    
+        /// <summary>
+        /// Get Images in Base64
+        /// </summary>
+        /// <param name="section"></param>
+        /// <returns></returns>
         public JsonResult GetImagesBase64(String section)
         {
 

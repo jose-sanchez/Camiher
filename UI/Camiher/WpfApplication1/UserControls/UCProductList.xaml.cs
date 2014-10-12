@@ -4,6 +4,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Camiher.Libs.Common;
+using Camiher.Libs.DataProviders;
+using Camiher.Libs.DataProviders.Interfaces;
 using Camiher.Libs.Server.DAL.CamiherLocalDAL;
 using Camiher.UI.AdministrationCenter.Models;
 using Camiher.UI.AdministrationCenter.Products;
@@ -15,7 +17,7 @@ namespace Camiher.UI.AdministrationCenter.UserControls
     /// </summary>
     public partial class UCProductList : UserControl
     {
-        
+        private IBusinessOperationProvider operationProvider;
         ObservableProduct lp;
         private  Model1Container _dataDC;
         private string marca="";
@@ -117,18 +119,28 @@ namespace Camiher.UI.AdministrationCenter.UserControls
 
         public UCProductList()
         {
+             
+
             if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
             {
-                _dataDC = ModelSingleton.getDataDC;
                 InitializeComponent();
- 
-                lp = new ObservableProduct(_dataDC);
+                if (Properties.Settings.Default.OnlineMode)
+                {
+                    operationProvider = DataProvidersFactory.GetBusinessOperationProvider();
+                    lp = new ObservableProduct(operationProvider.GetProductsToSale());
+                }
+                else
+                {
+                    _dataDC = ModelSingleton.getDataDC;                   
+                    lp = new ObservableProduct(_dataDC);
+                }
+
                 this.DataContext = lp;
                 ProductsSetListView.Width = this.Width;
-                
-                ProductsSetListView.ItemsSource = lp;
-            }
 
+                ProductsSetListView.ItemsSource = lp;  
+
+            }
         }
     
 

@@ -143,8 +143,6 @@ namespace WEBCAMIHER.Models
     }
     class RamdomID
     {
-
-
         public string RandomString(int length, string allowedChars = "ABCDEFZ0123456789")
         {
             if (length < 0) throw new ArgumentOutOfRangeException("length", "length cannot be less than zero.");

@@ -13,6 +13,10 @@ namespace Camiher.Libs.DataProviders.Interfaces
 
         ObjectSet<ItemSoldProductList> GetSoldProductsByClient(string clientId);
 
+        ObjectSet<ProductsSet>  GetProductsToSale();
+
+        ObjectSet<ProductsSet> GetSoldProducts();
+
         ObjectSet<ProductsSet> GetSoldProducts();
     }
 }

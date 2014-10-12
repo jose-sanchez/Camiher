@@ -35,10 +35,27 @@ namespace CamiherWCFServices
         ProductsResponse GetSoldProducts();
 
         [OperationContract]
-        BaseResponse AddProducts(ProductsSet product);
+        BaseResponse AddProduct(ProductsSet product);
 
         [OperationContract]
-        BaseResponse DeleteProducts(string productId);
+        BaseResponse DeleteProduct(string productId);
+
+        /// <summary>
+        /// Add a product to the database
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns>true if product updated succesfully</returns>
+        [OperationContract]
+        BaseResponse UpdateProduct(ProductsSet product);
+
+        /// <summary>
+        /// Get Products from db
+        /// </summary>
+        /// <param name="filter">filter which product should return</param>
+        /// <returns>product list filtered. If filter is not good format error</returns>
+        [OperationContract]
+        BaseResponse GetProducts(string filter);
+
     }
 
 

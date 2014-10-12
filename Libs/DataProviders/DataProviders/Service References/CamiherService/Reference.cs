@@ -7,11 +7,10 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-using Camiher.Libs.Server.WebServicesObjects;
-namespace Camiher.Libs.DataProviders.Camiher {
+
+namespace Camiher.Libs.DataProviders.CamiherService {
     using System.Runtime.Serialization;
     using System;
-
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -76,7 +75,7 @@ namespace Camiher.Libs.DataProviders.Camiher {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Camiher.ICamiherService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CamiherService.ICamiherService")]
     public interface ICamiherService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/GetData", ReplyAction="http://tempuri.org/ICamiherService/GetDataResponse")]
@@ -86,10 +85,10 @@ namespace Camiher.Libs.DataProviders.Camiher {
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/ICamiherService/GetDataUsingDataContractResponse")]
-        Camiher.Libs.DataProviders.Camiher.CompositeType GetDataUsingDataContract(Camiher.Libs.DataProviders.Camiher.CompositeType composite);
+        Camiher.Libs.DataProviders.CamiherService.CompositeType GetDataUsingDataContract(Camiher.Libs.DataProviders.CamiherService.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/ICamiherService/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<Camiher.Libs.DataProviders.Camiher.CompositeType> GetDataUsingDataContractAsync(Camiher.Libs.DataProviders.Camiher.CompositeType composite);
+        System.Threading.Tasks.Task<Camiher.Libs.DataProviders.CamiherService.CompositeType> GetDataUsingDataContractAsync(Camiher.Libs.DataProviders.CamiherService.CompositeType composite);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/ClientBuyProduct", ReplyAction="http://tempuri.org/ICamiherService/ClientBuyProductResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.SaleResponse))]
@@ -118,32 +117,50 @@ namespace Camiher.Libs.DataProviders.Camiher {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/GetSoldProducts", ReplyAction="http://tempuri.org/ICamiherService/GetSoldProductsResponse")]
         System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.ProductsResponse> GetSoldProductsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/AddProducts", ReplyAction="http://tempuri.org/ICamiherService/AddProductsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/AddProduct", ReplyAction="http://tempuri.org/ICamiherService/AddProductResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.SaleResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.SoldProductsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.ProductsResponse))]
-        Camiher.Libs.Server.WebServicesObjects.BaseResponse AddProducts(Camiher.Libs.Server.DAL.CamiherLocalDAL.ProductsSet product);
+        Camiher.Libs.Server.WebServicesObjects.BaseResponse AddProduct(Camiher.Libs.Server.DAL.CamiherLocalDAL.ProductsSet product);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/AddProducts", ReplyAction="http://tempuri.org/ICamiherService/AddProductsResponse")]
-        System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> AddProductsAsync(Camiher.Libs.Server.DAL.CamiherLocalDAL.ProductsSet product);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/AddProduct", ReplyAction="http://tempuri.org/ICamiherService/AddProductResponse")]
+        System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> AddProductAsync(Camiher.Libs.Server.DAL.CamiherLocalDAL.ProductsSet product);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/DeleteProducts", ReplyAction="http://tempuri.org/ICamiherService/DeleteProductsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/DeleteProduct", ReplyAction="http://tempuri.org/ICamiherService/DeleteProductResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.SaleResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.SoldProductsResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.ProductsResponse))]
-        Camiher.Libs.Server.WebServicesObjects.BaseResponse DeleteProducts(string productId);
+        Camiher.Libs.Server.WebServicesObjects.BaseResponse DeleteProduct(string productId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/DeleteProducts", ReplyAction="http://tempuri.org/ICamiherService/DeleteProductsResponse")]
-        System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> DeleteProductsAsync(string productId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/DeleteProduct", ReplyAction="http://tempuri.org/ICamiherService/DeleteProductResponse")]
+        System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> DeleteProductAsync(string productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/UpdateProduct", ReplyAction="http://tempuri.org/ICamiherService/UpdateProductResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.SaleResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.SoldProductsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.ProductsResponse))]
+        Camiher.Libs.Server.WebServicesObjects.BaseResponse UpdateProduct(Camiher.Libs.Server.DAL.CamiherLocalDAL.ProductsSet product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/UpdateProduct", ReplyAction="http://tempuri.org/ICamiherService/UpdateProductResponse")]
+        System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> UpdateProductAsync(Camiher.Libs.Server.DAL.CamiherLocalDAL.ProductsSet product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/GetProducts", ReplyAction="http://tempuri.org/ICamiherService/GetProductsResponse")]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.SaleResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.SoldProductsResponse))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.ProductsResponse))]
+        Camiher.Libs.Server.WebServicesObjects.BaseResponse GetProducts(string filter);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/GetProducts", ReplyAction="http://tempuri.org/ICamiherService/GetProductsResponse")]
+        System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> GetProductsAsync(string filter);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICamiherServiceChannel : Camiher.Libs.DataProviders.Camiher.ICamiherService, System.ServiceModel.IClientChannel {
+    public interface ICamiherServiceChannel : Camiher.Libs.DataProviders.CamiherService.ICamiherService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CamiherServiceClient : System.ServiceModel.ClientBase<Camiher.Libs.DataProviders.Camiher.ICamiherService>, Camiher.Libs.DataProviders.Camiher.ICamiherService {
+    public partial class CamiherServiceClient : System.ServiceModel.ClientBase<Camiher.Libs.DataProviders.CamiherService.ICamiherService>, Camiher.Libs.DataProviders.CamiherService.ICamiherService {
         
         public CamiherServiceClient() {
         }
@@ -172,11 +189,11 @@ namespace Camiher.Libs.DataProviders.Camiher {
             return base.Channel.GetDataAsync(value);
         }
         
-        public Camiher.Libs.DataProviders.Camiher.CompositeType GetDataUsingDataContract(Camiher.Libs.DataProviders.Camiher.CompositeType composite) {
+        public Camiher.Libs.DataProviders.CamiherService.CompositeType GetDataUsingDataContract(Camiher.Libs.DataProviders.CamiherService.CompositeType composite) {
             return base.Channel.GetDataUsingDataContract(composite);
         }
         
-        public System.Threading.Tasks.Task<Camiher.Libs.DataProviders.Camiher.CompositeType> GetDataUsingDataContractAsync(Camiher.Libs.DataProviders.Camiher.CompositeType composite) {
+        public System.Threading.Tasks.Task<Camiher.Libs.DataProviders.CamiherService.CompositeType> GetDataUsingDataContractAsync(Camiher.Libs.DataProviders.CamiherService.CompositeType composite) {
             return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
@@ -212,20 +229,36 @@ namespace Camiher.Libs.DataProviders.Camiher {
             return base.Channel.GetSoldProductsAsync();
         }
         
-        public Camiher.Libs.Server.WebServicesObjects.BaseResponse AddProducts(Camiher.Libs.Server.DAL.CamiherLocalDAL.ProductsSet product) {
-            return base.Channel.AddProducts(product);
+        public Camiher.Libs.Server.WebServicesObjects.BaseResponse AddProduct(Camiher.Libs.Server.DAL.CamiherLocalDAL.ProductsSet product) {
+            return base.Channel.AddProduct(product);
         }
         
-        public System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> AddProductsAsync(Camiher.Libs.Server.DAL.CamiherLocalDAL.ProductsSet product) {
-            return base.Channel.AddProductsAsync(product);
+        public System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> AddProductAsync(Camiher.Libs.Server.DAL.CamiherLocalDAL.ProductsSet product) {
+            return base.Channel.AddProductAsync(product);
         }
         
-        public Camiher.Libs.Server.WebServicesObjects.BaseResponse DeleteProducts(string productId) {
-            return base.Channel.DeleteProducts(productId);
+        public Camiher.Libs.Server.WebServicesObjects.BaseResponse DeleteProduct(string productId) {
+            return base.Channel.DeleteProduct(productId);
         }
         
-        public System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> DeleteProductsAsync(string productId) {
-            return base.Channel.DeleteProductsAsync(productId);
+        public System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> DeleteProductAsync(string productId) {
+            return base.Channel.DeleteProductAsync(productId);
+        }
+        
+        public Camiher.Libs.Server.WebServicesObjects.BaseResponse UpdateProduct(Camiher.Libs.Server.DAL.CamiherLocalDAL.ProductsSet product) {
+            return base.Channel.UpdateProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> UpdateProductAsync(Camiher.Libs.Server.DAL.CamiherLocalDAL.ProductsSet product) {
+            return base.Channel.UpdateProductAsync(product);
+        }
+        
+        public Camiher.Libs.Server.WebServicesObjects.BaseResponse GetProducts(string filter) {
+            return base.Channel.GetProducts(filter);
+        }
+        
+        public System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> GetProductsAsync(string filter) {
+            return base.Channel.GetProductsAsync(filter);
         }
     }
 }

@@ -11,3 +11,15 @@ c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\ob
 c:\users\josehp\documents\visual studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.pdb
 C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\DragDropImage.baml
 C:\Users\josehp\Documents\Visual Studio 2010\Projects\DragAndDrop\DragAndDrop\obj\x86\Debug\DragDropImage.g.cs
+C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\bin\Debug\DragAndDrop.exe
+C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\bin\Debug\DragAndDrop.pdb
+C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.csprojResolveAssemblyReference.cache
+C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragDropImage.baml
+C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragDropImage.g.cs
+C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\App.g.cs
+C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop_MarkupCompile.cache
+C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.g.resources
+C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.Properties.Resources.resources
+C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.csproj.GenerateResource.Cache
+C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.exe
+C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.pdb

@@ -7,3 +7,4 @@ C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debu
 C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\ClassLibrary1.pdb
 C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Debug\ClassLibrary1.dll
 C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Debug\ClassLibrary1.pdb
+C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Debug\DAL.csprojResolveAssemblyReference.cache

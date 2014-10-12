@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Objects;
 using System.Linq;
 using System.Windows;
@@ -88,6 +89,17 @@ namespace Camiher.UI.AdministrationCenter.Products
             //I wouldn't have known about Peoples
 
             foreach (ProductsSet thisPerson in dataDc.ProductsSet.ToList().Where(s =>s.Enventa == "True" ))
+            {
+                this.Add(thisPerson);
+            }
+        }
+        public ObservableProduct(IEnumerable<ProductsSet> dataDc)
+        {
+            //Open class view to find out what Properties the wizard
+            //had created in the DataClasses1DataContext class, otherwise
+            //I wouldn't have known about Peoples
+
+            foreach (ProductsSet thisPerson in dataDc)
             {
                 this.Add(thisPerson);
             }
