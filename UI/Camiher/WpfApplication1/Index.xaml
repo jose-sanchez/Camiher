@@ -8,10 +8,10 @@
       d:DesignHeight="900" d:DesignWidth="538" 
 	Title="Index" xmlns:my="clr-namespace:Camiher.UI.AdministrationCenter"
       xmlns:userControls="clr-namespace:Camiher.UI.AdministrationCenter.UserControls"
-      xmlns:camiherLocalDal="clr-namespace:Camiher.Libs.Server.DAL.CamiherLocalDAL;assembly=ClassLibrary1"
+      xmlns:camiherDal="clr-namespace:Camiher.Libs.Server.DAL.CamiherDAL;assembly=Camiher.Libs.Server.DAL.CamiherDAL"
       MaxHeight="900" WindowHeight="538" MaxWidth="538" MinHeight="900">
     <Page.Resources>
-        <CollectionViewSource x:Key="ProductsSetViewSource" d:DesignSource="{d:DesignInstance camiherLocalDal:ProductsSet, CreateList=True}" />
+        <CollectionViewSource x:Key="ProductsSetViewSource" d:DesignSource="{d:DesignInstance camiherDal:ProductsSet, CreateList=True}" />
     </Page.Resources>
     <Grid Height="850">
         <Grid.RowDefinitions>
@@ -102,7 +102,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Proveedores" Name="tabItem2">
+            <!--<TabItem Header="Proveedores" Name="tabItem2" IsEnabled="False">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -156,7 +156,7 @@
                      </Border>
                 </Grid>
             </TabItem>
-            <TabItem Header="Clientes" Name="tabItem3">
+            <TabItem Header="Clientes" Name="tabItem3" IsEnabled="False">
                 <Grid>
                 	<Grid.ColumnDefinitions>
                 		<ColumnDefinition Width="Auto" MinWidth="504"/>          	
@@ -181,7 +181,7 @@
 				
 				</Grid>
             </TabItem>
-            <TabItem Header="Busquedas pendientes" Name="tabItem4" GotFocus="pendingRequest">
+            <TabItem Header="Busquedas pendientes" Name="tabItem4" GotFocus="pendingRequest" IsEnabled="False">
                 <ListView Height="343" x:Name="ListRequestedProduct" Width="380" MouseDoubleClick="ListRequestedProduct_MouseDoubleClick" Margin="68,56,56,370.04" >
                     <ListView.ItemTemplate>
                         <DataTemplate >
@@ -200,7 +200,7 @@
                 </ListView>
 
             </TabItem>
-            <TabItem Header="Notificaciones" Name="tabItem5" GotFocus="NotificationsFocus" LostFocus="NotificationsLostFocus">
+            <TabItem Header="Notificaciones" Name="tabItem5" GotFocus="NotificationsFocus" LostFocus="NotificationsLostFocus" IsEnabled="False">
                 <Grid>
                     <Border>
                     <ListView Height="344.04" HorizontalAlignment="Left" Margin="45,37,0,0" Name="ListNotification" VerticalAlignment="Top" Width="414" MouseDoubleClick="List_Notification" SelectionChanged="ListNotification_SelectionChanged" SelectionMode="Extended" SelectedIndex="0">
@@ -220,7 +220,7 @@
                         </ListView>
                     </Border>
                 </Grid>
-            </TabItem>
+            </TabItem>-->
         </TabControl>
  
     </Grid>

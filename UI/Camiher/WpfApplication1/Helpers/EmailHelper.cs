@@ -3,7 +3,7 @@ using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using Camiher.Libs.Common;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.UI.AdministrationCenter.Models;
 using Camiher.UI.AdministrationCenter.Products;
 using Camiher.UI.AdministrationCenter.Properties;
@@ -33,12 +33,12 @@ namespace Camiher.UI.AdministrationCenter.Helpers
 
         public static Boolean SendEmail(string clientId, string productId, int price)
         {
-            Model1Container dataDc = ModelSingleton.getDataDC;
+            CamiherContext dataDc = ModelSingleton.getDataDC;
             //Recover Client and Product Data
-            ClientSet client = dataDc.ClientSet.First(s => s.Id == clientId);
+            ClientSet client = dataDc.Clients.First(s => s.Id == clientId);
             if (!string.IsNullOrEmpty(client.Email))
             {
-                ProductsSet product = dataDc.ProductsSet.First(s => s.Id == productId);
+                ProductsSet product = dataDc.Products.First(s => s.Id == productId);
                 //Build the destination address
                 var toAddress = new MailAddress(client.Email, client.Name + " " + client.Surname);
                 //Build the subject
@@ -47,8 +47,9 @@ namespace Camiher.UI.AdministrationCenter.Helpers
                 string body = BuildBody(product, client, price);
 
                 //collecting attached
-                String[] imagePathList =
-                    new ObservableProductImage(dataDc, product.Id).Where(s => s.Email == true).Select(l=>l.Path).ToArray();
+                String[] imagePathList = null ;
+                //String[] imagePathList =
+                //    new ObservableProductImage(dataDc, product.Id).Where(s => s.Email == true).Select(l=>l.Path).ToArray(); Restaurar
                 return _email.SendEmail(FromAddress, toAddress, subject, body, imagePathList);
             }
             else

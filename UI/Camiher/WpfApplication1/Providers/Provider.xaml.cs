@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Camiher.Libs.Common;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.UI.AdministrationCenter.Models;
 using Validation = Camiher.Libs.Common.Validation;
 
@@ -20,9 +20,9 @@ namespace Camiher.UI.AdministrationCenter.Providers
     public partial class Provider : Window
 
     {
-        private static Model1Container _dataDC = ModelSingleton.getDataDC;
+        private static CamiherContext _dataDC = ModelSingleton.getDataDC;
         private Boolean _newI = false;
-        private ProveedorSet _proveedor;
+        private ProvidersSet _proveedor;
 
 
         private Boolean _cancel=true;
@@ -62,7 +62,7 @@ namespace Camiher.UI.AdministrationCenter.Providers
             }
         }
        
-        public Provider(ProveedorSet proveedor)
+        public Provider(ProvidersSet proveedor)
         {
             InitializeComponent();
           
@@ -101,7 +101,7 @@ namespace Camiher.UI.AdministrationCenter.Providers
         {
             if (validateField())
             {
-                List<ProveedorSet> custQuery = _dataDC.ProveedorSet.Where(S => S.Nombre == tbNombre.Text && S.Apellido == tbApellido.Text).ToList();
+                List<ProvidersSet> custQuery = _dataDC.Providers.Where(S => S.Nombre == tbNombre.Text && S.Apellido == tbApellido.Text).ToList();
 
                 if (custQuery.Count() >= 1)
                 {
@@ -200,7 +200,7 @@ namespace Camiher.UI.AdministrationCenter.Providers
         {
             if (this._newI)
             {
-                _dataDC.ProveedorSet.AddObject(_proveedor);
+                _dataDC.Providers.Add(_proveedor);
                 _dataDC.SaveChanges();
                 this._newI = false;
             }
@@ -208,16 +208,16 @@ namespace Camiher.UI.AdministrationCenter.Providers
 
   
 
-    } 
+    }
 
-    public class ObservableProveedor : ObservableCollection<ProveedorSet>
+    public class ObservableProveedor : ObservableCollection<ProvidersSet>
     {
-        public ObservableProveedor(Model1Container dataDc)
+        public ObservableProveedor(CamiherContext dataDc)
         {
             //Open class view to find out what Properties the wizard
             //had created in the DataClasses1DataContext class, otherwise
             //I wouldn't have known about Peoples
-            foreach (ProveedorSet thisPerson in dataDc.ProveedorSet)
+            foreach (ProvidersSet thisPerson in dataDc.Providers)
             {
                 this.Add(thisPerson);
             }

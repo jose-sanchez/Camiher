@@ -5,9 +5,9 @@
 	x:Name="Window"
 	Title="Client"
 	Width="640" Height="480" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my="clr-namespace:Camiher.UI.AdministrationCenter"
-    xmlns:camiherLocalDal="clr-namespace:Camiher.Libs.Server.DAL.CamiherLocalDAL;assembly=ClassLibrary1">
+    xmlns:camiherDal="clr-namespace:Camiher.Libs.Server.DAL.CamiherDAL;assembly=Camiher.Libs.Server.DAL.CamiherDAL">
     <Window.Resources>
-        <CollectionViewSource x:Key="compradorSet1ViewSource" d:DesignSource="{d:DesignInstance camiherLocalDal:CompradorSet, CreateList=True}" />
+        <CollectionViewSource x:Key="compradorSet1ViewSource" d:DesignSource="{d:DesignInstance camiherDal:CompradorSet, CreateList=True}" />
     </Window.Resources>
     <Grid x:Name="LayoutRoot">
         <Rectangle Margin="8" Fill="#FF210A0D" Opacity="0.9">

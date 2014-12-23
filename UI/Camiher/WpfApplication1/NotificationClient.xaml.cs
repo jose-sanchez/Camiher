@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Camiher.Libs.Common;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.UI.AdministrationCenter.Helpers;
 using Camiher.UI.AdministrationCenter.Models;
 
@@ -16,20 +16,20 @@ namespace Camiher.UI.AdministrationCenter
     /// </summary>
     public partial class NotificationClient : Window
     {
-        Model1Container _dataDC = ModelSingleton.getDataDC;
+        CamiherContext _dataDC = ModelSingleton.getDataDC;
         private ProductsSet _product;
         List<NotificationListItem> Notification;
         public NotificationClient(ProductsSet Product)
         {
             InitializeComponent();
             _product = Product;
-            var productList = from c in _dataDC.ProductsSet
-                              where _dataDC.NotificationSet.Where(S => S.ProductID == _product.Id).Select(S => S.SearchID).Contains(c.Id)
+            var productList = from c in _dataDC.Products
+                              where _dataDC.Notifications.Where(S => S.ProductID == _product.Id).Select(S => S.Search_ID).Contains(c.Id)
                               select c;
 
 
             Notification = (from n in productList
-                                                       join cl in _dataDC.ClientSet on n.Proveedor_ID equals cl.Id
+                                                       join cl in _dataDC.Clients on n.Proveedor_ID equals cl.Id
                                                        select new NotificationListItem
                                                        {
                                                            Name = cl.Name + " " + cl.Surname,
@@ -87,14 +87,14 @@ namespace Camiher.UI.AdministrationCenter
                     {
                         newSale.LastEmailDate = new DateTime(1900, 1, 1);
                     }
-                    _dataDC.SaleSet.AddObject(newSale);
+                    _dataDC.Sales.Add(newSale);
                 }
                 if (NTC.DeleteSearch) {
-                    _dataDC.ProductsSet.DeleteObject(_dataDC.ProductsSet.First(S => S.Id == NTC.SearchID));
+                    _dataDC.Products.Remove(_dataDC.Products.First(S => S.Id == NTC.SearchID));
                 }
                 if (NTC.DeleteSearch || NTC.RequestProduct) { 
-                _dataDC.NotificationSet.DeleteObject(_dataDC.NotificationSet.First(S=>S.ProductID==_product.Id
-                                                                                    && S.SearchID == NTC.SearchID));
+                _dataDC.Notifications.Remove(_dataDC.Notifications.First(S=>S.ProductID==_product.Id
+                                                                                    && S.Search_ID == NTC.SearchID));
                 }
                 _dataDC.SaveChanges();
             }

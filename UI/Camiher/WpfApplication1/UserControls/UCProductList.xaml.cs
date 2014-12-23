@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Input;
 using Camiher.Libs.Common;
 using Camiher.Libs.DataProviders;
 using Camiher.Libs.DataProviders.Interfaces;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.UI.AdministrationCenter.Models;
 using Camiher.UI.AdministrationCenter.Products;
+using RavSoft.GoogleTranslator;
 
 namespace Camiher.UI.AdministrationCenter.UserControls
 {
@@ -19,7 +22,7 @@ namespace Camiher.UI.AdministrationCenter.UserControls
     {
         private IBusinessOperationProvider operationProvider;
         ObservableProduct lp;
-        private  Model1Container _dataDC;
+        private  CamiherContext _dataDC;
         private string marca="";
         private Boolean _IsfilterMode = true;
        
@@ -165,7 +168,7 @@ namespace Camiher.UI.AdministrationCenter.UserControls
                     {
                         String file = ProductsSetListView.SelectedItem.ToString();
                         ProductsSet p = (ProductsSet)ProductsSetListView.SelectedItem;
-
+                        string predescription = p.Descripcion;
                         Machine productdetails = new Machine(p);
                         productdetails._new = false;
                         
@@ -173,8 +176,26 @@ namespace Camiher.UI.AdministrationCenter.UserControls
                        
                         if (!productdetails.Cancel)
                         {
-                            _dataDC.SaveChanges();
-                            checkNotifications(p);
+                            if (Properties.Settings.Default.OnlineMode)
+                            {
+                                ProductTranslations[] translations = null;
+                                if (predescription != p.Descripcion)
+                                {
+                                    translations = GetProductTranslation(p).ToArray();
+                                }
+
+                                if(!operationProvider.UpdateProduct(p,translations).IsCorrect)
+                                {
+                                    MessageBox.Show("Error updating product in server");
+                                }
+                            }
+                            else
+                            {
+                                _dataDC.SaveChanges(); 
+                            }
+                            
+                            //Activate in future
+                            //checkNotifications(p);
                         }
                         
                     }
@@ -189,9 +210,9 @@ namespace Camiher.UI.AdministrationCenter.UserControls
 
         static public void checkNotifications(ProductsSet p)
         {
-            Model1Container _dataDC = ModelSingleton.getDataDC;
+            CamiherContext _dataDC = ModelSingleton.getDataDC;
             Boolean newinserted = false;                   
-            foreach (ProductsSet Product in _dataDC.ProductsSet.Where(S=>S.Enbusca == "True"
+            foreach (ProductsSet Product in _dataDC.Products.Where(S=>S.Enbusca == "True"
                                                                         && p.Producto.ToLower().Contains(S.Producto.ToLower())
                                                                         && (p.Marca.ToLower().Contains(S.Marca) || S.Marca == "")
                                                                         && (p.Modelo.ToLower().Contains(S.Modelo.ToLower()) || S.Modelo == "")
@@ -201,17 +222,17 @@ namespace Camiher.UI.AdministrationCenter.UserControls
                                                                         )
                                                                        )
             {
-                if (_dataDC.SaleSet.Where(S => S.Client_ID == Product.Proveedor_ID && S.Product_ID == p.Id).Count() == 0)
+                if (_dataDC.Sales.Where(S => S.Client_ID == Product.Proveedor_ID && S.Product_ID == p.Id).Count() == 0)
                 {
-                    if (_dataDC.NotificationSet.Where(S => S.ProductID == p.Id && S.SearchID == Product.Id).Count() == 0)
+                    if (_dataDC.Notifications.Where(S => S.ProductID == p.Id && S.Search_ID == Product.Id).Count() == 0)
                     {
                         NotificationSet newNotification = new NotificationSet();
                         Ramdom r = new Ramdom();
                         newNotification.ID = r.RandomString(32);
 
                         newNotification.ProductID = p.Id;
-                        newNotification.SearchID = Product.Id;
-                        _dataDC.AddToNotificationSet(newNotification);
+                        newNotification.Search_ID = Product.Id;
+                        _dataDC.Notifications.Add(newNotification);
                         newinserted = true;
                     }
                 }
@@ -239,15 +260,51 @@ namespace Camiher.UI.AdministrationCenter.UserControls
            
             if (productdetails._new && !productdetails.Cancel)
             {
+                var translations = GetProductTranslation(p);
+
+                if (Properties.Settings.Default.OnlineMode)
+                {
+                    if (!operationProvider.AddProduct(p,translations.ToArray()).IsCorrect)
+                    {
+                        MessageBox.Show("Error adding product in server");
+                    }
+                }
+                else
+                {
+                    _dataDC.Products.Add(p);
+                    _dataDC.SaveChanges();
+                }
                 lp.Add(p);
-                _dataDC.ProductsSet.AddObject(p);
-                _dataDC.SaveChanges();
                 filter();
-                checkNotifications(p);
+                //Activate in future
+                //checkNotifications(p);
             }
            
 
         }
+
+        private List<ProductTranslations> GetProductTranslation(ProductsSet p)
+        {
+            String[] Languages = new[] {"English", "German"};
+            string originalLanguage = "Spanish";
+            Translator t = new Translator();
+            t.SourceLanguage = originalLanguage;
+            t.SourceText = p.Descripcion;
+            var translations = new List<ProductTranslations>();
+            foreach (string language in Languages)
+            {
+                t.TargetLanguage = language;
+                t.Translate();
+                var translation = new ProductTranslations();
+                translation.Description = t.Translation;
+                translation.Id = new Ramdom().RandomString(8);
+                translation.Language = language;
+                translation.Product = p.Id;
+                translations.Add(translation);
+            }
+            return translations;
+        }
+
         private void filter(){
             decimal Maxprice;
             string fProducto = producto.ToLower();
@@ -276,25 +333,31 @@ namespace Camiher.UI.AdministrationCenter.UserControls
 
         private void Borrar_Click(object sender, RoutedEventArgs e)
         {
-            if (ProductsSetListView.SelectedItem!= null)
+            //redo in future
+            //if (ProductsSetListView.SelectedItem!= null)
+            //{
+            //string productID = (ProductsSetListView.SelectedItem as ProductsSet).Id;
+            ////If there are clients who requested the product ask the user if he is sure
+            //if (_dataDC.Sales.Where(S => S.Product_ID == productID && S.FinalPrice == 0).Count() > 0)
+            //{
+            //    if (MessageBox.Show("Algunos clientes han solicitado este producto, si borra el producto se borraran las solicitudes de los clientes para este producto¿Desea Continuar?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+            //    {
+            //        //do no stuff
+            //    }
+            //    else
+            //    {
+            //        DeleteProduct(productID);
+            //    }
+            //}
+            //else
+            //{
+            //    DeleteProduct(productID);
+            //}
+            //}
+            if (ProductsSetListView.SelectedItem != null)
             {
-            string productID = (ProductsSetListView.SelectedItem as ProductsSet).Id;
-            //If there are clients who requested the product ask the user if he is sure
-            if (_dataDC.SaleSet.Where(S => S.Product_ID == productID && S.FinalPrice == 0).Count() > 0)
-            {
-                if (MessageBox.Show("Algunos clientes han solicitado este producto, si borra el producto se borraran las solicitudes de los clientes para este producto¿Desea Continuar?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
-                {
-                    //do no stuff
-                }
-                else
-                {
-                    DeleteProduct(productID);
-                }
-            }
-            else
-            {
+                string productID = (ProductsSetListView.SelectedItem as ProductsSet).Id;
                 DeleteProduct(productID);
-            }
             }
         }
 
@@ -315,16 +378,29 @@ namespace Camiher.UI.AdministrationCenter.UserControls
             product.Enbusca = "false";
             product.Enventa = "false";
             product.Proveedor_ID = "Borrado";
-            foreach (SaleSet item in _dataDC.SaleSet.Where(S => S.Product_ID == productID && S.FinalPrice==0)) 
+            //foreach (SaleSet item in _dataDC.Sales.Where(S => S.Product_ID == productID && S.FinalPrice==0)) 
+            //{
+            //    _dataDC.Sales.Remove(item);
+            //}
+            //foreach (NotificationSet item in _dataDC.Notifications.Where(S => S.ProductID == productID))
+            //{
+            //    _dataDC.Notifications.Remove(item);
+            //}
+            if (Properties.Settings.Default.OnlineMode)
             {
-                _dataDC.SaleSet.DeleteObject(item);
+                if (!operationProvider.DeleteProduct(product.Id).IsCorrect)
+                {
+                    MessageBox.Show("Error deleting product in server");
+                }
+                lp.Remove(product);
+                
             }
-            foreach (NotificationSet item in _dataDC.NotificationSet.Where(S => S.ProductID == productID))
+            else
             {
-                _dataDC.NotificationSet.DeleteObject(item);
+                _dataDC.SaveChanges();
+                lp = new ObservableProduct(_dataDC);
             }
-            _dataDC.SaveChanges();
-            lp = new ObservableProduct(_dataDC);
+            
             ProductsSetListView.ItemsSource = lp;
         }
 

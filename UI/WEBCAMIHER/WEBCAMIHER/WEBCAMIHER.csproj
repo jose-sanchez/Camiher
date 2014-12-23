@@ -184,7 +184,19 @@
     <Compile Include="Areas\Handlers\HandlersAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\ProductsModel.cs" />
+    <Compile Include="Views\Products\ProductsStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductsStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\SharedStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SharedStrings.resx</DependentUpon>
+    </Compile>
     <Content Include="Areas\Handlers\Views\Web.config" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -369,6 +381,8 @@
     <Content Include="Views\Home\Housing.cshtml" />
     <Content Include="Views\Content\Index.cshtml" />
     <Content Include="Views\Home\Products.cshtml" />
+    <Content Include="Views\Products\ListProducts.cshtml" />
+    <Content Include="Views\Products\ProductDescription.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -378,6 +392,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Products\ProductsStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProductsStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\SharedStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libs\DataProviders\DataProviders\DataProviders.csproj">
+      <Project>{3338fd4a-4c30-48ae-a767-2ac9a2e9b34b}</Project>
+      <Name>DataProviders</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Server\DAL\CamiherDAL\CamiherDAL\CamiherDAL.csproj">
+      <Project>{59830872-57c8-48de-b004-7ec8c3f99fe8}</Project>
+      <Name>CamiherDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libs\Server\WebServicesObjects\WebServicesObjects.csproj">
+      <Project>{73a9976f-76ee-4d75-9797-38246bafe6d5}</Project>
+      <Name>WebServicesObjects</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

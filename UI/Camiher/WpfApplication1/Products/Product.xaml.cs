@@ -5,11 +5,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Camiher.Libs.Common;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.DataProviders;
 using Camiher.UI.AdministrationCenter.Clients;
 using Camiher.UI.AdministrationCenter.Models;
 using Camiher.UI.AdministrationCenter.Providers;
 using Validation = Camiher.Libs.Common.Validation;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 
 namespace Camiher.UI.AdministrationCenter.Products
 {
@@ -39,7 +40,7 @@ namespace Camiher.UI.AdministrationCenter.Products
             set { _cancel = value; }
         }
         Boolean isnew;
-        Model1Container _dataDC;
+        CamiherContext _dataDC;
         ProductsSet _product;
         public Boolean _new
         {
@@ -67,28 +68,28 @@ namespace Camiher.UI.AdministrationCenter.Products
             {
                 System.IO.Directory.CreateDirectory(productPath);
             }
-            ProveedorSet p;
+            ProvidersSet p;
             if (product.Proveedor_ID != null && product.Proveedor_ID !="")
             {
-                p = (ProveedorSet)_dataDC.ProveedorSet.Where(S => S.Id == product.Proveedor_ID).ToList()[0];
+                p = (ProvidersSet)_dataDC.Providers.Where(S => S.Id == product.Proveedor_ID).ToList()[0];
             }
             else {
-            p = new ProveedorSet();
+            p = new ProvidersSet();
             }
 
             if (product.Descripcion != "" && product.Descripcion != null) { tbdescription.Text = product.Descripcion; }
-        
-            
-            cbProducto.ItemsSource = _dataDC.ProductsSet.Select(S => S.Producto).Distinct().ToList();
-            cbModelo.ItemsSource = _dataDC.ProductsSet.Select(S => S.Modelo).Distinct().ToList();
-            cbMarca.ItemsSource = _dataDC.ProductsSet.Select(S => S.Marca).Distinct().ToList();
+
+            var Products = DataProvidersFactory.GetBusinessOperationProvider().GetProductsToSale();
+            cbProducto.ItemsSource = Products.Select(S => S.Producto).Distinct().ToList();
+            cbModelo.ItemsSource = Products.Select(S => S.Modelo).Distinct().ToList();
+            cbMarca.ItemsSource = Products.Select(S => S.Marca).Distinct().ToList();
             this.DataContext = product;
-            tbProvider.ItemsSource = _dataDC.ProveedorSet.Select(S=> S ).ToList();
+            tbProvider.ItemsSource = Products.Select(S => S).ToList();
             tbProvider.SelectedItem = p ;
 
-            ClientList.ItemsSource = from c in _dataDC.ClientSet
-                                     where _dataDC.SaleSet.Where(S => S.Product_ID == _product.Id).Select(S => S.Client_ID).Contains(c.Id)
-                                     select c;
+            //ClientList.ItemsSource = from c in _dataDC.Clients //Restaurar
+            //                         where _dataDC.Sales.Where(S => S.Product_ID == _product.Id).Select(S => S.Client_ID).Contains(c.Id)
+            //                         select c;
 
             for (int añoindex = 1900; añoindex < 2025; añoindex++)
             {
@@ -102,7 +103,7 @@ namespace Camiher.UI.AdministrationCenter.Products
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             if(validateFields()){
-            ProveedorSet p;
+            ProvidersSet p;
             _product.Marca = tbMarca.Text;
             _product.Modelo = tbModelo.Text;
             _product.Producto = tbProducto.Text;
@@ -111,7 +112,7 @@ namespace Camiher.UI.AdministrationCenter.Products
             if (tbProvider.SelectedIndex >= 0)
             {
 
-                p = (ProveedorSet)tbProvider.SelectedItem;
+                p = (ProvidersSet)tbProvider.SelectedItem;
                 _product.Proveedor_ID = p.Id;
             }
             else _product.Proveedor_ID = "";
@@ -232,7 +233,8 @@ namespace Camiher.UI.AdministrationCenter.Products
                 {
                     if (tb.Text.Count() > 0 && tb.Text[0] == '0')
                     {
-                        e.Handled = true;
+                        tb.Text = String.Empty;
+                        e.Handled = false;
                     }
                     else { e.Handled = false; }
                 }
@@ -261,7 +263,7 @@ namespace Camiher.UI.AdministrationCenter.Products
         private void btViewProvider_Click(object sender, RoutedEventArgs e)
         {
             if( tbProvider.SelectedItem!=null){
-            ProveedorSet p = tbProvider.SelectedItem as ProveedorSet;
+            ProvidersSet p = tbProvider.SelectedItem as ProvidersSet;
             Provider providerdetails = new Provider(p);
             providerdetails._new = false;
            

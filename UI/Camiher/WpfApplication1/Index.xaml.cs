@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.DataProviders;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.UI.AdministrationCenter.Models;
 using Camiher.UI.AdministrationCenter.Products;
 using Validation = Camiher.Libs.Common.Validation;
@@ -15,9 +18,10 @@ namespace Camiher.UI.AdministrationCenter
     /// </summary>
     public partial class Index : Page
     {
-        Model1Container _dataDC;
+        CamiherContext _dataDC;
         ObservableProductSearch ProductSearch;
         Boolean Updatenotification = true;
+        private IEnumerable<ProductsSet> Products;
         public Index()
         {
             this.Dispatcher.UnhandledException += OnDispatcherUnhandledException;
@@ -27,21 +31,22 @@ namespace Camiher.UI.AdministrationCenter
               
              Product_List.LWidth = 500;
              Product_List.LHeight = 400;
-             Provider_List.LWidth = 500;
-             Provider_List.LHeight = 400;
-             Client_List.LWidth = 500;
-             Client_List.LHeight = 400;
+             //Provider_List.LWidth = 500; Restaurar
+             //Provider_List.LHeight = 400;
+             //Client_List.LWidth = 500;
+             //Client_List.LHeight = 400;
              _dataDC = ModelSingleton.getDataDC;
+             Products = DataProvidersFactory.GetBusinessOperationProvider().GetProductsToSale();
              StartRutines.Database_Backup();
-             ProductSearch = new ObservableProductSearch(_dataDC);
+             //ProductSearch = new ObservableProductSearch(_dataDC); Restaurar
              UpdateNotificationList();
 
              string[] todos = new string[] { "Todos" };
 
 
-             cbProducto.ItemsSource = _dataDC.ProductsSet.Select(S => S.Producto).Distinct().Union(todos).ToList();
-             cbMarca.ItemsSource = _dataDC.ProductsSet.Select(S => S.Marca).Distinct().Union(todos).ToList();
-             cbModelo.ItemsSource = _dataDC.ProductsSet.Select(S => S.Modelo).Distinct().Union(todos).ToList();
+             cbProducto.ItemsSource = Products.Select(S => S.Producto).Distinct().Union(todos).ToList();
+             cbMarca.ItemsSource = Products.Select(S => S.Marca).Distinct().Union(todos).ToList();
+             cbModelo.ItemsSource = Products.Select(S => S.Modelo).Distinct().Union(todos).ToList();
              int añoindex;
              for (añoindex = 1900; añoindex < 2025; añoindex++)
              {
@@ -52,14 +57,14 @@ namespace Camiher.UI.AdministrationCenter
 
         private void UpdateNotificationList()
         {
-            var NoticationbyProduct = (from pr in _dataDC.ProductsSet
-                                       where _dataDC.NotificationSet.Select(S => S.ProductID).Contains(pr.Id)
-                                       select pr).ToList();
+            //var NoticationbyProduct = (from pr in _dataDC.Products Restaurar
+            //                           where _dataDC.Notifications.Select(S => S.ProductID).Contains(pr.Id)
+            //                           select pr).ToList();
 
             //ListNotification.ItemsSource = (from pr in _dataDC.ProductsSet
             //                                where _dataDC.NotificationSet.Select(S => S.ProductID).Contains(pr.Id)
             //                                select pr).ToList();
-            ListNotification.ItemsSource = NoticationbyProduct;
+            //ListNotification.ItemsSource = NoticationbyProduct; Restaurar
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -82,39 +87,39 @@ namespace Camiher.UI.AdministrationCenter
             cbMarca.IsDropDownOpen = true;
         }
 
-        private void ListRequestedProduct_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            if (ListRequestedProduct.Items.Count > 0 && ListRequestedProduct.SelectedItem != null)
-            {
-                ProductSearched search = new ProductSearched((ProductsSet)ListRequestedProduct.SelectedItem);
+        //private void ListRequestedProduct_MouseDoubleClick(object sender, MouseButtonEventArgs e) Restaurar
+        //{
+        //    if (ListRequestedProduct.Items.Count > 0 && ListRequestedProduct.SelectedItem != null)
+        //    {
+        //        ProductSearched search = new ProductSearched((ProductsSet)ListRequestedProduct.SelectedItem);
                 
-                search.ShowDialog();
+        //        search.ShowDialog();
                 
-                if (search.Cancel)
-                {
-                    _dataDC.SaveChanges();
-                }
+        //        if (search.Cancel)
+        //        {
+        //            _dataDC.SaveChanges();
+        //        }
 
-            }
-        }
+        //    }
+        //}
 
-        private void pendingRequest(object sender, RoutedEventArgs e)
-        {
+        //private void pendingRequest(object sender, RoutedEventArgs e) Restaurar
+        //{
 
-            ListRequestedProduct.ItemsSource = ProductSearch;
-        }
+        //    ListRequestedProduct.ItemsSource = ProductSearch;
+        //}
 
-        private void List_Notification(object sender, MouseButtonEventArgs e)
-        {
-            if (ListNotification.SelectedItem != null)
-            {
-                ProductsSet selectedProduct = (ProductsSet)ListNotification.SelectedItem;
-                NotificationClient NCWindow = new NotificationClient(selectedProduct);
+        //private void List_Notification(object sender, MouseButtonEventArgs e) Restaurar
+        //{
+        //    if (ListNotification.SelectedItem != null)
+        //    {
+        //        ProductsSet selectedProduct = (ProductsSet)ListNotification.SelectedItem;
+        //        NotificationClient NCWindow = new NotificationClient(selectedProduct);
                 
-                NCWindow.ShowDialog();
+        //        NCWindow.ShowDialog();
                 
-            }
-        }
+        //    }
+        //}
 
         private void NotificationsFocus(object sender, RoutedEventArgs e)
         {
@@ -184,25 +189,25 @@ namespace Camiher.UI.AdministrationCenter
 
         private void tabControl1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string[] todos = new string[] { "Todos" };
-            cbProducto.ItemsSource = _dataDC.ProductsSet.Select(S => S.Producto).Distinct().Union(todos).ToList();
-            ProductSearch = new ObservableProductSearch(_dataDC);
-            ListRequestedProduct.ItemsSource = ProductSearch;
+            //string[] todos = new string[] { "Todos" };Restaurar
+            //cbProducto.ItemsSource = _dataDC.Products.Select(S => S.Producto).Distinct().Union(todos).ToList();
+            //ProductSearch = new ObservableProductSearch(_dataDC); 
+            //ListRequestedProduct.ItemsSource = ProductSearch; 
             //Product_List.refresh();
-            UpdateNotificationList();
+            //UpdateNotificationList();
             
         }
 
         private void cbProducto_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string[] todos = new string[] { "Todos" };
-            cbMarca.ItemsSource = _dataDC.ProductsSet.Where(S => S.Producto == cbProducto.SelectedValue).Select(S => S.Marca).Distinct().Union(todos).ToList();
+            cbMarca.ItemsSource = Products.Where(S => S.Producto == cbProducto.SelectedValue).Select(S => S.Marca).Distinct().Union(todos).ToList();
         }
 
         private void cbMarca_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string[] todos = new string[] { "Todos" };
-            cbModelo.ItemsSource = _dataDC.ProductsSet.Where(S => S.Marca == cbMarca.SelectedValue).Select(S => S.Modelo).Distinct().Union(todos).ToList();
+            cbModelo.ItemsSource = Products.Where(S => S.Marca == cbMarca.SelectedValue).Select(S => S.Modelo).Distinct().Union(todos).ToList();
         }
 
         void OnDispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
@@ -210,7 +215,7 @@ namespace Camiher.UI.AdministrationCenter
             string errorMessage = string.Format("An unhandled exception occurred: {0}", e.Exception.Message);
             MessageBox.Show(errorMessage, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             e.Handled = true;
-            MessageBox.Show(ModelSingleton.getDataDC.Connection.DataSource);
+            MessageBox.Show(ModelSingleton.getDataDC.Connection);
         }
     }
 

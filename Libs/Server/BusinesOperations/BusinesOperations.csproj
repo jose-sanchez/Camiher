@@ -30,9 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClassLibrary1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\ClassLibrary1.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\DAL\CamiherLocalDAL\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,9 +54,9 @@
       <Project>{7c9b4ac9-07bf-4701-97c3-ac623b8d8c9f}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\CamiherLocalDAL\CamiherLocalDal\DAL.csproj">
-      <Project>{d29840e8-c1ce-4ab6-acd3-1a839aa6cb3e}</Project>
-      <Name>DAL</Name>
+    <ProjectReference Include="..\DAL\CamiherDAL\CamiherDAL\CamiherDAL.csproj">
+      <Project>{59830872-57c8-48de-b004-7ec8c3f99fe8}</Project>
+      <Name>CamiherDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

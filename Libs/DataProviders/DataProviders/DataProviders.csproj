@@ -30,9 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClassLibrary1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\ClassLibrary1.dll</HintPath>
-    </Reference>
+    <Reference Include="Camiher.Libs.Server.DAL.CamiherDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Logger">
       <HintPath>..\..\Common\Logger\Logger\bin\Debug\Logger.dll</HintPath>
     </Reference>
@@ -70,7 +68,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\Camiher.Libs.Server.WebServicesObjects.BaseResponse.datasource" />
+    <None Include="Properties\DataSources\Camiher.Libs.Server.WebServicesObjects.ProductsImagesResponse.datasource" />
     <None Include="Properties\DataSources\Camiher.Libs.Server.WebServicesObjects.ProductsResponse.datasource" />
+    <None Include="Properties\DataSources\Camiher.Libs.Server.WebServicesObjects.ProductsTranslationResponse.datasource" />
     <None Include="Properties\DataSources\Camiher.Libs.Server.WebServicesObjects.SaleResponse.datasource" />
     <None Include="Properties\DataSources\Camiher.Libs.Server.WebServicesObjects.SoldProductsResponse.datasource" />
     <None Include="Service References\CamiherService\Camiher.Libs.DataProviders.CamiherService.CompositeType.datasource">
@@ -102,9 +102,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Server\DAL\CamiherLocalDAL\CamiherLocalDal\DAL.csproj">
-      <Project>{D29840E8-C1CE-4AB6-ACD3-1A839AA6CB3E}</Project>
-      <Name>DAL</Name>
+    <ProjectReference Include="..\..\Server\DAL\CamiherDAL\CamiherDAL\CamiherDAL.csproj">
+      <Project>{59830872-57c8-48de-b004-7ec8c3f99fe8}</Project>
+      <Name>CamiherDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Server\WebServicesObjects\WebServicesObjects.csproj">
       <Project>{73a9976f-76ee-4d75-9797-38246bafe6d5}</Project>

@@ -8,3 +8,14 @@ C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debu
 C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Debug\ClassLibrary1.dll
 C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Debug\ClassLibrary1.pdb
 C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\josehp\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\ClassLibrary1.dll.config
+C:\Users\jose\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\ClassLibrary1.dll.config
+C:\Users\jose\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\ClassLibrary1.dll
+C:\Users\jose\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\ClassLibrary1.pdb
+C:\Users\jose\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Debug\ClassLibrary1.dll
+C:\Users\jose\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\obj\Debug\ClassLibrary1.pdb
+C:\Users\jose\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\jose\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\EntityFramework.dll
+C:\Users\jose\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jose\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\EntityFramework.xml
+C:\Users\jose\Camiher\Libs\Server\DAL\CamiherLocalDAL\CamiherLocalDal\bin\Debug\EntityFramework.SqlServer.xml

@@ -103,6 +103,10 @@ img.resize{
     height: 540px;
 }
 /*Camiher-------------------------*/
+.productList {
+  border-style: outset;  
+  }
+
 #leftcolum {
     width:500px;
     margin-right:0px;

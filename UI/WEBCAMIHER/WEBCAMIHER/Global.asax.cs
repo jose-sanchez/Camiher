@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -24,5 +25,13 @@ namespace WEBCAMIHER
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
         }
+
+        protected void Application_AcquireRequestState(object sender, EventArgs e)
+         {
+             //Create culture info object 
+             CultureInfo ci = new CultureInfo("es");    
+             System.Threading.Thread.CurrentThread.CurrentUICulture = ci;
+             System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(ci.Name);
+         }
     }
 }

@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using Camiher.Libs.Common;
 using Camiher.Libs.DataProviders;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.UI.AdministrationCenter.Helpers;
 using Camiher.UI.AdministrationCenter.Models;
 using Camiher.UI.AdministrationCenter.Products;
@@ -27,7 +27,7 @@ namespace Camiher.UI.AdministrationCenter.Clients
         }
 
         private Boolean isnew;
-        Model1Container _dataDC;
+        CamiherContext _dataDC;
         ClientSet _client;
         ObservableProductSearch lps;
         ObservableProduct lrequestedproduct;
@@ -62,7 +62,7 @@ namespace Camiher.UI.AdministrationCenter.Clients
         {
             lrequestedproduct = new ObservableProduct(_dataDC);
             var q1 = from c in lrequestedproduct
-                     join o in _dataDC.SaleSet on c.Id equals o.Product_ID
+                     join o in _dataDC.Sales on c.Id equals o.Product_ID
                      where o.Client_ID == _client.Id
                      select new ItemRequestedProductList
                      {
@@ -99,7 +99,7 @@ namespace Camiher.UI.AdministrationCenter.Clients
                 _client.Name = tbName.Text;
                 foreach (ItemRequestedProductList item in lvProductRequested.Items)
                 {
-                    _dataDC.SaleSet.First(S => S.Id == item.SaleID).PriceforClient = item.ClientPrice;
+                    _dataDC.Sales.First(S => S.Id == item.SaleID).PriceforClient = item.ClientPrice;
                 }
 
                 this.Close();
@@ -120,7 +120,7 @@ namespace Camiher.UI.AdministrationCenter.Clients
             if (search._new && !search.Cancel)
             {
                 lps.Add(newProduct);
-                _dataDC.ProductsSet.AddObject(newProduct);
+                _dataDC.Products.Add(newProduct);
                 _dataDC.SaveChanges();
                 lvProductSearched.ItemsSource = lps.Where(S => S.Enbusca == true.ToString() && S.Proveedor_ID == _client.Id).ToList();
             }
@@ -183,7 +183,7 @@ namespace Camiher.UI.AdministrationCenter.Clients
         {
             if (lvProductSearched.SelectedItem != null)
             {
-                _dataDC.ProductsSet.DeleteObject((lvProductSearched.SelectedItem as ProductsSet));
+                _dataDC.Products.Remove((lvProductSearched.SelectedItem as ProductsSet));
                 _dataDC.SaveChanges();
                 lps = new ObservableProductSearch(_dataDC);
                 lvProductSearched.ItemsSource = lps;
@@ -197,8 +197,8 @@ namespace Camiher.UI.AdministrationCenter.Clients
         }
         static void DeleteProductRequest(string ClientID, string ProductID)
         {
-            Model1Container dataDC = ModelSingleton.getDataDC;
-            dataDC.SaleSet.DeleteObject(dataDC.SaleSet.First(S => S.Client_ID == ClientID
+            CamiherContext dataDC = ModelSingleton.getDataDC;
+            dataDC.Sales.Remove(dataDC.Sales.First(S => S.Client_ID == ClientID
                                     && S.Product_ID == ProductID));
             MessageBox.Show("La solicitud para este producto ha sido borrada");
             dataDC.SaveChanges();
@@ -336,7 +336,7 @@ namespace Camiher.UI.AdministrationCenter.Clients
                     MessageBox.Show("El correo no pudo ser enviado");
                 else
                 {
-                    _dataDC.SaleSet.First(S => S.Id == ItemProduct.SaleID).LastEmailDate = DateTime.Now;
+                    _dataDC.Sales.First(S => S.Id == ItemProduct.SaleID).LastEmailDate = DateTime.Now;
                     _dataDC.SaveChanges();
                 }
             }

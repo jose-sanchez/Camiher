@@ -1,4 +1,4 @@
-﻿using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+﻿using Camiher.Libs.Server.DAL.CamiherDAL;
 
 namespace BusinesOperations.Interfaces
 {

@@ -1,5 +1,5 @@
 ﻿using System.Runtime.Serialization;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 
 namespace Camiher.Libs.Server.WebServicesObjects
 {

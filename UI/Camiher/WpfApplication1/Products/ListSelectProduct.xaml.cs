@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using Camiher.Libs.Common;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.UI.AdministrationCenter.Helpers;
 using Camiher.UI.AdministrationCenter.Models;
 using Camiher.UI.AdministrationCenter.UserControls;
@@ -28,7 +28,7 @@ namespace Camiher.UI.AdministrationCenter.Products
         Boolean isnew;
         List< ProductsSet> addedlist;
         List<SaleSet> AddSaleList;
-        Model1Container _dataDC;
+        CamiherContext _dataDC;
 
         ObservableSale SaleList;
         List<SaleListItem> ItemList;
@@ -59,9 +59,9 @@ namespace Camiher.UI.AdministrationCenter.Products
             ItemList = new  List<SaleListItem>();
             Product_List.MouseDoubleClick += AddProduct;
             string[] todos = new string[] { "Todos" };
-            cbProducto.ItemsSource = _dataDC.ProductsSet.Select(S => S.Producto).Distinct().Union(todos).ToList();
-            cbMarca.ItemsSource = _dataDC.ProductsSet.Select(S => S.Marca).Distinct().Union(todos).ToList();
-            cbModelo.ItemsSource = _dataDC.ProductsSet.Select(S => S.Modelo).Distinct().Union(todos).ToList();
+            cbProducto.ItemsSource = _dataDC.Products.Select(S => S.Producto).Distinct().Union(todos).ToList();
+            cbMarca.ItemsSource = _dataDC.Products.Select(S => S.Marca).Distinct().Union(todos).ToList();
+            cbModelo.ItemsSource = _dataDC.Products.Select(S => S.Modelo).Distinct().Union(todos).ToList();
             int añoindex;
             for (añoindex = 1900; añoindex < 2025; añoindex++)
             {
@@ -75,7 +75,7 @@ namespace Camiher.UI.AdministrationCenter.Products
             if (s.ProductsSetListView.SelectedItem != null)
             {
                 ProductsSet productSelected = (ProductsSet)s.ProductsSetListView.SelectedItem;
-                if (_dataDC.SaleSet.Where(S => S.Client_ID == _clientID &&
+                if (_dataDC.Sales.Where(S => S.Client_ID == _clientID &&
                                                S.Product_ID == productSelected.Id).Count()==0)
                 {
                     SaleListItem Item = new SaleListItem();
@@ -117,7 +117,7 @@ namespace Camiher.UI.AdministrationCenter.Products
                             item.Name + " no pudo ser enviado");
                     }
                 }
-                _dataDC.SaleSet.AddObject(newSale);
+                _dataDC.Sales.Add(newSale);
 
             }
             _dataDC.SaveChanges();
@@ -188,13 +188,13 @@ namespace Camiher.UI.AdministrationCenter.Products
         private void cbProducto_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string[] todos = new string[] { "Todos" };
-            cbMarca.ItemsSource = _dataDC.ProductsSet.Where(S => S.Producto == cbProducto.SelectedValue).Select(S => S.Marca).Distinct().Union(todos).ToList();
+            cbMarca.ItemsSource = _dataDC.Products.Where(S => S.Producto == cbProducto.SelectedValue).Select(S => S.Marca).Distinct().Union(todos).ToList();
         }
 
         private void cbMarca_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string[] todos = new string[] { "Todos" };
-            cbModelo.ItemsSource = _dataDC.ProductsSet.Where(S => S.Marca == cbMarca.SelectedValue).Select(S => S.Modelo).Distinct().Union(todos).ToList();
+            cbModelo.ItemsSource = _dataDC.Products.Where(S => S.Marca == cbMarca.SelectedValue).Select(S => S.Modelo).Distinct().Union(todos).ToList();
         }
 
  

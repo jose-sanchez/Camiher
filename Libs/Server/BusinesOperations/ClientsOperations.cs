@@ -1,8 +1,8 @@
-﻿using System.Data.Objects;
+﻿using System.Collections.Generic;
+using System.Data.Objects;
 using System.Linq;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.Libs.Server.BusinesOperations.Interfaces;
-using ClassLibrary1;
 
 namespace Camiher.Libs.Server.BusinesOperations
 {
@@ -10,20 +10,20 @@ namespace Camiher.Libs.Server.BusinesOperations
     {
         public void ClientBuyProduct(string clientId, string productId, string currentSale)
         {
-            var dataDc = new Model1Container();
-            ProductsSet product = dataDc.ProductsSet.First(s => s.Id == productId);
-            SaleSet currentsale = dataDc.SaleSet.First(s => s.Client_ID == clientId
+            var dataDc = new CamiherContext();
+            ProductsSet product = dataDc.Products.First(s => s.Id == productId);
+            SaleSet currentsale = dataDc.Sales.First(s => s.Client_ID == clientId
                                                         && s.Product_ID == productId);
 
             product.Enventa = "false";
-            foreach (SaleSet item in dataDc.SaleSet.Where(s => s.Product_ID == productId
+            foreach (SaleSet item in dataDc.Sales.Where(s => s.Product_ID == productId
                        && s.Id != currentsale.Id))
             {
-                dataDc.SaleSet.DeleteObject(item);
+                dataDc.Sales.Remove(item);
             }
-            foreach (NotificationSet item in dataDc.NotificationSet.Where(s => s.ProductID == productId))
+            foreach (NotificationSet item in dataDc.Notifications.Where(s => s.ProductID == productId))
             {
-                dataDc.NotificationSet.DeleteObject(item);
+                dataDc.Notifications.Remove(item);
             }
             dataDc.SaveChanges();
         }
@@ -37,8 +37,8 @@ namespace Camiher.Libs.Server.BusinesOperations
         public SaleSet GetCurrentSale(string clientId, string productId)
         {
 
-            var dataDc = new Model1Container();
-            SaleSet currentsale = dataDc.SaleSet.First(s => s.Client_ID == clientId
+            var dataDc = new CamiherContext();
+            SaleSet currentsale = dataDc.Sales.First(s => s.Client_ID == clientId
                                                         && s.Product_ID == productId);
             return currentsale;
 
@@ -48,12 +48,12 @@ namespace Camiher.Libs.Server.BusinesOperations
         /// Return all Sold Products 
         /// </summary>
         /// <returns>all Sold Products</returns>
-        public ObjectSet<ItemSoldProductList> GetSoldProductsByClient(string clientId)
+        public IEnumerable <ItemSoldProductList> GetSoldProductsByClient(string clientId)
         {
-            var dataDc = new Model1Container();
-            var soldProducts = dataDc.ProductsSet.Where(s => s.Enventa == "False" && s.Enbusca == "False" && s.Proveedor_ID != "Borrado");
+            var dataDc = new CamiherContext();
+            var soldProducts = dataDc.Products.Where(s => s.Enventa == "False" && s.Enbusca == "False" && s.Proveedor_ID != "Borrado");
             return (ObjectSet<ItemSoldProductList>)(from c in soldProducts
-                join sale in dataDc.SaleSet.Where(S => S.Client_ID == clientId)
+                join sale in dataDc.Sales.Where(S => S.Client_ID == clientId)
                     on c.Id equals sale.Product_ID
                 select new ItemSoldProductList
                 {
@@ -65,8 +65,8 @@ namespace Camiher.Libs.Server.BusinesOperations
 
         public ObjectSet<ProductsSet> GetSoldProducts()
         {
-            var dataDc = new Model1Container();
-            return (ObjectSet<ProductsSet>) dataDc.ProductsSet.Where(s => s.Enventa == "False" && s.Enbusca == "False" && s.Proveedor_ID != "Borrado");          
+            var dataDc = new CamiherContext();
+            return (ObjectSet<ProductsSet>) dataDc.Products.Where(s => s.Enventa == "False" && s.Enbusca == "False" && s.Proveedor_ID != "Borrado");          
         }
 
 

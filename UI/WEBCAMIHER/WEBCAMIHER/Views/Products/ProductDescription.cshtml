@@ -1,0 +1,20 @@
+﻿@using WEBCAMIHER.Views.Products
+@using WEBCAMIHER.Views.Shared
+@{
+    ViewBag.Title = "ListProducts";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Product.Producto + " " + @ViewBag.Product.Marca + " " + @ViewBag.Product.Modelo</h1>
+                <p>
+                    @ViewBag.Product.Descripcion
+                </p>
+            </hgroup>
+        </div>
+    </section>
+}
+
+

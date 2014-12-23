@@ -1,0 +1,34 @@
+﻿@using Camiher.Libs.Server.DAL.CamiherDAL
+@using WEBCAMIHER.Views.Products
+@using WEBCAMIHER.Views.Shared
+@{
+    ViewBag.Title = "ListProducts";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ProductsStrings.Title</h1>
+                <p>
+                    @ProductsStrings.TitleParraf
+                </p>
+            </hgroup>
+        </div>
+    </section>
+}
+
+<ol class="round">
+    @foreach (ProductsSet item in ViewBag.ProductList)
+{
+    <li class="productList">
+        <h5>@Html.ActionLink(@item.Producto + " " + @item.Marca + " " + @item.Modelo, "ProductDescription", "Products", item)</h5>
+        <img src=""/>
+        <p><span>@ProductsStrings.Year :</span>@item.Año</p>
+        <p><span>@ProductsStrings.Hours :</span>@item.Hours</p>
+        <p><span>@ProductsStrings.Kilometers :</span>@item.Kilometer</p>
+    </li>
+
+
+}
+</ol>

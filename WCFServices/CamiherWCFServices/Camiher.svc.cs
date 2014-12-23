@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.Libs.Server.BusinesOperations;
 using Camiher.Libs.Server.WebServicesObjects;
 
@@ -104,7 +104,7 @@ namespace CamiherWCFServices
         /// </summary>
         /// <param name="filter">filter which product should return</param>
         /// <returns>product list filtered. If filter is not good format error</returns>
-        public BaseResponse GetProducts(string filter)
+        public ProductsResponse GetProducts(string language)
         {
 
             var businessOperations = new ProductsOperation();
@@ -115,7 +115,37 @@ namespace CamiherWCFServices
 
             try
             {
-                response.Products = businessOperations.GetProducts(filter ?? String.Empty);
+                response.Products = businessOperations.GetProducts(language ?? String.Empty);
+            }
+            catch (ArgumentException ex)
+            {
+                response.ErrorResponse = ResponseError.InvalidParameters;
+            }
+            catch (Exception ex)
+            {
+                response.ErrorResponse = ResponseError.Error;
+            }
+
+            return response;
+        }
+
+        /// <summary>
+        /// Get Products from db
+        /// </summary>
+        /// <param name="filter">filter which product should return</param>
+        /// <returns>product list filtered. If filter is not good format error</returns>
+        public ProductsTranslationResponse GetProductsTranslations(string productId, string language)
+        {
+
+            var businessOperations = new ProductsOperation();
+            var response = new ProductsTranslationResponse()
+            {
+                ErrorResponse = ResponseError.Ok,
+            };
+
+            try
+            {
+                response.ProductsTranslation = businessOperations.GetTranslation(productId, language);
             }
             catch (ArgumentException ex)
             {
@@ -134,27 +164,35 @@ namespace CamiherWCFServices
         /// </summary>
         /// <param name="product"></param>
         /// <returns>true if product store succesfully</returns>
-        public BaseResponse AddProduct(ProductsSet product)
+        public BaseResponse AddProduct(ProductsSet product, IEnumerable<ProductTranslations> translations)
         {
             var businessOperations = new ProductsOperation();
             businessOperations.AddProduct(product);
 
-            var response = new ProductsResponse()
+            var response = new BaseResponse()
             {
                 ErrorResponse = ResponseError.Ok,
             };
+            if (translations != null)
+            {
+                foreach (ProductTranslations pt in translations)
+                {
+                    businessOperations.AddProductTranslation(pt);
+                }
+            }
 
             return response;
         }
+
 
         /// <summary>
         /// Add a product to the database
         /// </summary>
         /// <param name="product"></param>
         /// <returns>true if product updated succesfully</returns>
-        public BaseResponse UpdateProduct(ProductsSet product)
+        public BaseResponse UpdateProduct(ProductsSet product, IEnumerable<ProductTranslations> translations)
         {
-            var response = new ProductsResponse()
+            var response = new BaseResponse()
             {
                 ErrorResponse = ResponseError.Ok,
             };
@@ -163,11 +201,22 @@ namespace CamiherWCFServices
             {
                 var businessOperations = new ProductsOperation();
                 businessOperations.UpdateProduct(product);
+                if (translations != null)
+                {
+                    foreach (ProductTranslations pt in translations)
+                    {
+                        businessOperations.UpdateProductTranslation(product.Id, pt.Language, pt.Description);
+                    }
+                    
+                }
             }
             catch (Exception ex)
             {
+                //Addlog
                 response.ErrorResponse = ResponseError.Error;
             }
+
+
 
             return response;
         }
@@ -180,9 +229,11 @@ namespace CamiherWCFServices
         public BaseResponse DeleteProduct(string productId)
         {
             var businessOperations = new ProductsOperation();
-            var response = new ProductsResponse();
+            var response = new BaseResponse();
             if (businessOperations.DeleteProductById(productId))
             {
+                //Delete the images associate to the product
+                businessOperations.DeleteProductImages(productId);
                 response.ErrorResponse = ResponseError.Ok;
             }
             else
@@ -194,6 +245,67 @@ namespace CamiherWCFServices
             return response;
         }
 
+
         #endregion client.axml
+
+        public BaseResponse AddPictureToProduct(string productId, string picture)
+        {
+
+            return new BaseResponse();
+        }
+
+        #region productImages
+        public BaseResponse AddProductImage(ProductImageSet image)
+        {
+            var businessOperations = new ProductsOperation();
+            businessOperations.AddProductImage(image);
+
+            var response = new BaseResponse()
+            {
+                ErrorResponse = ResponseError.Ok,
+            };
+
+            return response;
+        }
+
+        public BaseResponse DeleteProductImages(string productId)
+        {
+            var businessOperations = new ProductsOperation();
+            businessOperations.DeleteProductImages(productId);
+
+            var response = new BaseResponse()
+            {
+                ErrorResponse = ResponseError.Ok,
+            };
+
+            return response;
+        }
+
+        public BaseResponse DeleteProductImage(string imageId)
+        {
+            var businessOperations = new ProductsOperation();
+            businessOperations.DeleteProductImage(imageId);
+
+            var response = new BaseResponse()
+            {
+                ErrorResponse = ResponseError.Ok,
+            };
+
+            return response;
+        }
+
+        public ProductsImagesResponse GetProductImages(string productId)
+        {
+            var businessOperations = new ProductsOperation();       
+
+            var response = new ProductsImagesResponse()
+            {
+                ProductsImages = businessOperations.GetProductsImage(productId),
+                ErrorResponse = ResponseError.Ok,
+            };
+
+            return response;
+        }
+        #endregion
     }
 }

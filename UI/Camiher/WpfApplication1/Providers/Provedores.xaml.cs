@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Camiher.Libs.Common;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.UI.AdministrationCenter.Models;
 
 namespace Camiher.UI.AdministrationCenter.Providers
@@ -16,7 +16,7 @@ namespace Camiher.UI.AdministrationCenter.Providers
     public partial class Provedores : Page
     {
         ObservableProveedor lp;
-        private  Model1Container _dataDC =  ModelSingleton.getDataDC;
+        private  CamiherContext _dataDC =  ModelSingleton.getDataDC;
         public Provedores()
         {
             InitializeComponent();
@@ -33,10 +33,10 @@ namespace Camiher.UI.AdministrationCenter.Providers
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            
-      
-            ProveedorSet pro = new ProveedorSet();
-            List<ProveedorSet> lp = _dataDC.ProveedorSet.ToList();
+
+
+            ProvidersSet pro = new ProvidersSet();
+            List<ProvidersSet> lp = _dataDC.Providers.ToList();
             Ramdom r = new Ramdom();
            pro.Id  = r.RandomString(32);
             
@@ -59,7 +59,7 @@ namespace Camiher.UI.AdministrationCenter.Providers
             if (proveedorSetListView.SelectedItem != null)
             {
             String file = proveedorSetListView.SelectedItem.ToString();
-            ProveedorSet  p = (ProveedorSet) proveedorSetListView.SelectedItem;
+            ProvidersSet p = (ProvidersSet)proveedorSetListView.SelectedItem;
             Provider providerdetails = new Provider(p);
             providerdetails._new = false;
           
@@ -76,7 +76,7 @@ namespace Camiher.UI.AdministrationCenter.Providers
             //provmenu.PlacementTarget = this;
             //provmenu.IsOpen = true;
 
-            ProveedorSet p = new ProveedorSet();
+            ProvidersSet p = new ProvidersSet();
             Provider providerdetails = new Provider(p);
             providerdetails._new = true;
          
@@ -85,7 +85,7 @@ namespace Camiher.UI.AdministrationCenter.Providers
             if (providerdetails._new)
             {
                 lp.Add(p);
-                _dataDC.ProveedorSet.AddObject(p);
+                _dataDC.Providers.Add(p);
                 _dataDC.SaveChanges();
             }
         }

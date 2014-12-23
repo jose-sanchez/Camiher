@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Objects;
 using Camiher.Libs.DataProviders.CamiherService;
 using Camiher.Libs.DataProviders.Interfaces;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.Libs.Server.WebServicesObjects;
-using ClassLibrary1;
+
 
 
 namespace Camiher.Libs.DataProviders.Providers
@@ -38,7 +39,7 @@ namespace Camiher.Libs.DataProviders.Providers
             }
         }
 
-        public ObjectSet<ItemSoldProductList> GetSoldProductsByClient(string clientId)
+        public IEnumerable<ItemSoldProductList> GetSoldProductsByClient(string clientId)
         {
             var response = (SoldProductsResponse)_businessOperation.GetSoldProductsByClient(clientId);
             if (response.IsCorrect)
@@ -52,7 +53,7 @@ namespace Camiher.Libs.DataProviders.Providers
             }
         }
 
-        public ObjectSet<ProductsSet> GetSoldProducts()
+        public IEnumerable<ProductsSet> GetSoldProducts()
         {
             var response = (ProductsResponse)_businessOperation.GetSoldProducts();
             if (response.IsCorrect)
@@ -66,9 +67,9 @@ namespace Camiher.Libs.DataProviders.Providers
             }
         }
 
-        public ObjectSet<ProductsSet> GetProductsToSale()
+        public IEnumerable<ProductsSet> GetProductsToSale(string language = null)
         {
-            var response = (ProductsResponse)_businessOperation.GetProducts("Enventa ='True'");
+            var response = (ProductsResponse)_businessOperation.GetProducts(language);
             if (response.IsCorrect)
             {
                 return response.Products;
@@ -79,6 +80,63 @@ namespace Camiher.Libs.DataProviders.Providers
                 return null;
             }
         }
+
+        public IEnumerable<ProductsSet> GetProductsToSale(string language = null)
+        {
+            var response = (ProductsResponse)_businessOperation.GetProducts(language);
+            if (response.IsCorrect)
+            {
+                return response.Products;
+            }
+            else
+            {
+                //AppLogger.Error(String.Format("[BusinessOperationProvider][GetCurrentSale]: response Error '{0}' ", response.ErrorResponse));
+                return null;
+            }
+        }
+
+        public BaseResponse UpdateProduct(ProductsSet product,ProductTranslations[] translations = null )
+        {
+            return (BaseResponse)_businessOperation.UpdateProduct(product, translations);
+        }
+
+        public BaseResponse DeleteProduct(String product)
+        {
+            return (BaseResponse)_businessOperation.DeleteProduct(product);
+        }
+
+        public BaseResponse AddProduct(ProductsSet product ,ProductTranslations[] translations = null )
+        {
+            return (BaseResponse)_businessOperation.AddProduct(product, translations);
+        }
+
+        public BaseResponse DeleteProductImages(String product)
+        {
+            return (BaseResponse)_businessOperation.DeleteProductImages(product);
+        }
+
+        public BaseResponse DeleteProductImage(string imageId)
+        {
+            return (BaseResponse)_businessOperation.DeleteProductImage(imageId);
+        }
+
+        public BaseResponse AddProductImage(ProductImageSet image)
+        {
+            return (BaseResponse)_businessOperation.AddProductImage(image);
+        }
+
+
+        public ProductsImagesResponse GetProductImages(string product)
+        {
+            return (ProductsImagesResponse)_businessOperation.GetProductImages(product);
+        }
+
+        //public ProductsImagesResponse GetFirstImageOfEveryProduct()
+        //{
+        //    return (ProductsImagesResponse)_businessOperation.GetProductImages();
+        //}
+
+
 
 
     }

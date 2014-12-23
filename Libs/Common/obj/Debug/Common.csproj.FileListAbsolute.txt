@@ -7,3 +7,11 @@ C:\Users\josehp\Camiher\Libs\Common\bin\Debug\NLog.dll
 C:\Users\josehp\Camiher\Libs\Common\bin\Debug\Logger.pdb
 C:\Users\josehp\Camiher\Libs\Common\bin\Debug\NLog.xml
 C:\Users\josehp\Camiher\Libs\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\jose\Camiher\Libs\Common\bin\Debug\Common.dll
+C:\Users\jose\Camiher\Libs\Common\bin\Debug\Common.pdb
+C:\Users\jose\Camiher\Libs\Common\bin\Debug\Logger.dll
+C:\Users\jose\Camiher\Libs\Common\bin\Debug\NLog.dll
+C:\Users\jose\Camiher\Libs\Common\bin\Debug\Logger.pdb
+C:\Users\jose\Camiher\Libs\Common\bin\Debug\NLog.xml
+C:\Users\jose\Camiher\Libs\Common\obj\Debug\Common.dll
+C:\Users\jose\Camiher\Libs\Common\obj\Debug\Common.pdb

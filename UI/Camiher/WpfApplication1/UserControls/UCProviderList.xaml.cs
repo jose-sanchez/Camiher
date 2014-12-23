@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.UI.AdministrationCenter.Models;
 using Camiher.UI.AdministrationCenter.Providers;
 
@@ -19,7 +19,7 @@ namespace Camiher.UI.AdministrationCenter.UserControls
 
                
         ObservableProveedor lpr;
-        private static Model1Container _dataDC;
+        private static CamiherContext _dataDC;
         private string name="";
 
         public string FirstName
@@ -96,7 +96,7 @@ namespace Camiher.UI.AdministrationCenter.UserControls
             if (providerSet1ViewSource.Items.Count > 0 && providerSet1ViewSource.SelectedItem != null)
             {
                 String file = providerSet1ViewSource.SelectedItem.ToString();
-                ProveedorSet p = (ProveedorSet)providerSet1ViewSource.SelectedItem;
+                ProvidersSet p = (ProvidersSet)providerSet1ViewSource.SelectedItem;
                 Provider providerdetails = new Provider(p);
                 providerdetails._new = false;
               
@@ -112,7 +112,7 @@ namespace Camiher.UI.AdministrationCenter.UserControls
             //provmenu.PlacementTarget = this;
             //provmenu.IsOpen = true;
 
-            ProveedorSet p = new ProveedorSet();
+            ProvidersSet p = new ProvidersSet();
        
             Provider providerdetails = new Provider(p);
             providerdetails._new = true;
@@ -123,7 +123,7 @@ namespace Camiher.UI.AdministrationCenter.UserControls
                 if (providerdetails._new )
                 {
                     lpr.Add(p);
-                    _dataDC.ProveedorSet.AddObject(p);
+                    _dataDC.Providers.Add(p);
                     _dataDC.SaveChanges();
                     
                 }

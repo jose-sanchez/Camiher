@@ -6,9 +6,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="900"
 	Title="Provedores" xmlns:my="clr-namespace:Camiher.UI.AdministrationCenter"
-      xmlns:camiherLocalDal="clr-namespace:Camiher.Libs.Server.DAL.CamiherLocalDAL;assembly=ClassLibrary1">
+      xmlns:camiherDal="clr-namespace:Camiher.Libs.Server.DAL.CamiherDAL;assembly=Camiher.Libs.Server.DAL.CamiherDAL">
     <Page.Resources>
-        <CollectionViewSource x:Key="proveedorSetViewSource" d:DesignSource="{d:DesignInstance camiherLocalDal:ProveedorSet, CreateList=True}" />
+        <CollectionViewSource x:Key="proveedorSetViewSource" d:DesignSource="{d:DesignInstance camiherDal:ProvidersSet, CreateList=True}" />
     </Page.Resources>
     <Grid DataContext="{StaticResource proveedorSetViewSource}" Width="473">
         <Button Content="Button" Height="23" HorizontalAlignment="Left" Margin="117,265,0,0" Name="button1" VerticalAlignment="Top" Width="75" Click="button1_Click" />

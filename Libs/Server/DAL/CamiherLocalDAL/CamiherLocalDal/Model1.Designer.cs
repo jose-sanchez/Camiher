@@ -8,16 +8,16 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
-
-namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
+namespace ClassLibrary1
 {
     #region Contexts
     
@@ -210,6 +210,7 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         private ObjectSet<ProductsSet> _ProductsSet;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -285,19 +286,19 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityType(NamespaceName="Model1", Name="ClientSet")]
+    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="ClientSet")]
     [Serializable()]
-    [DataContract(IsReference=true)]
+    [DataContractAttribute(IsReference=true)]
     public partial class ClientSet : EntityObject
     {
         #region Factory Method
@@ -314,13 +315,14 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Id
         {
             get
@@ -346,8 +348,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String Name
         {
             get
@@ -370,8 +372,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String Surname
         {
             get
@@ -394,8 +396,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String PhoneMain
         {
             get
@@ -418,8 +420,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String PhoneSecond
         {
             get
@@ -442,8 +444,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String Address
         {
             get
@@ -466,8 +468,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String Email
         {
             get
@@ -490,8 +492,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String Description
         {
             get
@@ -514,8 +516,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String Account
         {
             get
@@ -536,15 +538,16 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         partial void OnAccountChanged();
 
         #endregion
+
     
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityType(NamespaceName="Model1", Name="CompradorSet")]
+    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="CompradorSet")]
     [Serializable()]
-    [DataContract(IsReference=true)]
+    [DataContractAttribute(IsReference=true)]
     public partial class CompradorSet : EntityObject
     {
         #region Factory Method
@@ -575,13 +578,14 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 Id
         {
             get
@@ -607,8 +611,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Nombre
         {
             get
@@ -631,8 +635,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Apellido
         {
             get
@@ -655,8 +659,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String TelefonoM
         {
             get
@@ -679,8 +683,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String TelefonoF
         {
             get
@@ -703,8 +707,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Direccion
         {
             get
@@ -727,8 +731,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Descripcion
         {
             get
@@ -751,8 +755,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Email
         {
             get
@@ -773,15 +777,16 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         partial void OnEmailChanged();
 
         #endregion
+
     
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityType(NamespaceName="Model1", Name="FotosSet")]
+    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="FotosSet")]
     [Serializable()]
-    [DataContract(IsReference=true)]
+    [DataContractAttribute(IsReference=true)]
     public partial class FotosSet : EntityObject
     {
         #region Factory Method
@@ -806,13 +811,14 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 Id
         {
             get
@@ -838,8 +844,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Nombre
         {
             get
@@ -862,8 +868,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Path
         {
             get
@@ -886,8 +892,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Orden
         {
             get
@@ -910,8 +916,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Product_ID
         {
             get
@@ -932,15 +938,16 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         partial void OnProduct_IDChanged();
 
         #endregion
+
     
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityType(NamespaceName="Model1", Name="NotificationSet")]
+    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="NotificationSet")]
     [Serializable()]
-    [DataContract(IsReference=true)]
+    [DataContractAttribute(IsReference=true)]
     public partial class NotificationSet : EntityObject
     {
         #region Factory Method
@@ -961,13 +968,14 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String ID
         {
             get
@@ -993,8 +1001,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String ProductID
         {
             get
@@ -1017,8 +1025,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String SearchID
         {
             get
@@ -1039,15 +1047,16 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         partial void OnSearchIDChanged();
 
         #endregion
+
     
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityType(NamespaceName="Model1", Name="ProductImageSet")]
+    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="ProductImageSet")]
     [Serializable()]
-    [DataContract(IsReference=true)]
+    [DataContractAttribute(IsReference=true)]
     public partial class ProductImageSet : EntityObject
     {
         #region Factory Method
@@ -1064,13 +1073,14 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String ImageID
         {
             get
@@ -1096,8 +1106,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String ProducID
         {
             get
@@ -1120,8 +1130,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String Path
         {
             get
@@ -1144,8 +1154,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String Name
         {
             get
@@ -1168,8 +1178,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String Description
         {
             get
@@ -1192,8 +1202,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Int32> Order
         {
             get
@@ -1216,8 +1226,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Boolean> Email
         {
             get
@@ -1238,15 +1248,16 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         partial void OnEmailChanged();
 
         #endregion
+
     
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityType(NamespaceName="Model1", Name="ProductsSet")]
+    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="ProductsSet")]
     [Serializable()]
-    [DataContract(IsReference=true)]
+    [DataContractAttribute(IsReference=true)]
     public partial class ProductsSet : EntityObject
     {
         #region Factory Method
@@ -1285,13 +1296,14 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Producto
         {
             get
@@ -1314,8 +1326,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Marca
         {
             get
@@ -1338,8 +1350,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Modelo
         {
             get
@@ -1362,8 +1374,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 Año
         {
             get
@@ -1386,8 +1398,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 Potencia
         {
             get
@@ -1410,8 +1422,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 Peso
         {
             get
@@ -1434,8 +1446,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Descripcion
         {
             get
@@ -1458,8 +1470,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 Precio
         {
             get
@@ -1482,8 +1494,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 Cantidad
         {
             get
@@ -1506,8 +1518,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Id
         {
             get
@@ -1533,8 +1545,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Enventa
         {
             get
@@ -1557,8 +1569,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Enbusca
         {
             get
@@ -1581,8 +1593,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String Proveedor_ID
         {
             get
@@ -1605,8 +1617,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Int32> Kilometer
         {
             get
@@ -1629,8 +1641,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Int32> Hours
         {
             get
@@ -1653,8 +1665,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public global::System.String PrivateDescription
         {
             get
@@ -1675,15 +1687,16 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         partial void OnPrivateDescriptionChanged();
 
         #endregion
+
     
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityType(NamespaceName="Model1", Name="ProveedorSet")]
+    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="ProveedorSet")]
     [Serializable()]
-    [DataContract(IsReference=true)]
+    [DataContractAttribute(IsReference=true)]
     public partial class ProveedorSet : EntityObject
     {
         #region Factory Method
@@ -1714,13 +1727,14 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Id
         {
             get
@@ -1746,8 +1760,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Nombre
         {
             get
@@ -1770,8 +1784,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Apellido
         {
             get
@@ -1794,8 +1808,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String TelefonoM
         {
             get
@@ -1818,8 +1832,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String TelefonoF
         {
             get
@@ -1842,8 +1856,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Direccion
         {
             get
@@ -1866,8 +1880,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Descripcion
         {
             get
@@ -1890,8 +1904,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Email
         {
             get
@@ -1912,15 +1926,16 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         partial void OnEmailChanged();
 
         #endregion
+
     
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityType(NamespaceName="Model1", Name="SaleSet")]
+    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="SaleSet")]
     [Serializable()]
-    [DataContract(IsReference=true)]
+    [DataContractAttribute(IsReference=true)]
     public partial class SaleSet : EntityObject
     {
         #region Factory Method
@@ -1941,13 +1956,14 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Id
         {
             get
@@ -1973,8 +1989,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Int32> PriceforClient
         {
             get
@@ -1997,8 +2013,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Int32> PriceClientOffered
         {
             get
@@ -2021,8 +2037,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.DateTime> LastEmailDate
         {
             get
@@ -2045,8 +2061,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=true)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Int32> FinalPrice
         {
             get
@@ -2069,8 +2085,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Client_ID
         {
             get
@@ -2093,8 +2109,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=false, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String Product_ID
         {
             get
@@ -2115,15 +2131,16 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         partial void OnProduct_IDChanged();
 
         #endregion
+
     
     }
     
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityType(NamespaceName="Model1", Name="VentaSet")]
+    [EdmEntityTypeAttribute(NamespaceName="Model1", Name="VentaSet")]
     [Serializable()]
-    [DataContract(IsReference=true)]
+    [DataContractAttribute(IsReference=true)]
     public partial class VentaSet : EntityObject
     {
         #region Factory Method
@@ -2154,13 +2171,14 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 Id
         {
             get
@@ -2186,8 +2204,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String PrecioDado
         {
             get
@@ -2213,8 +2231,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String PrecioOfrecido
         {
             get
@@ -2240,8 +2258,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String CorreoEnviado
         {
             get
@@ -2267,8 +2285,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String FechaUltimoCorreo
         {
             get
@@ -2294,8 +2312,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.String PrecioFinal
         {
             get
@@ -2321,8 +2339,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 Comprador_Id
         {
             get
@@ -2348,8 +2366,8 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarProperty(EntityKeyProperty=true, IsNullable=false)]
-        [DataMember()]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 Product_Id
         {
             get
@@ -2373,9 +2391,11 @@ namespace Camiher.Libs.Server.DAL.CamiherLocalDAL
         partial void OnProduct_IdChanged();
 
         #endregion
+
     
     }
 
     #endregion
+
     
 }

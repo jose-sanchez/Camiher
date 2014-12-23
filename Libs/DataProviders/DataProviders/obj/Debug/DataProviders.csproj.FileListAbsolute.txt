@@ -23,3 +23,15 @@ C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Debug\Logger.dll
 C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Debug\NLog.dll
 C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Debug\Logger.pdb
 C:\Users\josehp\Camiher\Libs\DataProviders\DataProviders\bin\Debug\NLog.xml
+C:\Users\jose\Camiher\Libs\DataProviders\DataProviders\bin\Debug\DataProviders.dll.config
+C:\Users\jose\Camiher\Libs\DataProviders\DataProviders\bin\Debug\DataProviders.dll
+C:\Users\jose\Camiher\Libs\DataProviders\DataProviders\bin\Debug\DataProviders.pdb
+C:\Users\jose\Camiher\Libs\DataProviders\DataProviders\bin\Debug\Logger.dll
+C:\Users\jose\Camiher\Libs\DataProviders\DataProviders\bin\Debug\WebServicesObjects.dll
+C:\Users\jose\Camiher\Libs\DataProviders\DataProviders\bin\Debug\NLog.dll
+C:\Users\jose\Camiher\Libs\DataProviders\DataProviders\bin\Debug\WebServicesObjects.pdb
+C:\Users\jose\Camiher\Libs\DataProviders\DataProviders\bin\Debug\Logger.pdb
+C:\Users\jose\Camiher\Libs\DataProviders\DataProviders\bin\Debug\NLog.xml
+C:\Users\jose\Camiher\Libs\DataProviders\DataProviders\obj\Debug\DataProviders.csprojResolveAssemblyReference.cache
+C:\Users\jose\Camiher\Libs\DataProviders\DataProviders\obj\Debug\DataProviders.dll
+C:\Users\jose\Camiher\Libs\DataProviders\DataProviders\obj\Debug\DataProviders.pdb

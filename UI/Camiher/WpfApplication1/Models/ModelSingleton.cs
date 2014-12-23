@@ -1,23 +1,24 @@
-﻿using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+﻿using Camiher.Libs.Server.DAL.CamiherDAL;
 
 namespace Camiher.UI.AdministrationCenter.Models
 {
      class ModelSingleton
     {
-        private static Model1Container _contexDC;
+        private static CamiherContext _contexDC;
          public ModelSingleton(){}
 
-        public Model1Container ContexDC
+         public CamiherContext ContexDC
         {
             get { return _contexDC; }
             set { _contexDC = value; }
         }
-        static public Model1Container getDataDC {
+         static public CamiherContext getDataDC
+         {
             get
             {
                 if (_contexDC == null)
                 {
-                    _contexDC = new Model1Container();
+                    _contexDC = new CamiherContext();
                     
                 } 
                 return _contexDC;

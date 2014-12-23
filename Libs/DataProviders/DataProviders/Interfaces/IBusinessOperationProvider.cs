@@ -1,7 +1,8 @@
-﻿using System.Data.Objects;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Objects;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.Libs.Server.WebServicesObjects;
-using ClassLibrary1;
 
 namespace Camiher.Libs.DataProviders.Interfaces
 {
@@ -11,12 +12,19 @@ namespace Camiher.Libs.DataProviders.Interfaces
 
         SaleSet GetCurrentSale(string clientId, string productId);
 
-        ObjectSet<ItemSoldProductList> GetSoldProductsByClient(string clientId);
+        IEnumerable<ItemSoldProductList> GetSoldProductsByClient(string clientId);
 
-        ObjectSet<ProductsSet>  GetProductsToSale();
+        IEnumerable<ProductsSet> GetProductsToSale(string language = null);
 
-        ObjectSet<ProductsSet> GetSoldProducts();
+        IEnumerable<ProductsSet> GetSoldProducts();
 
-        ObjectSet<ProductsSet> GetSoldProducts();
+        BaseResponse UpdateProduct(ProductsSet products ,ProductTranslations[] translations = null );
+        BaseResponse AddProduct(ProductsSet products, ProductTranslations[] translations = null);
+        BaseResponse DeleteProduct(string products);
+        BaseResponse AddProductImage(ProductImageSet image);
+        BaseResponse DeleteProductImages(String product);
+        BaseResponse DeleteProductImage(String imageId);
+        ProductsImagesResponse GetProductImages(string product);
+
     }
 }

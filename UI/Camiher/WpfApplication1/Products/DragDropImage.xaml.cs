@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using Camiher.Libs.Common;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.DataProviders;
+using Camiher.Libs.DataProviders.Interfaces;
+using Camiher.Libs.Server.DAL.CamiherDAL;
+using Camiher.Libs.Server.WebServicesObjects;
+using Image = System.Drawing.Image;
 
 namespace Camiher.UI.AdministrationCenter.Products
 
@@ -15,7 +20,7 @@ namespace Camiher.UI.AdministrationCenter.Products
     /// </summary>
     public partial class DragDropImage : Window
     {
-        Model1Container _dataDC;
+        CamiherContext _dataDC;
         string _productID;
 
         public string ProductID
@@ -24,12 +29,23 @@ namespace Camiher.UI.AdministrationCenter.Products
             set { _productID = value; }
         }
         ObservableProductImage imagelist;
+        private IBusinessOperationProvider operationProvider;
         public DragDropImage(string Product)
         {
             InitializeComponent();
             _productID = Product;
-            _dataDC = new Model1Container();
-            imagelist = new ObservableProductImage(_dataDC, _productID);
+            operationProvider = DataProvidersFactory.GetBusinessOperationProvider();
+            ProductsImagesResponse response = operationProvider.GetProductImages(_productID);
+            if (response.IsCorrect)
+            {
+               imagelist = new ObservableProductImage(response.ProductsImages);
+            }
+            else
+            {
+                MessageBox.Show(String.Format("Couldnt recover Images for product {0}",Product));
+                //Addlog
+            }
+
 
             ImageList.ItemsSource = imagelist;
             
@@ -63,15 +79,18 @@ namespace Camiher.UI.AdministrationCenter.Products
                     if (imagelist.Where(S => S.Name == filename).Count() == 0)
                     {
                         ProductImageSet newImage = new ProductImageSet();
-                        newImage.ProducID = _productID;
+                        newImage.ProductID = _productID;
                         newImage.Path = file;
                         newImage.Name = filename;
                         Ramdom r = new Ramdom();
                         newImage.ImageID = r.RandomString(32);
                         newImage.Order = 0;
                         imagelist.Add(newImage);
-                        _dataDC.ProductImageSet.AddObject(newImage);
-                        _dataDC.SaveChanges();
+                        if (!Properties.Settings.Default.OnlineMode)
+                        {
+                            _dataDC.ProductImages.Add(newImage);
+                            _dataDC.SaveChanges();
+                        }
                         string destinationFile = Properties.Settings.Default.ImagePath + "\\" + ProductID + "\\" + filename;
                         if(!System.IO.Directory.Exists(Properties.Settings.Default.ImagePath + "\\" + ProductID ))
                         {
@@ -79,7 +98,29 @@ namespace Camiher.UI.AdministrationCenter.Products
                         }
                         System.IO.File.Copy(file, destinationFile);
                         imageViewer.Source = LoadImageFromFile(destinationFile);
-                        ImageList.ItemsSource = imagelist.Where(S => S.ProducID == _productID).ToList();
+                        ImageList.ItemsSource = imagelist.Where(S => S.ProductID == _productID).ToList();
+
+                        //Upload to internet
+
+
+                        Image image = Image.FromFile(file);
+                        image.imageToByteArray().CreateThumbnail(400).byteArrayToImage().Save(destinationFile);
+                        newImage.Data = System.Text.Encoding.Default.GetString(image.imageToByteArray().CreateThumbnail(400));
+
+                        DataProvidersFactory.GetBusinessOperationProvider().AddProductImage(newImage);
+
+
+                        //using (System.Drawing.Image thumbnail = image.GetThumbnailImage(100, 100, new System.Drawing.Image.GetThumbnailImageAbort(ThumbnailCallback), IntPtr.Zero))
+                        //{
+                        //    using (MemoryStream memoryStream = new MemoryStream())
+                        //    {
+                        //        thumbnail.Save(memoryStream, ImageFormat.Png);
+                        //        Byte[] bytes = new Byte[memoryStream.Length];
+                        //        memoryStream.Position = 0;
+                        //        memoryStream.Read(bytes, 0, (int)bytes.Length);
+                        //        string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+                        //    }
+                        //}
                     }
                     else
                     {
@@ -97,9 +138,15 @@ namespace Camiher.UI.AdministrationCenter.Products
                 try
                 {
                     Image = ImageList.SelectedItem as ProductImageSet;
-
-                    _dataDC.ProductImageSet.DeleteObject(Image);
-                    _dataDC.SaveChanges();
+                    if (!Properties.Settings.Default.OnlineMode)
+                    {
+                        operationProvider.DeleteProductImage(Image.ImageID);
+                    }
+                    else
+                    {
+                        _dataDC.ProductImages.Remove(Image);
+                        _dataDC.SaveChanges();                    
+                    }
                     ImageList.Items.Remove(Image);
                     System.IO.File.Delete(Image.Path);
                 }
@@ -117,7 +164,6 @@ namespace Camiher.UI.AdministrationCenter.Products
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            _dataDC.SaveChanges();
         }
     }
 }

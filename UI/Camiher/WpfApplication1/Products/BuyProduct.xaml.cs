@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 
 namespace Camiher.UI.AdministrationCenter.Products
 {

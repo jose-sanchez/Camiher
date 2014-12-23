@@ -16,7 +16,7 @@ namespace WEBCAMIHER
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "OurServices", id = UrlParameter.Optional }
+                defaults: new { controller = "Products", action = "ListProducts", id = UrlParameter.Optional }
             );
         }
     }

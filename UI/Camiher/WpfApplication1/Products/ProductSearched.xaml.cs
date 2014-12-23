@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using Camiher.Libs.Common;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.UI.AdministrationCenter.Models;
 using Validation = Camiher.Libs.Common.Validation;
 
@@ -23,7 +23,7 @@ namespace Camiher.UI.AdministrationCenter.Products
             set { _cancel = value; }
         }
         Boolean isnew;
-        Model1Container _dataDC;
+        CamiherContext _dataDC;
         ProductsSet _product;
         public Boolean _new
         {
@@ -47,9 +47,9 @@ namespace Camiher.UI.AdministrationCenter.Products
 
             product.Descripcion = "";
 
-            cbProducto.ItemsSource = _dataDC.ProductsSet.Select(S => S.Producto).Distinct().ToList();
-            cbModelo.ItemsSource = _dataDC.ProductsSet.Select(S => S.Modelo).Distinct().ToList();
-            cbMarca.ItemsSource = _dataDC.ProductsSet.Select(S => S.Marca).Distinct().ToList();
+            cbProducto.ItemsSource = _dataDC.Products.Select(S => S.Producto).Distinct().ToList();
+            cbModelo.ItemsSource = _dataDC.Products.Select(S => S.Modelo).Distinct().ToList();
+            cbMarca.ItemsSource = _dataDC.Products.Select(S => S.Marca).Distinct().ToList();
             this.DataContext = product;
             
             for ( int añoindex = 1900; añoindex < 2025; añoindex++)

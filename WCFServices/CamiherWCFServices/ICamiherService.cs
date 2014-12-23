@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.Libs.Server.WebServicesObjects;
 
 
@@ -35,26 +35,82 @@ namespace CamiherWCFServices
         ProductsResponse GetSoldProducts();
 
         [OperationContract]
-        BaseResponse AddProduct(ProductsSet product);
+        BaseResponse AddProduct(ProductsSet product, IEnumerable<ProductTranslations> productTranslation );
 
+        /// <summary>
+        /// Delete a specific product via productID
+        /// </summary>
+        /// <param name="productId">product Identificator</param>
+        /// <returns></returns>
         [OperationContract]
         BaseResponse DeleteProduct(string productId);
 
         /// <summary>
         /// Add a product to the database
         /// </summary>
-        /// <param name="product"></param>
+        /// <param name="product">product to add</param>
+        /// <param name="productTranslation">language translations</param>
         /// <returns>true if product updated succesfully</returns>
         [OperationContract]
-        BaseResponse UpdateProduct(ProductsSet product);
+        BaseResponse UpdateProduct(ProductsSet product, IEnumerable<ProductTranslations> productTranslation);
+        
+        /// <summary>
+        /// Get a specific translation for a specific product
+        /// </summary>
+        /// <param name="productId">product id</param>
+        /// <param name="language">language to recover</param>
+        /// <returns></returns>
+        [OperationContract]
+        ProductsTranslationResponse GetProductsTranslations(string productId, string language);
+
+        /// <summary>
+        /// Get all the images for a specific product
+        /// </summary>
+        /// <param name="productId">product id</param>
+        /// <returns>Images for the product</returns>
+        [OperationContract]
+        ProductsImagesResponse GetProductImages(string productId);
+
+        /// <summary>
+        /// Delete all images for a specific product
+        /// </summary>
+        /// <param name="productId">productid</param>
+        /// <returns>Response with information about the success of the operation</returns>
+        [OperationContract]
+        BaseResponse DeleteProductImages(string productId);
+
+        /// <summary>
+        /// Delete a Image via its id
+        /// </summary>
+        /// <param name="imageId">image id</param>
+        /// <returns>Response with information about the success of the operation</returns>
+        [OperationContract]
+        BaseResponse DeleteProductImage(string imageId);
+
+        /// <summary>
+        /// Add a image for a product
+        /// </summary>
+        /// <param name="image">data containing product Id and image data</param>
+        /// <returns>Response with information about the success of the operation</returns>
+        [OperationContract]
+        BaseResponse AddProductImage(ProductImageSet image);
 
         /// <summary>
         /// Get Products from db
         /// </summary>
-        /// <param name="filter">filter which product should return</param>
+        /// <param name="language">product langage which will be retrieved</param>
         /// <returns>product list filtered. If filter is not good format error</returns>
         [OperationContract]
-        BaseResponse GetProducts(string filter);
+        ProductsResponse GetProducts(string language);
+
+        /// <summary>
+        ///  Add picture in base64 format to a product
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="picture"></param>
+        /// <returns>product list filtered. If filter is not good format error</returns>
+        [OperationContract]
+        BaseResponse AddPictureToProduct(string productId, string picture);
 
     }
 

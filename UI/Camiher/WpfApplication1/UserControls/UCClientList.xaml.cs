@@ -3,7 +3,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.UI.AdministrationCenter.Clients;
 using Camiher.UI.AdministrationCenter.Models;
 using Camiher.UI.AdministrationCenter.Products;
@@ -17,7 +17,7 @@ namespace Camiher.UI.AdministrationCenter.UserControls
 	{
       
         
-        private static Model1Container _dataDC;
+        private static CamiherContext _dataDC;
         ObservableClient lcl;
         private string name="";
 
@@ -123,7 +123,7 @@ namespace Camiher.UI.AdministrationCenter.UserControls
             if (clientdetails._new && !clientdetails.Cancel)
             {
                 lcl.Add(p);
-                _dataDC.ClientSet.AddObject(p);
+                _dataDC.Clients.Add(p);
                 _dataDC.SaveChanges();
                 filter();
             }
@@ -165,7 +165,7 @@ namespace Camiher.UI.AdministrationCenter.UserControls
             if (clientSet1ViewSource.SelectedItem != null)
             {
             string ClientID = (clientSet1ViewSource.SelectedItem as ClientSet).Id;
-            if (_dataDC.ProductsSet.Where(S => S.Proveedor_ID == ClientID).Count() > 0) {
+            if (_dataDC.Products.Where(S => S.Proveedor_ID == ClientID).Count() > 0) {
 
                 if (MessageBox.Show("Este cliente tiene busquedas activas, si borra el cliente se borraran sus de busquedas de productos ¿Desea Continuar?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
                 {
@@ -185,11 +185,11 @@ namespace Camiher.UI.AdministrationCenter.UserControls
 
          private void DeleteClient(string ClientID)
          {
-             foreach (ProductsSet item in _dataDC.ProductsSet.Where(S => S.Proveedor_ID == ClientID && S.Enbusca == "True"))            
+             foreach (ProductsSet item in _dataDC.Products.Where(S => S.Proveedor_ID == ClientID && S.Enbusca == "True"))            
              {
-                 _dataDC.ProductsSet.DeleteObject(item);
+                 _dataDC.Products.Remove(item);
              }
-            _dataDC.ClientSet.DeleteObject( _dataDC.ClientSet.First(S => S.Id == ClientID));
+            _dataDC.Clients.Remove( _dataDC.Clients.First(S => S.Id == ClientID));
             _dataDC.SaveChanges();
         
          }

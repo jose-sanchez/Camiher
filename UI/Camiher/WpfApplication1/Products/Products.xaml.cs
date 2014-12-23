@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Camiher.Libs.Server.DAL.CamiherLocalDAL;
+using Camiher.Libs.Server.DAL.CamiherDAL;
 using Camiher.UI.AdministrationCenter.Models;
 using Camiher.UI.AdministrationCenter.Providers;
 
@@ -18,7 +18,7 @@ namespace Camiher.UI.AdministrationCenter.Products
     {
         ObservableProduct lp;
         ObservableProveedor lpr;
-        private  Model1Container _dataDC ;
+        private CamiherContext _dataDC;
         public Products()
         {
             InitializeComponent();
@@ -59,22 +59,21 @@ namespace Camiher.UI.AdministrationCenter.Products
             if (productdetails._new)
             {
                 lp.Add(p);
-                _dataDC.ProductsSet.AddObject(p);
+                _dataDC.Products.Add(p);
                 _dataDC.SaveChanges();
             }
             _dataDC.Dispose();
         }
-
     }
 
     public class ObservableProductSearch : System.Collections.ObjectModel.ObservableCollection<ProductsSet>
     {
-        public ObservableProductSearch(Model1Container dataDc)
+        public ObservableProductSearch(CamiherContext dataDc)
         {
             //Open class view to find out what Properties the wizard
             //had created in the DataClasses1DataContext class, otherwise
             //I wouldn't have known about Peoples
-            foreach (ProductsSet thisPerson in dataDc.ProductsSet.Where(S =>  S.Enbusca == "True" ))
+            foreach (ProductsSet thisPerson in dataDc.Products.Where(S =>  S.Enbusca == "True" ))
             {
                 this.Add(thisPerson);
             }
@@ -82,13 +81,13 @@ namespace Camiher.UI.AdministrationCenter.Products
     }
     public class ObservableProduct : System.Collections.ObjectModel.ObservableCollection<ProductsSet>
     {
-        public ObservableProduct(Model1Container dataDc)
+        public ObservableProduct(CamiherContext dataDc)
         {
             //Open class view to find out what Properties the wizard
             //had created in the DataClasses1DataContext class, otherwise
             //I wouldn't have known about Peoples
 
-            foreach (ProductsSet thisPerson in dataDc.ProductsSet.ToList().Where(s =>s.Enventa == "True" ))
+            foreach (ProductsSet thisPerson in dataDc.Products.ToList().Where(s =>s.Enventa == "True" ))
             {
                 this.Add(thisPerson);
             }
@@ -107,7 +106,7 @@ namespace Camiher.UI.AdministrationCenter.Products
     }
     public class ObservableProductSold : System.Collections.ObjectModel.ObservableCollection<ProductsSet>
     {
-        public ObservableProductSold(ObjectSet<ProductsSet> Products)
+        public ObservableProductSold(IEnumerable<ProductsSet> Products)
         {
             foreach (ProductsSet thisProduct in Products)
             {
@@ -117,12 +116,12 @@ namespace Camiher.UI.AdministrationCenter.Products
     }
       public class ObservableClient : System.Collections.ObjectModel.ObservableCollection<ClientSet>
     {
-          public ObservableClient(Model1Container dataDc)
+          public ObservableClient(CamiherContext dataDc)
         {
             //Open class view to find out what Properties the wizard
             //had created in the DataClasses1DataContext class, otherwise
             //I wouldn't have known about Peoples
-            foreach (ClientSet thisPerson in dataDc.ClientSet)
+            foreach (ClientSet thisPerson in dataDc.Clients)
             {
                 this.Add(thisPerson);
             }
@@ -130,25 +129,25 @@ namespace Camiher.UI.AdministrationCenter.Products
     }
       public class ObservableProductImage : System.Collections.ObjectModel.ObservableCollection<ProductImageSet>
       {
-          public ObservableProductImage(Model1Container dataDc, String ProductID)
+          public ObservableProductImage(IEnumerable<ProductImageSet> images)
           {
               //Open class view to find out what Properties the wizard
               //had created in the DataClasses1DataContext class, otherwise
               //I wouldn't have known about Peoples
-              foreach (ProductImageSet thisPerson in dataDc.ProductImageSet.Where(S => S.ProducID == ProductID))
+              foreach (ProductImageSet image in images)
               {
-                  this.Add(thisPerson);
+                  this.Add(image);
               }
           }
       }
       public class ObservableSale : System.Collections.ObjectModel.ObservableCollection<SaleSet>
       {
-          public ObservableSale(Model1Container dataDc)
+          public ObservableSale(CamiherContext dataDc)
           {
               //Open class view to find out what Properties the wizard
               //had created in the DataClasses1DataContext class, otherwise
               //I wouldn't have known about Peoples
-              foreach (SaleSet thisPerson in dataDc.SaleSet)
+              foreach (SaleSet thisPerson in dataDc.Sales)
               {
                   this.Add(thisPerson);
               }

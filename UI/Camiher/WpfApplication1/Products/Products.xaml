@@ -6,9 +6,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="Products" xmlns:my="clr-namespace:Camiher.UI.AdministrationCenter"
-      xmlns:camiherLocalDal="clr-namespace:Camiher.Libs.Server.DAL.CamiherLocalDAL;assembly=ClassLibrary1">
+      xmlns:camiherDal="clr-namespace:Camiher.Libs.Server.DAL.CamiherDAL;assembly=Camiher.Libs.Server.DAL.CamiherDAL">
     <Page.Resources>
-        <CollectionViewSource x:Key="ProductsSetViewSource" d:DesignSource="{d:DesignInstance camiherLocalDal:ProductsSet, CreateList=True}" />
+        <CollectionViewSource x:Key="ProductsSetViewSource" d:DesignSource="{d:DesignInstance camiherDal:ProductsSet, CreateList=True}" />
     </Page.Resources>
     <Grid DataContext="{StaticResource ProductsSetViewSource}">
         <ListView  Height="162" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="51,55,0,0" Name="ProductsSetListView" SelectedValuePath="Id" SelectionMode="Single" VerticalAlignment="Top" Width="184" SelectionChanged="ProductsSetListView_SelectionChanged" >
