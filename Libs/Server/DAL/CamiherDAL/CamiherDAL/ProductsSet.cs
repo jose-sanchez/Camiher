@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,5 +32,8 @@ namespace Camiher.Libs.Server.DAL.CamiherDAL
         public Int32 Kilometer { get; set; }
         public Int32 Hours { get; set; }
         public string PrivateDescription { get; set; }
+
+        [NotMapped]
+        public string ImageMain { get; set; }
     }
 }

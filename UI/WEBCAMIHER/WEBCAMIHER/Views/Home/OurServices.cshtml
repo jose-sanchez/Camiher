@@ -1,22 +1,21 @@
-﻿@{
+﻿@using WEBCAMIHER.Views.Shared
+@{
     ViewBag.Title = "OurServices";
 }
 @section featured {
 <section class="featured">
     <div class="content-wrapper">
         <hgroup class="title">
-            <h1>@ViewBag.Message.</h1>
+            <h1>@ViewBag.Message</h1>
            <p>
-               Ponemos a su servicio todo tipo de maquinaria de obra pública relacionada con el movimiento
-               de tierras y la construccion. Bajo la dirección y asesoramiento de Don Jose Maria Sanchez Colino que cuenta con mas
-               35 años de experiencia en el sector.
+               @SharedStrings.OurServicesDescription
            </p>
         </hgroup>
     </div>
 </section>
     }
 
-<h3>Somos expertos en:</h3>
+<h3>@SharedStrings.WeAreExpertIn:</h3>
 <ol class="round">
     @foreach (WEBCAMIHER.Models.Content item in ViewBag.OurServicesList)
     {

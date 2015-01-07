@@ -5,8 +5,8 @@ using System.Data.Entity;
 using System.Data.Objects;
 using System.Linq;
 using System.Linq.Expressions;
-using BusinesOperations.Interfaces;
 using Camiher.Libs.Common;
+using Camiher.Libs.Server.BusinesOperations.Interfaces;
 using Camiher.Libs.Server.DAL.CamiherDAL;
 
 namespace Camiher.Libs.Server.BusinesOperations
@@ -133,6 +133,17 @@ namespace Camiher.Libs.Server.BusinesOperations
 
         }
 
+        /// <summary>
+        /// Get a the image with order 0 for a specific product productID
+        /// </summary>
+        /// <param name="productId">productID</param>
+        /// <returns></returns>
+        public ProductImageSet GetProductImageOrder0(string productId)
+        {
+            return _camiherUnitOfWork.ProductImageRepository.Get().First(s => s.ProductID == productId && s.Order == 0);
+
+        }
+
 
         /// <summary>
         /// Add a product to the database
@@ -177,36 +188,45 @@ namespace Camiher.Libs.Server.BusinesOperations
         /// <returns></returns>
         public IEnumerable<ProductsSet> GetProducts(string language)
         {
-            if (!String.IsNullOrEmpty(language))
-            {
-                var products = from p in _camiherUnitOfWork.ProductRepository.Get()
-                    join t in _camiherUnitOfWork.ProductTranslationsRepository.Get().Where(s=>s.Language == language) 
-                               on p.Id equals t.Product
+                if (!String.IsNullOrEmpty(language) && language != "es")
+                {
+                    var products = from p in _camiherUnitOfWork.ProductRepository.Get()
+                        join t in
+                            _camiherUnitOfWork.ProductTranslationsRepository.Get().Where(s => s.Language == language)
+                            on p.Id equals t.Product
 
-                    select new ProductsSet()
+                        select new ProductsSet()
+                        {
+                            Peso = p.Peso,
+                            Año = p.Año,
+                            Cantidad = p.Cantidad,
+                            Descripcion = t.Description,
+                            Enbusca = p.Enbusca,
+                            Enventa = p.Enventa,
+                            Hours = p.Hours,
+                            Id = p.Id,
+                            Kilometer = p.Kilometer,
+                            Marca = p.Marca,
+                            Modelo = p.Modelo,
+                            Potencia = p.Potencia,
+                            Precio = p.Precio,
+                            PrivateDescription = p.PrivateDescription,
+                            Producto = p.Producto,
+                            Proveedor_ID = p.Proveedor_ID,
+                            ImageMain = GetProductImageOrder0(p.Id).Data
+                        };
+                    return products;
+                }
+                else
+                {
+                    var products = _camiherUnitOfWork.ProductRepository.Get();
+                    foreach (ProductsSet pr in products)
                     {
-                        Peso = p.Peso,
-                        Año = p.Año,
-                        Cantidad = p.Cantidad,
-                        Descripcion = t.Description,
-                        Enbusca = p.Enbusca,
-                        Enventa = p.Enventa,
-                        Hours = p.Hours,
-                        Id = p.Id,
-                        Kilometer = p.Kilometer,
-                        Marca = p.Marca,
-                        Modelo = p.Modelo,
-                        Potencia = p.Potencia,
-                        Precio = p.Precio,
-                        PrivateDescription = p.PrivateDescription,
-                        Producto = p.Producto,
-                        Proveedor_ID = p.Proveedor_ID
+                        pr.ImageMain = GetProductImageOrder0(pr.Id).Data;
+                    }
 
-                    };
-                return products;
-            }
-            return _camiherUnitOfWork.ProductRepository.Get();
-
+                    return products;
+                }
 
         }
 

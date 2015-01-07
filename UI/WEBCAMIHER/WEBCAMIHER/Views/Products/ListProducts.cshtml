@@ -3,6 +3,7 @@
 @using WEBCAMIHER.Views.Shared
 @{
     ViewBag.Title = "ListProducts";
+   
 }
 
 @section featured {
@@ -22,8 +23,11 @@
     @foreach (ProductsSet item in ViewBag.ProductList)
 {
     <li class="productList">
-        <h5>@Html.ActionLink(@item.Producto + " " + @item.Marca + " " + @item.Modelo, "ProductDescription", "Products", item)</h5>
-        <img src=""/>
+        <h3>@Html.ActionLink(item.Producto + " " + item.Marca + " " + item.Modelo, "ProductDescription", "Products", new { productId = item.Id }, null)</h3>
+       
+        
+        <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(item.ImageMain)))" />
+        <p><span>@ProductsStrings.Description :</span>@item.Descripcion</p>
         <p><span>@ProductsStrings.Year :</span>@item.Año</p>
         <p><span>@ProductsStrings.Hours :</span>@item.Hours</p>
         <p><span>@ProductsStrings.Kilometers :</span>@item.Kilometer</p>

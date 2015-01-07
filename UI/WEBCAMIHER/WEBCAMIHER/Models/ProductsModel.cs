@@ -24,7 +24,7 @@ namespace WEBCAMIHER.Models
 
         public IEnumerable<ProductsSet> GetProductList(string language)
         {
-            if (language != "Spanish")
+            if (language != "es")
             {
                 return _businessOperation.GetProductsToSale();
             }

@@ -198,10 +198,10 @@ namespace Camiher.Libs.DataProviders.CamiherService {
         System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.BaseResponse> AddProductImageAsync(Camiher.Libs.Server.DAL.CamiherDAL.ProductImageSet image);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/GetProducts", ReplyAction="http://tempuri.org/ICamiherService/GetProductsResponse")]
-        Camiher.Libs.Server.WebServicesObjects.ProductsResponse GetProducts(string filter);
+        Camiher.Libs.Server.WebServicesObjects.ProductsResponse GetProducts(string language);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/GetProducts", ReplyAction="http://tempuri.org/ICamiherService/GetProductsResponse")]
-        System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.ProductsResponse> GetProductsAsync(string filter);
+        System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.ProductsResponse> GetProductsAsync(string language);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICamiherService/AddPictureToProduct", ReplyAction="http://tempuri.org/ICamiherService/AddPictureToProductResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Camiher.Libs.Server.WebServicesObjects.SaleResponse))]
@@ -354,12 +354,12 @@ namespace Camiher.Libs.DataProviders.CamiherService {
             return base.Channel.AddProductImageAsync(image);
         }
         
-        public Camiher.Libs.Server.WebServicesObjects.ProductsResponse GetProducts(string filter) {
-            return base.Channel.GetProducts(filter);
+        public Camiher.Libs.Server.WebServicesObjects.ProductsResponse GetProducts(string language) {
+            return base.Channel.GetProducts(language);
         }
         
-        public System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.ProductsResponse> GetProductsAsync(string filter) {
-            return base.Channel.GetProductsAsync(filter);
+        public System.Threading.Tasks.Task<Camiher.Libs.Server.WebServicesObjects.ProductsResponse> GetProductsAsync(string language) {
+            return base.Channel.GetProductsAsync(language);
         }
         
         public Camiher.Libs.Server.WebServicesObjects.BaseResponse AddPictureToProduct(string productId, string picture) {

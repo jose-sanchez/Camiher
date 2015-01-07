@@ -61,6 +61,15 @@ namespace WEBCAMIHER.Views.Products {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Descripción.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Horas.
         /// </summary>
         public static string Hours {
@@ -79,6 +88,15 @@ namespace WEBCAMIHER.Views.Products {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Potencia.
+        /// </summary>
+        public static string Power {
+            get {
+                return ResourceManager.GetString("Power", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Maquinaria en venta.
         /// </summary>
         public static string Title {
@@ -93,6 +111,15 @@ namespace WEBCAMIHER.Views.Products {
         public static string TitleParraf {
             get {
                 return ResourceManager.GetString("TitleParraf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Peso.
+        /// </summary>
+        public static string Weight {
+            get {
+                return ResourceManager.GetString("Weight", resourceCulture);
             }
         }
         

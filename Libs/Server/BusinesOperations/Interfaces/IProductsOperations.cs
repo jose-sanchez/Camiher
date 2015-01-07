@@ -1,6 +1,6 @@
 ﻿using Camiher.Libs.Server.DAL.CamiherDAL;
 
-namespace BusinesOperations.Interfaces
+namespace Camiher.Libs.Server.BusinesOperations.Interfaces
 {
     interface IProductsOperations
     {

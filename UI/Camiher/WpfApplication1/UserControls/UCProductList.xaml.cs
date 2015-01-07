@@ -298,12 +298,28 @@ namespace Camiher.UI.AdministrationCenter.UserControls
                 var translation = new ProductTranslations();
                 translation.Description = t.Translation;
                 translation.Id = new Ramdom().RandomString(8);
-                translation.Language = language;
+                translation.Language = LanguageMapping(language);
                 translation.Product = p.Id;
                 translations.Add(translation);
             }
             return translations;
         }
+
+        public string LanguageMapping(string language)
+        {
+            switch (language)
+            {
+                case "Spanish":
+                    return "es";
+                case "English":
+                    return "en";
+                case "German":
+                    return "de";
+                default:
+                    return "es";
+            }
+        }
+
 
         private void filter(){
             decimal Maxprice;

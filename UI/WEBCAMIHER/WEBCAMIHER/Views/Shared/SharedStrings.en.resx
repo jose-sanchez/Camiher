@@ -117,28 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Description" xml:space="preserve">
-    <value>Descripción</value>
+  <data name="ActualOffer" xml:space="preserve">
+    <value>Machine list</value>
   </data>
-  <data name="Hours" xml:space="preserve">
-    <value>Horas</value>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
   </data>
-  <data name="Kilometers" xml:space="preserve">
-    <value>Kilometros</value>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
   </data>
-  <data name="Power" xml:space="preserve">
-    <value>Potencia</value>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
   </data>
-  <data name="Title" xml:space="preserve">
-    <value>Maquinaria en venta</value>
+  <data name="Housing" xml:space="preserve">
+    <value>Housing</value>
   </data>
-  <data name="TitleParraf" xml:space="preserve">
-    <value>A continuacion la lista de maquinaria en venta. Pulse sobre la maquina para obtener mas informacion</value>
+  <data name="HousingDescription" xml:space="preserve">
+    <value>HousingDescription</value>
   </data>
-  <data name="Weight" xml:space="preserve">
-    <value>Peso</value>
+  <data name="MachinaryDescription" xml:space="preserve">
+    <value>Check our machines on sale</value>
   </data>
-  <data name="Year" xml:space="preserve">
-    <value>Año</value>
+  <data name="Machinery_for_sale" xml:space="preserve">
+    <value>Machines on sale</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>Our Services</value>
+  </data>
+  <data name="OurServicesDescription" xml:space="preserve">
+    <value>Ponemos a su servicio todo tipo de maquinaria de obra pública relacionada con el movimiento de tierras y la construccion. Bajo la dirección y asesoramiento de Don Jose Maria Sanchez Colino que cuenta con mas 35 años de experiencia en el sector.</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="WeAreExpertIn" xml:space="preserve">
+    <value>We are expert in</value>
   </data>
 </root>

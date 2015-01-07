@@ -1,6 +1,6 @@
 ﻿
 var array_pictures;
-var array_pictures_index
+var array_pictures_index;
 $(document).keyup(function(e) {
 
     if (e.keyCode == 27) {

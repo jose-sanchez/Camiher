@@ -59,5 +59,113 @@ namespace WEBCAMIHER.Views.Shared {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oferta actual.
+        /// </summary>
+        public static string ActualOffer {
+            get {
+                return ResourceManager.GetString("ActualOffer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Direccion.
+        /// </summary>
+        public static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contacto.
+        /// </summary>
+        public static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Correo Electronico.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Viviendas.
+        /// </summary>
+        public static string Housing {
+            get {
+                return ResourceManager.GetString("Housing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disponemos de numerosas viviendas para comprar o alquilar..
+        /// </summary>
+        public static string HousingDescription {
+            get {
+                return ResourceManager.GetString("HousingDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vea nuestra oferta de maquinaria en venta..
+        /// </summary>
+        public static string MachinaryDescription {
+            get {
+                return ResourceManager.GetString("MachinaryDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Maquinaria en venta.
+        /// </summary>
+        public static string Machinery_for_sale {
+            get {
+                return ResourceManager.GetString("Machinery_for_sale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nuestros Servicios.
+        /// </summary>
+        public static string OurServices {
+            get {
+                return ResourceManager.GetString("OurServices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ponemos a su servicio todo tipo de maquinaria de obra pública relacionada con el movimiento de tierras y la construccion. Bajo la dirección y asesoramiento de Don Jose Maria Sanchez Colino que cuenta con mas 35 años de experiencia en el sector..
+        /// </summary>
+        public static string OurServicesDescription {
+            get {
+                return ResourceManager.GetString("OurServicesDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefono.
+        /// </summary>
+        public static string PhoneNumber {
+            get {
+                return ResourceManager.GetString("PhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Somos expertos en.
+        /// </summary>
+        public static string WeAreExpertIn {
+            get {
+                return ResourceManager.GetString("WeAreExpertIn", resourceCulture);
+            }
+        }
     }
 }

@@ -208,7 +208,7 @@
       <xs:element name="GetProducts">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="language" nillable="true" type="xs:string" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -370,6 +370,7 @@
           <xs:element minOccurs="0" name="Enventa" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Hours" type="xs:int" />
           <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageMain" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Kilometer" type="xs:int" />
           <xs:element minOccurs="0" name="Marca" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Modelo" nillable="true" type="xs:string" />

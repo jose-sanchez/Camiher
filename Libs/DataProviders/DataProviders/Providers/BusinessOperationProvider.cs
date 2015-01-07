@@ -81,19 +81,19 @@ namespace Camiher.Libs.DataProviders.Providers
             }
         }
 
-        public IEnumerable<ProductsSet> GetProductsToSale(string language = null)
-        {
-            var response = (ProductsResponse)_businessOperation.GetProducts(language);
-            if (response.IsCorrect)
-            {
-                return response.Products;
-            }
-            else
-            {
-                //AppLogger.Error(String.Format("[BusinessOperationProvider][GetCurrentSale]: response Error '{0}' ", response.ErrorResponse));
-                return null;
-            }
-        }
+        //public IEnumerable<ProductsSet> GetProductsToSale(string language = null)
+        //{
+        //    var response = (ProductsResponse)_businessOperation.GetProducts(language);
+        //    if (response.IsCorrect)
+        //    {
+        //        return response.Products;
+        //    }
+        //    else
+        //    {
+        //        //AppLogger.Error(String.Format("[BusinessOperationProvider][GetCurrentSale]: response Error '{0}' ", response.ErrorResponse));
+        //        return null;
+        //    }
+        //}
 
         public BaseResponse UpdateProduct(ProductsSet product,ProductTranslations[] translations = null )
         {

@@ -187,10 +187,30 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\ProductsModel.cs" />
+    <Compile Include="Views\Products\ProductsStrings.en.Designer.cs">
+      <DependentUpon>ProductsStrings.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Products\ProductsStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ProductsStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\SharedStrings.pl.Designer.cs">
+      <DependentUpon>SharedStrings.pl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Shared\SharedStrings.de.Designer.cs">
+      <DependentUpon>SharedStrings.de.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Shared\SharedStrings.en.Designer.cs">
+      <DependentUpon>SharedStrings.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Views\Shared\SharedStrings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -208,6 +228,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -303,6 +324,14 @@
     <Content Include="Images\saneamientos1.jpg" />
     <Content Include="Images\saneamientos2.jpg" />
     <Content Include="Images\servicios.jpg" />
+    <Content Include="Images\Slider\a01.png" />
+    <Content Include="Images\Slider\a03.png" />
+    <Content Include="Images\Slider\a04.png" />
+    <Content Include="Images\Slider\a06.png" />
+    <Content Include="Images\Slider\a11.png" />
+    <Content Include="Images\Slider\a21.png" />
+    <Content Include="Images\Slider\b05.png" />
+    <Content Include="Images\Slider\b21.png" />
     <Content Include="Images\urbanizacion.jpg" />
     <Content Include="Images\urbanizacion1.JPG" />
     <Content Include="Images\vaciadook.jpg" />
@@ -321,9 +350,13 @@
     <Content Include="Images\zanja.jpg" />
     <Content Include="Images\zanjap1.jpg" />
     <Content Include="Images\zanjap2.jpg" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\docs.min.js" />
+    <Content Include="Scripts\ie10-viewport-bug-workaround.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
@@ -332,6 +365,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jssor.slider.mini.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -394,9 +428,25 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\Products\ProductsStrings.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProductsStrings.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Products\ProductsStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ProductsStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\SharedStrings.pl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedStrings.pl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\SharedStrings.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedStrings.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\SharedStrings.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SharedStrings.en.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Shared\SharedStrings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
