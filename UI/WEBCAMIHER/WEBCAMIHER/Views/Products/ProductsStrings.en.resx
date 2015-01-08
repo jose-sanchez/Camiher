@@ -129,6 +129,9 @@
   <data name="Power" xml:space="preserve">
     <value>Power</value>
   </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>Machinary on sale</value>
   </data>

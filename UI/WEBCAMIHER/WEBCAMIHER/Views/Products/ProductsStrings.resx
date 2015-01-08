@@ -124,16 +124,19 @@
     <value>Horas</value>
   </data>
   <data name="Kilometers" xml:space="preserve">
-    <value>Kilometros</value>
+    <value>Kilómetros</value>
   </data>
   <data name="Power" xml:space="preserve">
     <value>Potencia</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Precio</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>Maquinaria en venta</value>
   </data>
   <data name="TitleParraf" xml:space="preserve">
-    <value>A continuacion la lista de maquinaria en venta. Pulse sobre la maquina para obtener mas informacion</value>
+    <value>A continuación la lista de maquinaria en venta. Pulse sobre la máquina para obtener mas información</value>
   </data>
   <data name="Weight" xml:space="preserve">
     <value>Peso</value>

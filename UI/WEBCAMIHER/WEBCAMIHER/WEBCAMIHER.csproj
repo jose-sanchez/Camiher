@@ -187,6 +187,11 @@
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Models\ProductsModel.cs" />
+    <Compile Include="Views\Products\ProductsStrings.de.Designer.cs">
+      <DependentUpon>ProductsStrings.de.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Views\Products\ProductsStrings.en.Designer.cs">
       <DependentUpon>ProductsStrings.en.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -428,6 +433,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\Products\ProductsStrings.de.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProductsStrings.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Products\ProductsStrings.en.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ProductsStrings.en.Designer.cs</LastGenOutput>

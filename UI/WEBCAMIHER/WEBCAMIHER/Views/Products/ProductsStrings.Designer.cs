@@ -79,7 +79,7 @@ namespace WEBCAMIHER.Views.Products {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kilometros.
+        ///   Looks up a localized string similar to Kilómetros.
         /// </summary>
         public static string Kilometers {
             get {
@@ -97,6 +97,15 @@ namespace WEBCAMIHER.Views.Products {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Precio.
+        /// </summary>
+        public static string Price {
+            get {
+                return ResourceManager.GetString("Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Maquinaria en venta.
         /// </summary>
         public static string Title {
@@ -106,7 +115,7 @@ namespace WEBCAMIHER.Views.Products {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A continuacion la lista de maquinaria en venta. Pulse sobre la maquina para obtener mas informacion.
+        ///   Looks up a localized string similar to A continuación la lista de maquinaria en venta. Pulse sobre la máquina para obtener mas información.
         /// </summary>
         public static string TitleParraf {
             get {

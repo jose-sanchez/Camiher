@@ -1,4 +1,5 @@
-﻿@{
+﻿@using WEBCAMIHER.Views.Shared
+@{
    
 }
 
@@ -8,16 +9,24 @@
 </hgroup>
 
 <ol class="round">
-    @foreach (WEBCAMIHER.Models.Content item in ViewBag.ContactList)
-    {
+
         <li >
-            <h5>@item.Title</h5>
-            @item.Text
-            <br>
+            <h5 style="font-weight:bold;">@SharedStrings.Address</h5>
+            Cervantes 11 Cadalso de los vidrios , Madrid (28640)
+            <br>          
         </li>
-
-
-    }
+        <li >
+            <h5 style="font-weight:bold;">@SharedStrings.PhoneNumber</h5>
+            (+34) 629 106 714 
+            <br/>
+            (+48) 795 923 091 @SharedStrings.EnglishSpeaker
+            <br/>          
+        </li>
+        <li >
+            <h5 style="font-weight:bold;">@SharedStrings.Email</h5>
+            @SharedStrings.EmailValue 
+        </li>
+        
 </ol>
 @*<section class="contact">
     <header>

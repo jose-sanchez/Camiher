@@ -183,3 +183,4 @@ C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER\obj\Debug\pl\WEBCAMIHER.resources
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER\obj\Debug\de\WEBCAMIHER.resources.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER\obj\Debug\en\WEBCAMIHER.resources.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER\obj\Debug\WEBCAMIHER.Views.Products.ProductsStrings.en.resources
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER\obj\Debug\WEBCAMIHER.Views.Products.ProductsStrings.de.resources

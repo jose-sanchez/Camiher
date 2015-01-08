@@ -129,6 +129,12 @@
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="EmailValue" xml:space="preserve">
+    <value>contact@camiher.com</value>
+  </data>
+  <data name="EnglishSpeaker" xml:space="preserve">
+    <value>for english speakers</value>
+  </data>
   <data name="Housing" xml:space="preserve">
     <value>Housing</value>
   </data>

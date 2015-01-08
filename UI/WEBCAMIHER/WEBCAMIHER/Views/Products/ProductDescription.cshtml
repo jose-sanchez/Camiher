@@ -9,9 +9,6 @@
         <div class="content-wrapper">
             <hgroup class="title">
                 <h1>@ViewBag.Product.Producto @ViewBag.Product.Marca  @ViewBag.Product.Modelo</h1>
-                <p>
-                    @ViewBag.Product.Descripcion
-                </p>
             </hgroup>
         </div>
 
@@ -20,84 +17,89 @@
     </section>
     
 }
-
 <div>
-    <p><span>@ProductsStrings.Year :</span>@ViewBag.Product.Año</p>
-    <p><span>@ProductsStrings.Hours :</span>@ViewBag.Product.Hours</p>
-    <p><span>@ProductsStrings.Kilometers :</span>@ViewBag.Product.Kilometer</p>
-    <p><span>@ProductsStrings.Weight :</span>@ViewBag.Product.Peso</p>
-    <p><span>@ProductsStrings.Power :</span>@ViewBag.Product.Potencia</p>
-</div>
-
-<div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px;">
-    <!-- Slides Container -->
-    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 600px; height: 300px;">
-        @foreach (var imgdata in @ViewBag.ProductImages)
-        {
-            <div><img u="image" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(imgdata)))" /></div>
-        }
-            
-        @*<div><img u="image" src="~/Images/camino1.jpg" /></div>
-        <div><img u="image" src="~/Images/camino2.jpg" /></div>*@
+    <div style="float: left; padding-top:30px;">
+        <p><span style="font-weight:bold;">@ProductsStrings.Price :</span>@ViewBag.Product.Precio Euros</p>
+        <p><span style="font-weight:bold;">@ProductsStrings.Year :</span>@ViewBag.Product.Año</p>
+        <p><span style="font-weight:bold;">@ProductsStrings.Hours :</span>@ViewBag.Product.Hours</p>
+        <p><span style="font-weight:bold;">@ProductsStrings.Kilometers :</span>@ViewBag.Product.Kilometer</p>
+        <p><span style="font-weight:bold;">@ProductsStrings.Weight :</span>@ViewBag.Product.Peso</p>
+        <p><span style="font-weight:bold;">@ProductsStrings.Power :</span>@ViewBag.Product.Potencia</p>
     </div>
-    <!-- Arrow Navigator Skin Begin -->
-    <style>
-        /* jssor slider arrow navigator skin 01 css */
-        /*
-                .jssora01l              (normal)
-                .jssora01r              (normal)
-                .jssora01l:hover        (normal mouseover)
-                .jssora01r:hover        (normal mouseover)
-                .jssora01ldn            (mousedown)
-                .jssora01rdn            (mousedown)
-                */
-        .jssora01l, .jssora01r, .jssora01ldn, .jssora01rdn {
-            position: absolute;
-            cursor: pointer;
-            display: block;
-            background: url(/../Images/Slider/a11.png) no-repeat;
-            overflow: hidden;
+
+
+    <div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px;float:right;">
+        <!-- Slides Container -->
+        <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 600px; height: 300px;">
+            @foreach (var imgdata in @ViewBag.ProductImages)
+        {
+                <div><img u="image" src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(System.Text.Encoding.Default.GetBytes(imgdata)))" /></div>
         }
 
-        .jssora01l {
-            background-position: -8px -38px;
-        }
+            @*<div><img u="image" src="~/Images/camino1.jpg" /></div>
+                <div><img u="image" src="~/Images/camino2.jpg" /></div>*@
+        </div>
+        <!-- Arrow Navigator Skin Begin -->
+        <style>
+            /* jssor slider arrow navigator skin 01 css */
+            /*
+                    .jssora01l              (normal)
+                    .jssora01r              (normal)
+                    .jssora01l:hover        (normal mouseover)
+                    .jssora01r:hover        (normal mouseover)
+                    .jssora01ldn            (mousedown)
+                    .jssora01rdn            (mousedown)
+                    */
+            .jssora01l, .jssora01r, .jssora01ldn, .jssora01rdn {
+                position: absolute;
+                cursor: pointer;
+                display: block;
+                background: url(/../Images/Slider/a11.png) no-repeat;
+                overflow: hidden;
+            }
 
-        .jssora01r {
-            background-position: -68px -38px;
-        }
+            .jssora01l {
+                background-position: -8px -38px;
+            }
 
-        .jssora01l:hover {
-            background-position: -128px -38px;
-        }
+            .jssora01r {
+                background-position: -68px -38px;
+            }
 
-        .jssora01r:hover {
-            background-position: -188px -38px;
-        }
+            .jssora01l:hover {
+                background-position: -128px -38px;
+            }
 
-        .jssora01ldn {
-            background-position: -8px -38px;
-        }
+            .jssora01r:hover {
+                background-position: -188px -38px;
+            }
 
-        .jssora01rdn {
-            background-position: -68px -38px;
-        }
-    </style>
-    @*<div u="navigator" class="jssorb01" style="position: absolute; bottom: 6px; right: 6px;">
+            .jssora01ldn {
+                background-position: -8px -38px;
+            }
 
-    </div>*@
-    
-    <!-- Arrow Left -->
-    <span u="arrowleft" class="jssora01l" style="width: 45px; height: 45px; top: 123px; left: 8px;">
-    </span>
-    <!-- Arrow Right -->
-    <span u="arrowright" class="jssora01r" style="width: 45px; height: 45px; top: 123px; right: 8px">
-    </span>
+            .jssora01rdn {
+                background-position: -68px -38px;
+            }
+        </style>
+        @*<div u="navigator" class="jssorb01" style="position: absolute; bottom: 6px; right: 6px;">
 
-    <!-- Arrow Navigator Skin End -->
+            </div>*@
+
+        <!-- Arrow Left -->
+        <span u="arrowleft" class="jssora01l" style="width: 45px; height: 45px; top: 123px; left: 8px;">
+        </span>
+        <!-- Arrow Right -->
+        <span u="arrowright" class="jssora01r" style="width: 45px; height: 45px; top: 123px; right: 8px">
+        </span>
+
+        <!-- Arrow Navigator Skin End -->
+    </div>
 </div>
-
-
+<div>
+    <p style="padding-top: 30px;clear:right"><span style="font-weight:bold;">@ProductsStrings.Description :</span></p>
+    <p>@ViewBag.Product.Descripcion</p>
+</div>
 
 @section scripts
 {

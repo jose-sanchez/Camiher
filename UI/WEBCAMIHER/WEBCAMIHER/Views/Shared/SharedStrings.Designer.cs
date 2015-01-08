@@ -97,6 +97,24 @@ namespace WEBCAMIHER.Views.Shared {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to contacto@camiher.com.
+        /// </summary>
+        public static string EmailValue {
+            get {
+                return ResourceManager.GetString("EmailValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to para angloparlantes.
+        /// </summary>
+        public static string EnglishSpeaker {
+            get {
+                return ResourceManager.GetString("EnglishSpeaker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Viviendas.
         /// </summary>
         public static string Housing {
