@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!-- Select a Product Configuration -->
+		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
+		<!-- Select a Visual Studio Configuration / InstallShield Release -->
+		<Configuration>Debug</Configuration>
+		<InstallShieldRelease>$(Configuration)</InstallShieldRelease>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- The InstallShieldProject item selects the project to build -->
+		<InstallShieldProject Include="$(MSBuildProjectDirectory)\$(MSBuildProjectName).isl"/>
+		<!-- The InstallShieldReleaseFlags sets Release Flags -->
+		<!--<InstallShieldReleaseFlags Include=""/>-->
+		<!-- The InstallShieldMergeModulePath specifies what directories are
+		searched for Merge Modules -->
+		<!--<InstallShieldMergeModulePath Include=""/>-->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The ProjectReference items refer to any Visual Studio solutions you want to automatically probe for Project Output Groups.  -->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
+		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
+			<Name>My Test Project</Name>
+			<OutputGroup>Primary output</OutputGroup>
+			<TargetPath>My Test Exe.exe</TargetPath>
+		</TaggedOutputs> -->
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2013Limited\InstallShield.targets"/>
+	<ItemGroup>
+		<ProjectReference Include="..\WpfApplication1\AdministrationCenter.csproj">
+			<Name>AdministrationCenter</Name>
+			<Project>{94540B51-B01E-4792-A049-79BFE79EC83C}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\..\..\Libs\Server\DAL\CamiherDAL\CamiherDAL\CamiherDAL.csproj">
+			<Name>CamiherDAL</Name>
+			<Project>{59830872-57C8-48DE-B004-7EC8C3F99FE8}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\..\..\Libs\Common\Common.csproj">
+			<Name>Common</Name>
+			<Project>{7C9B4AC9-07BF-4701-97C3-AC623B8D8C9F}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\..\..\Libs\DataProviders\DataProviders\DataProviders.csproj">
+			<Name>DataProviders</Name>
+			<Project>{3338FD4A-4C30-48AE-A767-2AC9A2E9B34B}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\DragAndDrop\DragAndDrop\DragAndDrop.csproj">
+			<Name>DragAndDrop</Name>
+			<Project>{98E0081E-B4C1-4487-B66E-84979DCE8882}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\..\..\ExternalLibs\PicViewer_async\PicViewer\PicViewer.csproj">
+			<Name>PicViewer</Name>
+			<Project>{617A7B35-06F5-4BCB-81BA-BB3746E2C0A3}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\..\..\Libs\Server\WebServicesObjects\WebServicesObjects.csproj">
+			<Name>WebServicesObjects</Name>
+			<Project>{73A9976F-76EE-4D75-9797-38246BAFE6D5}</Project>
+		</ProjectReference>
+	</ItemGroup>
+</Project>

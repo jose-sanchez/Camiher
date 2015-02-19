@@ -1,2 +1,11 @@
 C:\Users\josehp\NightDiary\Libs\Common\obj\Release\Common.csprojResolveAssemblyReference.cache
 C:\Users\josehp\Camiher\Libs\Common\obj\Release\Common.csprojResolveAssemblyReference.cache
+C:\Users\jose\Camiher\Libs\Common\bin\Release\Common.dll
+C:\Users\jose\Camiher\Libs\Common\bin\Release\Common.pdb
+C:\Users\jose\Camiher\Libs\Common\bin\Release\Logger.dll
+C:\Users\jose\Camiher\Libs\Common\bin\Release\NLog.dll
+C:\Users\jose\Camiher\Libs\Common\bin\Release\Logger.pdb
+C:\Users\jose\Camiher\Libs\Common\bin\Release\NLog.xml
+C:\Users\jose\Camiher\Libs\Common\obj\Release\Common.csprojResolveAssemblyReference.cache
+C:\Users\jose\Camiher\Libs\Common\obj\Release\Common.dll
+C:\Users\jose\Camiher\Libs\Common\obj\Release\Common.pdb

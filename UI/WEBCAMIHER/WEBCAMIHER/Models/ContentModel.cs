@@ -7,6 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Web;
+using EntityState = System.Data.Entity.EntityState;
 
 namespace WEBCAMIHER.Models
 {

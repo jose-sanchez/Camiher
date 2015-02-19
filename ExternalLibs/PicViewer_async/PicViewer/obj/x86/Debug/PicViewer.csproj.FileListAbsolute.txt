@@ -25,7 +25,6 @@ C:\Users\josehp\Camiher\ExternalLibs\PicViewer_async\PicViewer\obj\x86\Debug\Pic
 C:\Users\josehp\Camiher\ExternalLibs\PicViewer_async\PicViewer\obj\x86\Debug\PicViewer.pdb
 C:\Users\jose\Camiher\ExternalLibs\PicViewer_async\PicViewer\bin\Debug\PicViewer.exe
 C:\Users\jose\Camiher\ExternalLibs\PicViewer_async\PicViewer\bin\Debug\PicViewer.pdb
-C:\Users\jose\Camiher\ExternalLibs\PicViewer_async\PicViewer\obj\x86\Debug\PicViewer.csprojResolveAssemblyReference.cache
 C:\Users\jose\Camiher\ExternalLibs\PicViewer_async\PicViewer\obj\x86\Debug\MainWindow.baml
 C:\Users\jose\Camiher\ExternalLibs\PicViewer_async\PicViewer\obj\x86\Debug\MainWindow.g.cs
 C:\Users\jose\Camiher\ExternalLibs\PicViewer_async\PicViewer\obj\x86\Debug\App.g.cs

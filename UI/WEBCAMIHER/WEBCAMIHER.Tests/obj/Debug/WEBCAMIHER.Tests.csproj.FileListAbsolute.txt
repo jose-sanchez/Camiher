@@ -80,6 +80,7 @@ C:\Users\josehp\documents\visual studio 2013\Projects\WEBCAMIHER\WEBCAMIHER.Test
 C:\Users\josehp\documents\visual studio 2013\Projects\WEBCAMIHER\WEBCAMIHER.Tests\obj\Debug\WEBCAMIHER.Tests.csprojResolveAssemblyReference.cache
 C:\Users\josehp\documents\visual studio 2013\Projects\WEBCAMIHER\WEBCAMIHER.Tests\obj\Debug\WEBCAMIHER.Tests.dll
 C:\Users\josehp\documents\visual studio 2013\Projects\WEBCAMIHER\WEBCAMIHER.Tests\obj\Debug\WEBCAMIHER.Tests.pdb
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\obj\Debug\WEBCAMIHER.Tests.csprojResolveAssemblyReference.cache
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\WEBCAMIHER.Tests.dll.config
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\WEBCAMIHER.Tests.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\WEBCAMIHER.Tests.pdb
@@ -88,21 +89,22 @@ C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Microsoft.Data.OD
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Microsoft.Web.Mvc.FixedDisplayModes.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Newtonsoft.Json.dll
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Spatial.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Helpers.dll
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Http.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Http.OData.dll
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Http.WebHost.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Mvc.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Razor.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.WebPages.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.WebPages.Razor.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\WEBCAMIHER.dll
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\EntityFramework.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Camiher.Libs.Server.DAL.CamiherDAL.dll
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DataProviders.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Microsoft.Web.WebPages.OAuth.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DotNetOpenAuth.AspNet.dll
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\WebServicesObjects.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DotNetOpenAuth.Core.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DotNetOpenAuth.OAuth.Consumer.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DotNetOpenAuth.OAuth.dll
@@ -110,10 +112,7 @@ C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DotNetOpenAuth.Op
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DotNetOpenAuth.OpenId.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\WEBCAMIHER.pdb
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Newtonsoft.Json.xml
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Helpers.xml
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Http.xml
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Http.WebHost.xml
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Mvc.xml
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Razor.xml
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.WebPages.xml
@@ -123,13 +122,19 @@ C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Web.Http.O
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Microsoft.Data.Edm.xml
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Microsoft.Data.OData.xml
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\System.Spatial.xml
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Camiher.Libs.Server.DAL.CamiherDAL.pdb
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DataProviders.pdb
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Microsoft.Web.WebPages.OAuth.xml
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DotNetOpenAuth.AspNet.xml
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\WebServicesObjects.pdb
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DotNetOpenAuth.Core.xml
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DotNetOpenAuth.OAuth.Consumer.xml
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DotNetOpenAuth.OAuth.xml
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DotNetOpenAuth.OpenId.xml
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\de\WEBCAMIHER.resources.dll
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\en\WEBCAMIHER.resources.dll
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\pl\WEBCAMIHER.resources.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\de\Microsoft.Data.Edm.resources.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\es\Microsoft.Data.Edm.resources.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\fr\Microsoft.Data.Edm.resources.dll
@@ -157,12 +162,6 @@ C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\ko\System.Spatial
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\ru\System.Spatial.resources.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\zh-Hans\System.Spatial.resources.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\zh-Hant\System.Spatial.resources.dll
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\obj\Debug\WEBCAMIHER.Tests.csprojResolveAssemblyReference.cache
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\obj\Debug\WEBCAMIHER.Tests.dll
 C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\obj\Debug\WEBCAMIHER.Tests.pdb
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Camiher.Libs.Server.DAL.CamiherDAL.dll
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DataProviders.dll
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\WebServicesObjects.dll
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\Camiher.Libs.Server.DAL.CamiherDAL.pdb
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\DataProviders.pdb
-C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\WebServicesObjects.pdb
+C:\Users\jose\Camiher\UI\WEBCAMIHER\WEBCAMIHER.Tests\bin\Debug\EntityFramework.xml

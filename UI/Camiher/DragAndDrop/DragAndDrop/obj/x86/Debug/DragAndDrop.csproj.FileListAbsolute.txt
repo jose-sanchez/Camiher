@@ -25,7 +25,6 @@ C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAnd
 C:\Users\josehp\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.pdb
 C:\Users\jose\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\bin\Debug\DragAndDrop.exe
 C:\Users\jose\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\bin\Debug\DragAndDrop.pdb
-C:\Users\jose\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragAndDrop.csprojResolveAssemblyReference.cache
 C:\Users\jose\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragDropImage.baml
 C:\Users\jose\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\DragDropImage.g.cs
 C:\Users\jose\Camiher\UI\Camiher\DragAndDrop\DragAndDrop\obj\x86\Debug\App.g.cs

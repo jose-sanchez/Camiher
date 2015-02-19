@@ -33,8 +33,6 @@ namespace WEBCAMIHER.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = SharedStrings.Contact;
-
-            ViewBag.ContactList = unitOfWork.ContentRepository.Get(S => S.Section.Contains("Contacto")).OrderBy(S => S.Order);
             return View();
         }
         public ActionResult Products()
